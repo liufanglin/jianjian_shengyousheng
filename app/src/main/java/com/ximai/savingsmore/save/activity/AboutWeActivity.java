@@ -15,5 +15,8 @@ public class AboutWeActivity  extends BaseActivity{
         setContentView(R.layout.about_activity);
         setCenterTitle("关于我们");
         setLeftBackMenuVisibility(AboutWeActivity.this,"");
+
+
+
     }
 }
