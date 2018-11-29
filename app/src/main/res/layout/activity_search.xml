@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:orientation="horizontal"
+        android:background="@color/mianColor"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <!--方框-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/bg_white"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_city"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未选择"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@mipmap/sousuo_icon" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/line_one"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:focusableInTouchMode="true"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:background="@mipmap/sousuo_icon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/search_et_input"
+                    android:hint="搜索商品名称/品牌/促销号"
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="5dp"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+                <RelativeLayout
+                    android:id="@+id/rl_clearinput"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/sousuo_icon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!--挑选商家-->
+        <LinearLayout
+            android:id="@+id/ll_choosebusiness"
+            android:layout_width="80dp"
+            android:background="@drawable/line_white"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="6dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_choose"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="挑选商家"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/sousuo_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <!--<LinearLayout-->
+        <!--android:background="#E5E5E5"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<FrameLayout-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/search_et_input"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_search"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/search_edittext_shape"-->
+                <!--android:textSize="16sp"-->
+                <!--android:imeOptions="actionSearch"-->
+                <!--android:inputType="text"-->
+                <!--android:hint="请输入搜索的内容"/>-->
+
+            <!--<ImageView-->
+                <!--android:visibility="gone"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:src="@drawable/ic_delete"-->
+                <!--android:id="@+id/search_iv_delete"-->
+                <!--android:layout_gravity="right|center_vertical"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</FrameLayout>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/search_btn_back"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:text="取消"-->
+            <!--android:textColor="#EA5421"-->
+            <!--android:textSize="15sp"-->
+            <!--android:background="@null"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="50dp" />-->
+    <!--</LinearLayout>-->
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/search_lv_tips"
+        android:background="#ffffff"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</LinearLayout>

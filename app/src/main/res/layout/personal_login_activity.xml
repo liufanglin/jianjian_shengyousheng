@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_height="48dp"
+        android:background="@color/mianColor"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:gravity="center_vertical"
+            android:layout_width="40dp"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/header_back_icon" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cen_title"
+            android:text="个人登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/max" />
+        <RelativeLayout
+            android:id="@+id/title＿right"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_title"
+                android:textColor="#ff2c33"
+                android:paddingRight="12dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="5dp"
+                android:textSize="13dp"
+                android:background="@drawable/login_titleright"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/user3" />
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:inputType="number"
+                android:gravity="center_vertical"
+                android:hint="请输入您的手机号码"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="60dp"
+            android:background="@color/line_one"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/pwd3" />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入您的密码"
+                android:password="true"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_sharp"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_regin_text" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="个人免费注册"
+            android:textColor="@color/mianColor"
+            android:textSize="@dimen/login_regin_text" />
+
+        <TextView
+            android:id="@+id/forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:text="忘记密码?"
+            android:textColor="@color/mianColor"
+            android:textSize="@dimen/login_regin_text" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--第三方登陆-->
+        <LinearLayout
+            android:id="@+id/ll_login_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@color/line_two"/>
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="第三方登录" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@color/line_two"/>
+        </LinearLayout>
+
+        <!--qq,wx,wb-->
+        <LinearLayout
+            android:id="@+id/ll_login_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/account_login_user_wechat"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@mipmap/weixin3" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/account_loginuser__qq"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@mipmap/qq3" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/account_login_user_xinlang"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@mipmap/weibo" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_choose_user"
+            android:background="@drawable/bg_blueyuan"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="65dp"
+            android:layout_height="65dp">
+            <TextView
+                android:id="@+id/tv_msg_one"
+                android:text="--"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_msg_two"
+                android:text="--"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--时时更新数据-->
+        <LinearLayout
+            android:id="@+id/ll_updata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@color/line_two"/>
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="实时更新数据" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@color/line_two"/>
+        </LinearLayout>
+
+        <!--商家入驻-->
+        <LinearLayout
+            android:id="@+id/ll_business"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--左-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/iv_left"
+                        android:layout_marginTop="1dp"
+                        android:background="@mipmap/denglu_iconsjl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/business_number"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="30sp"
+                        android:textColor="#ff2c33"
+                        android:text="1950"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_danweileft"
+                        android:textColor="#8e97a4"
+                        android:textSize="15sp"
+                        android:text="家"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_msgleft"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#8e97a4"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:text="周边正在促销的商铺数量"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!--右-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/iv_right"
+                        android:layout_marginTop="1dp"
+                        android:background="@mipmap/denglu_iconsjr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/pingzhong_number"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="30sp"
+                        android:textColor="#0097ff"
+                        android:text="1950"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_danweiright"
+                        android:textColor="#8e97a4"
+                        android:textSize="15sp"
+                        android:text="种"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_msgright"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#8e97a4"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:text="促销商品品种至今数量"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--个人图片显示-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_geren"
+                android:layout_alignParentBottom="true"
+                android:background="@mipmap/peitu"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <!--个人登录-->
+        <LinearLayout
+            android:id="@+id/ll_personal"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--左-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginTop="1dp"
+                        android:background="@mipmap/denglu_iconleft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/kuhu_number"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="30sp"
+                        android:textColor="#ff2c33"
+                        android:text="1950"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="#8e97a4"
+                        android:textSize="15sp"
+                        android:text="人"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="3dp"
+                    android:textColor="#8e97a4"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:text="商铺周边今天注册客户人数"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!--右-->
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginTop="1dp"
+                        android:background="@mipmap/denglu_iconright"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/all_number"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="30sp"
+                        android:textColor="#0097ff"
+                        android:text="1950"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="#8e97a4"
+                        android:textSize="15sp"
+                        android:text="人"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="3dp"
+                    android:textColor="#8e97a4"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:text="至今注册总人数"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

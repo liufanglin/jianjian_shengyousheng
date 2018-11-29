@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_redone"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@mipmap/icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <RelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv1"
+                    android:text="省又省"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="SavingsMore"
+                    android:layout_marginBottom="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="TM"
+                    android:layout_toRightOf="@+id/tv1"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView
+            android:text="促销优惠卡号："
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/white"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:text="本卡使用范围：购买“省又省”商户全部商品，享受优惠和返利。"
+            android:layout_width="match_parent"
+            android:textSize="10sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_whiteone"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="发卡机构：“省又省”运营商"
+            android:layout_width="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/text_black"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@mipmap/icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="持卡人"
+                    android:textSize="12sp"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="姓   名"
+                    android:layout_marginBottom="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="170dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/gray"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:text="积分说明："
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:textColor="@color/text_black"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="*  购物赚积分，积分抵扣再购物；"
+            android:layout_width="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="*  A店挣积分，可去B店购物，积分不过时;"
+            android:layout_width="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="*  在门店购买任何商品，可以现场与门店议价;"
+            android:layout_width="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="*  在非“省又省”商家消费，直接获得现金返利;"
+            android:layout_width="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="*  送货服务，金杯会员免费，其他会员市价50%优惠;"
+            android:layout_width="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="*  在实体门店购物，享受“绿色通道”特权，无须排队;"
+            android:layout_width="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="有效日期：“省又省”会员期间"
+            android:layout_width="match_parent"
+            android:textSize="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_close"
+        android:background="@mipmap/close5"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+</LinearLayout>

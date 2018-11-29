@@ -1,0 +1,41 @@
+apply plugin: 'android-library'
+apply plugin: 'signing'
+
+version = "2.0.0"
+group = "com.edmodo"
+
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 23
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-annotations:23.1.0'               //有冲突将其隐藏 - 导入picture-library
+}
+
+repositories {
+    mavenCentral()
+}
+
+signing {
+    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+
+
+

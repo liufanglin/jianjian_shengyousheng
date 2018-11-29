@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/change_icon_popupwindow_item"
+        android:text="百度地图" />
+
+    <Button
+        android:id="@+id/btnAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/change_icon_popupwindow_item"
+        android:text="高德地图" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/change_icon_popupwindow_item"
+        android:text="@string/cancel" />
+
+</LinearLayout>

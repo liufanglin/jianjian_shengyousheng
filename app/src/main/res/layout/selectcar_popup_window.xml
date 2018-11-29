@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:background="@drawable/btn_style_alert_dialog_takephoto"
+            android:layout_height="55dp">
+            <Button
+                android:id="@+id/btn_one"
+                android:text="您好，我们接送你去购物"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#879ca6"
+                android:background="#00000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:text="(上海地区)"
+                android:layout_toRightOf="@+id/btn_one"
+                android:textSize="12sp"
+                android:textColor="#879ca6"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_car1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_height="55dp">
+            <TextView
+                android:text="“省又省”专车"
+                android:textSize="18sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="13818799928"
+                android:textSize="13sp"
+                android:layout_marginTop="3dp"
+                android:textColor="#879ca6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_one"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:id="@+id/ll_car2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_height="55dp">
+            <TextView
+                android:text="强生租车"
+                android:textSize="18sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="021-62580000"
+                android:textSize="13sp"
+                android:layout_marginTop="3dp"
+                android:textColor="#879ca6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:background="@color/line_one"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:id="@+id/ll_car3"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_height="55dp">
+            <TextView
+                android:text="大众出行"
+                android:textSize="18sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="96822"
+                android:textSize="13sp"
+                android:layout_marginTop="3dp"
+                android:textColor="#879ca6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_one"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:id="@+id/ll_car4"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_height="55dp">
+            <TextView
+                android:text="上海锦江"
+                android:textSize="18sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="96961"
+                android:textSize="13sp"
+                android:layout_marginTop="3dp"
+                android:textColor="#879ca6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:background="@color/line_one"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:id="@+id/ll_car5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_height="55dp">
+            <TextView
+                android:text="无人驾驶专车"
+                android:textSize="18sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="阿法狗"
+                android:textSize="13sp"
+                android:layout_marginTop="3dp"
+                android:textColor="#879ca6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_style_alert_dialog_cancel"
+            android:text="取消"
+            android:textColor="#879ca6"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

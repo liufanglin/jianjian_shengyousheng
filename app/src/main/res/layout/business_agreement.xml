@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="《省又省用户服务协议》"
+            android:textColor="@color/text_black"
+            android:textSize="15sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2dp"
+            android:text="      《省又省用户服务协议》（以下简称“本协议”）是由“省又省”用户移动端应用程序的用户（以下简称“用户或您”）与“省又省”的运营方，即上海西麦企业管理咨询有限公司（以下简称“省又省”）之间， 就“省又省”APP服务等相关事宜共同缔结。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2dp"
+            android:text="      本协议具有合同效力，您应当阅读并遵守本协议。请您务必仔细阅读、充分理解各条款内容。本应用的各项移动服务的所有权和运作权归“省又省”运营商所有。您注册成功后，本协议自动生效，您成为“省又省”APP的正式注册用户，开始并享用其各类服务。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:textColor="@color/text_black"
+            android:text="一、您的权益："
+            android:lineSpacingExtra="2dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:text="1、自由申请加入“省又省”促销商品购物平台，同时，也可以随时退出该平台；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="2、在“省又省”实体商户，您可购买全部促销商品，享受的待遇有优惠+返利+包邮；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="3、在“省又省”实体商户，您可提出任何非促销商品的促销价购买，可获取促销+返利；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="4、在“省又省”实体商户，您可在线下门店购买任一商品，获得返利优惠；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="5、在“省又省”实体商户，您有权对不促销商品提出优惠价要求，获取优惠+返利的待遇；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="6、可要求“省又省”平台出售促销商品在品质、价格、包装等方面完全符合国家相关规定；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="7、可要求“省又省”平台实体店完全兑现其在“省又省”平台发布的促销广告的承若；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="8、有权得到“省又省”发行奖励返利积分，包括转发、评价和下单购买等返利；"
+            android:gravity="top"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="9、您的”省又省”积分仅限于在“省又省”实体商户消费时抵扣现金使用，不可提现；"
+            android:gravity="top"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="10、您的”省又省”积分可以在“省又省”全部入驻实体商户通用，抵扣现金使用；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="11、您的”省又省”积分可以在“省又省”所有实体商户购买返现，永远不过期；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:textColor="@color/text_black"
+            android:text="二、您的义务："
+            android:lineSpacingExtra="2dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:text="1、在“省又省”的实体商户下单购买商品或服务是我本人的选择，我有义务按时并按量收货并支付全额货款；同时按照与商户事先达成协议支付其他费用包括运费和保险费等；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="2、有义务按“省又省”的积分管理办法执行关于积分赚取、累积、使用抵扣的各项规定；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="3、有义务在任何情况下不会在“省又省”平台发布或评价有损他人形象、利益及安全的言论或其它图文、视频资料；否则，我承担一切经济及法律后果；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:text="4、有义务积极、友好、协商、支持和配合“省又省”平台客服人员及“省又省”实体商户解决交易的任何争议；"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="top"
+            android:text="      “省又省”运营机构上海西麦企业管理咨询有限公司保留该协议各项条款的最终的解释权和更改权。"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+                <TextView
+                    android:text="“省又省”运营商"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="2016年12月22日星期四"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

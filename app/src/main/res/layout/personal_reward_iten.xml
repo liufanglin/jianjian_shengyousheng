@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_rewardstate"
+            android:layout_width="wrap_content"
+            android:background="@mipmap/iv_reward1"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_rewardstyle"
+                android:text="奖赏：VIP积分返利"
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="125dp"
+                android:background="@drawable/xu_lines"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/mycenter_item_p"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/tv_rewarddate"
+                android:text="领取时间："
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_rewardsbtn"
+                android:layout_below="@+id/iv_delete"
+                android:text="打开红包"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_black"
+                android:layout_width="80dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

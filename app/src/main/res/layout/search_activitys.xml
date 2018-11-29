@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--title-->
+        <RelativeLayout
+            android:layout_height="48dp"
+            android:background="@color/mianColor"
+            android:layout_width="match_parent">
+            <RelativeLayout
+                android:id="@+id/back"
+                android:gravity="center_vertical"
+                android:layout_width="40dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:src="@mipmap/header_back_icon" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/cen_title"
+                android:text="促销商品搜索"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/max" />
+        </RelativeLayout>
+
+        <!--商品搜索-->
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:orientation="horizontal"
+            android:background="@color/mianColor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <!--方框-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="@drawable/bg_white"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/ll_citys"
+                    android:layout_width="70dp"
+                    android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_citys"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="切换城市"
+                        android:gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@mipmap/sousuo_icon" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/line_one"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:background="@mipmap/sousuo_icon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/search_et_inputs"
+                        android:hint="商品名称/品牌/促销号"
+                        android:textSize="12sp"
+                        android:ellipsize="end"
+                        android:layout_marginLeft="5dp"
+                        android:background="@null"
+                        android:layout_width="0dp"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+                    <RelativeLayout
+                        android:id="@+id/rl_clearinputs"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:background="@mipmap/sousuo_icon3"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--挑选商家-->
+            <LinearLayout
+                android:layout_width="80dp"
+                android:visibility="gone"
+                android:background="@drawable/line_white"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_chooses"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:text="挑选商家"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:background="@mipmap/sousuo_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_choosebusines"
+                android:layout_width="80dp"
+                android:background="@mipmap/search_up"
+                android:layout_marginTop="2dp"
+                android:gravity="center|bottom"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_search_msg1"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:text="商圈"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--地址搜索-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@color/mianColor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <!--方框-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="@drawable/bg_white"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:background="@mipmap/sousuo_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/et_location_address"
+                        android:hint="街道、城市、省"
+                        android:textSize="12sp"
+                        android:ellipsize="end"
+                        android:layout_marginLeft="5dp"
+                        android:background="@null"
+                        android:layout_width="0dp"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+                    <RelativeLayout
+                        android:id="@+id/rl_clear_address"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:background="@mipmap/sousuo_icon3"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_choosebusines_down"
+                android:layout_width="80dp"
+                android:background="@mipmap/search_down"
+                android:gravity="top|center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_search_msg2"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:text="商家"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--点击标题-->
+        <LinearLayout
+            android:id="@+id/show_chanping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/line_color"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/ll_cpgoods"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/iv_cpgoods"
+                        android:background="@mipmap/sousuo_iconred"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_cpgoods"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产品类商品"
+                        android:textColor="@color/mianColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_fugoods"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/iv_fugoods"
+                        android:background="@mipmap/sousuo_iconfw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_fugoods"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="服务类商品"
+                        android:textColor="@color/text_black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/line_color"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <View
+                    android:id="@+id/view_cpgoodsline"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="2dp"
+                    android:visibility="invisible"
+                    android:background="@color/mianColor"/>
+                <View
+                    android:id="@+id/view_fugoodsline"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/mianColor"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--个人搜索暂无数据-->
+        <LinearLayout
+            android:id="@+id/ll_defaultdata"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@mipmap/pinglun_nocomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="该商品暂无促销~"
+                android:layout_marginTop="30dp"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:id="@+id/ll_callphone"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="想了解类似商品促销活动，"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="请联系"
+                    android:textSize="14sp"
+                    android:textColor="@color/mianColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/iv_callphone"
+                    android:visibility="gone"
+                    android:background="@mipmap/iv_phone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--商家搜索暂无数据-->
+        <LinearLayout
+            android:id="@+id/ll_businessdata"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@mipmap/pinglun_nocomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="该商品暂无促销~"
+                android:layout_marginTop="30dp"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_businessfabu"
+                android:background="@drawable/button_sharp"
+                android:layout_marginTop="30dp"
+                android:textSize="12sp"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:text="我要发布该商品促销"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <!--暂无数据-->
+        <LinearLayout
+            android:id="@+id/ll_businessNoDada"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@mipmap/pinglun_nocomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="很抱歉，暂无数据请重新搜索~"
+                android:layout_marginTop="30dp"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--用来展示主营商品方格布局-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view_fg"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!--用来展示搜索到的商品信息-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view_shangping"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="55dp"
+            android:visibility="gone"
+            android:layout_height="match_parent" />
+
+        <!--用来展示搜索到的商家-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view_shangjia"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent" />
+        <!--展示搜索出来的地址-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view_address"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <!--底部条件筛选-->
+    <LinearLayout
+        android:id="@+id/ll_paixu"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/xiaoliang"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/zhekou3" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="销量"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black" />
+                <ImageView
+                    android:id="@+id/iv_xiaoliang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/up3" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_color"/>
+        <LinearLayout
+            android:id="@+id/jiage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/jiage3" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="价格"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black" />
+                <ImageView
+                    android:id="@+id/iv_jiage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/up3" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_color"/>
+        <LinearLayout
+            android:id="@+id/riqi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/date3" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="促销日期"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black" />
+                <ImageView
+                    android:id="@+id/iv_riqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/up3" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_color"/>
+        <LinearLayout
+            android:id="@+id/juli"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/juli3" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="距离"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_black" />
+                <ImageView
+                    android:id="@+id/iv_juli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:background="@mipmap/up3" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_liebiao"
+        android:text="地图"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:background="@drawable/bg_yuanredtm"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

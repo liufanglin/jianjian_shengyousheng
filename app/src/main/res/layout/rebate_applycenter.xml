@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/bg_sub"
+    android:layout_marginTop="5dp"
+    android:layout_height="70dp">
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="返利编号："
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_bianhao"
+                android:text="111111111111111"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="返利申请日期："
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_date"
+                android:text="111111111111111"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:background="@mipmap/iv_closegray"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_below="@+id/iv_delete"
+            android:text="查看详情"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_fanli"
+        android:layout_marginLeft="80dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

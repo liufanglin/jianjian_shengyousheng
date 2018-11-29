@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="max">18dp</dimen>
+    <dimen name="login_regin_text">15dp</dimen>
+    <dimen name="middle">12dp</dimen>
+    <dimen name="smart">10dp</dimen>
+    <dimen name="PaddingSmall">3dip</dimen>
+    <dimen name="dp_70">70dp</dimen>
+
+
+    <!--pickerView-->
+    <!-- 顶部按钮栏高度 -->
+    <dimen name="pickerview_topbar_height">44dp</dimen>
+    <!-- 顶部按钮paddingLeft -->
+    <dimen name="pickerview_topbar_paddingleft">10dp</dimen>
+    <!-- 顶部按钮paddingRight -->
+    <dimen name="pickerview_topbar_paddingright">30dp</dimen>
+    <!-- 顶部按钮文字大小 -->
+    <dimen name="pickerview_topbar_btn_textsize">20sp</dimen>
+    <dimen name="pickerview_topbar_title_textsize">21sp</dimen>
+    <!-- 选项文字大小 需要配合 bools.xml 的 pickerview_customTextSize 为 true 才有效果-->
+    <dimen name="pickerview_textsize">20sp</dimen>
+    <dimen name="text_nomal">15sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Album相关 -->
+    <dimen name="albumitem_height">100dp</dimen>
+    <dimen name="albumitem_content_height">80dp</dimen>
+    <dimen name="albumitem_image_height">20dp</dimen>
+
+    <!-- 图片选择界面Item相关 -->
+    <dimen name="sticky_item_horizontalSpacing">2dp</dimen>
+    <dimen name="sticky_item_verticalSpacing">2dp</dimen>
+    <dimen name="collection_photo_toolbar_height">44dp</dimen>
+</resources>

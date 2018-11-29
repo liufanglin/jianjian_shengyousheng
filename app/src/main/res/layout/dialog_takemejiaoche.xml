@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:background="@drawable/bg_white"
+        android:layout_width="300dp"
+        android:orientation="vertical"
+        android:layout_height="350dp">
+
+        <TextView
+            android:text="您好，我们接您去购物。"
+            android:layout_width="wrap_content"
+            android:textColor="#030303"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+        <ScrollView
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:id="@+id/rl_chooseone"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:text="“省又省”专车"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/iv_chooseone"
+                        android:background="@mipmap/noselect"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_choosetwo"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:text="海博出租"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/iv_choosetwo"
+                        android:background="@mipmap/noselect"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_choosethree"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:text="大众出租"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/iv_choosethree"
+                        android:background="@mipmap/noselect"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_choosefour"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:text="巴士出租"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/iv_choosefour"
+                        android:background="@mipmap/noselect"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_choosefive"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:text="上海锦江"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/iv_choosefive"
+                        android:background="@mipmap/noselect"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_choosesix"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:text="无人驾驶专车"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/iv_choosesix"
+                        android:background="@mipmap/noselect"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:text="取消"
+                android:textSize="17sp"
+                android:textColor="#0076FF"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line"/>
+            <TextView
+                android:id="@+id/tv_ok"
+                android:text="确定"
+                android:textSize="17sp"
+                android:textColor="#0076FF"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_close"
+        android:background="@mipmap/close5"
+        android:layout_marginTop="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+</LinearLayout>

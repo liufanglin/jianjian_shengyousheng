@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="40dp" >
+
+    <Button
+        android:textColor="@color/white"
+        android:id="@+id/marker_content"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:background="@mipmap/map_icon2"
+        android:textSize="15dp"
+        android:paddingBottom="10dp"
+        android:maxLength="4"
+        />
+    <!--
+     <ImageView 
+        android:id="@+id/marker_imgs_no"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:background="@drawable/markerimgs_none"
+        />
+     <ImageView 
+         android:id="@+id/marker_imgs_yes"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shouye_08"
+        />
+    -->
+
+
+    <!--
+         <TextView
+        android:paddingLeft="22dp"
+        android:paddingTop="10dp"
+        android:id="@+id/marker_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="销售经理"
+        android:textColor="#ffffff"
+        android:textSize="10dp" />
+    -->
+
+</FrameLayout>

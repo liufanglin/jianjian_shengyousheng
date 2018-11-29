@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--title-->
+        <RelativeLayout
+            android:layout_height="48dp"
+            android:background="@color/mianColor"
+            android:layout_width="match_parent">
+            <RelativeLayout
+                android:id="@+id/back"
+                android:gravity="center_vertical"
+                android:layout_width="40dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:src="@mipmap/header_back_icon" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/cen_title"
+                android:text="商品评论"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/max" />
+            <RelativeLayout
+                android:id="@+id/title＿right"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:textColor="#ff2c33"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15sp"
+                    android:text="我要评价"
+                    android:background="@drawable/login_titleright"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--总体评价-->
+                <LinearLayout
+                    android:id="@+id/all_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="总体评价:"
+                            android:textColor="@color/text_black"
+                            android:textSize="14sp" />
+                        <LinearLayout
+                            android:id="@+id/start_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"/>
+                        <TextView
+                            android:id="@+id/score"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:background="@color/line_color"/>
+                </LinearLayout>
+                <!--评论列表-->
+                <LinearLayout
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+                <!--暂无数据-->
+                <LinearLayout
+                    android:id="@+id/ll_defaultdata"
+                    android:orientation="vertical"
+                    android:layout_marginTop="50dp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:background="@mipmap/pinglun_nocomment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="很抱歉，还没有评论~"
+                        android:layout_marginTop="30dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

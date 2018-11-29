@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      省又省是品牌商品跨界促销平台！它推出“门店促销+移动互联网+到店消费”模式助力实体商家发布数字化促销信息，提高手机用户到店购物或消费的愉悦感。所有用户都这样说：“有省又省一款APP，门店中所有名牌商品都可以按促销优惠价买到，而且品质有保障！”"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+        <TextView
+            android:text="一、个人用户使用的功能："
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/text_black"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="1.【正品促销寻优惠】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="     按自主需要，从多个维度在线搜寻门店促销商品并且将搜索结果“货比三家“，选定正品行货最低价；"
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="2.【促销有推送】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="     手机上主动设置开关，接收关注中的各种促销信息的推送；走近门店，也会收到促销活动的通知；"
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="3.【导航精准去门店】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="     足不出户，在线搜索促销中商品、品牌、门店或商圈，采用导航功能，实现精准去门店；"
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="4.【门店消费很方便】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     在门店购物，手机上除了可以下单购买促销商品外，还可以购买其他非促销商品，一起下单、消费获积分，积分抵扣现金、支付不排队、送货有服务；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="5.【与商家直接交流】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     用户可采用几种不同方式灵活地与店商人员直接对话，内容包括商品或服务项目咨询、定制化推送、预留商品、通知发货及退货或退款等事项；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="6.【分享促销给好友】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     将各家门店促销信息通过内置各种社交媒体群发或点对点转发给亲朋好友，也可以将其他用户评语、收藏、转发及购买数据所推崇的“热销”商品与他们分享；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="7.【一款App通吃】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="     用户下载一款省又省App，解决去“衣食住行乐”各类别门店购买促销品的问题，无需下载其他App；"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="8.【成为门店导购员】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="     个人用户可以在省又省平台开设专店，代理门店的促销商品在自己社交群里宣传推广，组群在线或去门店消费，并且展开各种服务的工作。向门店收取促销服务费；"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="9.【赚取积分不浪费】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="     用户每次消费获得积分奖励，还可以通过转发、收藏、点评促销商品或活动赚取积分，累积的积分透明，自主管理，跨界门店通用，永不过时；"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="10.【会员特权优惠】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     支付年费成为会员，享受服务包括一卡支付、购物接送服务、支出优化及消费信贷建议等！"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="二、 实体门店操作功能："
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="1.【发布促销主动权】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     入驻省又省后，门店从商户端口进入，花3分钟开设促销专店，自主性地发布本店商品的促销信息，包括商品及商店的介绍，用文字、照片及视频的形式展现；编辑、修改及取消发布内容自行完成；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="2.【快速出售促销商品】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     门店促销商品需要快速出售，门店移动促销专店建立后，销售人员在手机上开展销售，接单、发货、收款、送货及退货的功能操作简单，一人可同时服务许多客户，在同一时间段完成多个订单；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="3.【扩大门店销量】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     在线发布一个全新促销2分钟内可完成，修改一次仅仅2秒。任一次促销商品的发布都是流量新入口，不但助力获取新客，而且会激活留存客户，刺激老客户回店，带动门店其他商品的销量；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="4.【快速获取新客户】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="     省又省平台任一家门店的促销活动都在自动地为全体门店扩大潜客的入口和集聚潜客。本店每发布或更新一次促销活动，都会将这些潜客源源不断地转化为自身客户，直接与他们进行交易；"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="5.【全员营销数据保留】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="     商户只需注册一个帐户，可以安排多个或全体人员在各自手机上向他们各自客户提供营销服务包括邀约、成交与维系等流程内容；所有数据保留在注册商户的数据库，不再流失在操作人员手上；"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="6.【高效统一做营销】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     总部设计发布每次促销活动，各地分店同时展现，一键邀约就近客户去当地门店消费；减少个门店自身发布、修改、取消促销信息的投入；在避免错误的基础上，总部还掌控全部营销数据；"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="7.【降低营销投入】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="     商户专员进入促销专店后，一人可以在手机上完成本店促销推广、线上线下的销售及客户服务工作；而且还可以同时可接待服务多个订单或客户，减低运营成本，提升效率；"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="8.【营销数据开放】"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:text="     商户入驻后，管理者凭用户名及密码进入自己后台系统，获取本店及全体用户各个阶段的数据及竞品的营销活动数据！为商品结构调整、库存量修改及营销活动方式的变化提供依据。"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:text="用户帮助:"
+            android:textColor="@color/text_black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="     如果您付款或消费遇到问题，请联系客服人员：021-58366991"
+            android:textSize="14sp" />
+
+        <TextView
+            android:text="     邮箱：savingsmore@talentmore.com"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:text="商铺入驻:"
+            android:textColor="@color/text_black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="     如果您希望在省又省平台快速发布及传播促销信息，请与我们联系。"
+            android:textSize="14sp" />
+        <TextView
+            android:text="     邮箱：savingsmore@talentmore.com"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

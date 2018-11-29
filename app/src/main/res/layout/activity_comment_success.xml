@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--title-->
+        <RelativeLayout
+            android:layout_height="48dp"
+            android:background="@color/mianColor"
+            android:layout_width="match_parent">
+            <RelativeLayout
+                android:id="@+id/back"
+                android:visibility="invisible"
+                android:gravity="center_vertical"
+                android:layout_width="40dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:src="@mipmap/header_back_icon" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/cen_title"
+                android:text="评论成功"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/max" />
+            <RelativeLayout
+                android:id="@+id/title＿right"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:textColor="#ff2c33"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15sp"
+                    android:text="关闭"
+                    android:background="@drawable/login_titleright"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/comment_gou" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="感谢您的评论"
+            android:textColor="@color/mianColor"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/jifen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="奖励积分10分"
+            android:textColor="@color/mianColor"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温馨提示:"
+                android:textColor="@color/stepcolor"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_below="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="1、积分自动转换为现金，消费时兑换"
+                android:textColor="@color/stepcolor"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_below="@+id/tv2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2、您的所获积分在积分返利中心"
+                    android:textColor="@color/stepcolor"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/tv_seejifen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bg_black"
+                    android:text="查看积分"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

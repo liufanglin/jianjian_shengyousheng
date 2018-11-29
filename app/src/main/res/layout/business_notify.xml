@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:background="@mipmap/modal_cuxiao_shangjia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/quxiao"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/close1" />
+        <ImageView
+            android:id="@+id/known"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="65dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+           />
+        <!--android:background="@mipmap/start_sale"-->
+    </RelativeLayout>
+</LinearLayout>

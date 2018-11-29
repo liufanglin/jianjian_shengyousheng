@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/stepcolor"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="买N送N"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_regin_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="购买数量"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+                <EditText
+                    android:inputType="number"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/number1"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="n"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="赠送数量"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+                <EditText
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/number2"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:hint="n"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/comfirm"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_sharp"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/cannel"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_sharp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

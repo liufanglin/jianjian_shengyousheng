@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <!--title-->
+    <RelativeLayout
+        android:layout_height="48dp"
+        android:background="@color/mianColor"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/header_back_icon" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cen_title"
+            android:text="我要促销价"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/max" />
+    </RelativeLayout>
+
+    <!--商品照片-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_height="45dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/fanli_img" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="上传商品正面照片"
+                android:textColor="@color/text_black"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/mianColor"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(1张)，商品名称需要清晰可见"
+                android:layout_marginLeft="5dp"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
+    <!--线-->
+    <View
+        android:layout_marginLeft="10dp"
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <!--店铺照片-->
+    <com.ximai.savingsmore.save.view.MyGridView
+        android:id="@+id/myGridview"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:numColumns="5" />
+    <!--10dp线-->
+    <View
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <!--输入价格-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_height="65dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/fanli_money" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="输入最终成交价格"
+                android:textColor="@color/text_black"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/mianColor"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp" />
+            <TextView
+                android:textSize="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/et_price"
+                android:background="@null"
+                android:textSize="10sp"
+                android:layout_marginLeft="5dp"
+                android:hint="请输入价格"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_height="1dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_sharp"
+                android:text="取消申请"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_regin_text" />
+            <Button
+                android:id="@+id/btn_commit"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_blue"
+                android:text="提交申请"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_regin_text" />
+        </LinearLayout>
+        <ImageView
+            android:background="@mipmap/peitu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

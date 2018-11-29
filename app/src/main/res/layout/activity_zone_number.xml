@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--title-->
+    <RelativeLayout
+        android:layout_height="48dp"
+        android:background="@color/mianColor"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/header_back_icon" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cen_title"
+            android:text="选择国家或地区"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/max" />
+    </RelativeLayout>
+
+    <me.yokeyword.indexablerv.IndexableLayout
+        android:id="@+id/indexableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:indexBar_selectedTextColor="@color/black"
+        app:indexBar_textColor="@color/gray1"
+        app:indexBar_layout_width="40dp"
+        app:indexBar_textSize="14sp"
+        app:indexBar_textSpace="5dp" />
+</LinearLayout>

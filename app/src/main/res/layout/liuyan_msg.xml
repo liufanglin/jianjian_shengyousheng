@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您的姓名:"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_toRightOf="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/mianColor" />
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:background="@null"
+                android:hint="请输入您的姓名"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="所在城市:"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/l_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:background="@null"
+                android:hint="请输您的城市名称"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="回电号码:"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_toRightOf="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/mianColor" />
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:background="@null"
+                android:hint="请输入您的电话"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="回复邮箱:"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:background="@null"
+                android:hint="请输入您的邮箱"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QQ/微信:"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/qq_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:background="@null"
+                android:hint="请输入您的QQ/微信"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="留言内容:"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/mianColor" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/leave_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|center_vertical"
+                android:background="@null"
+                android:hint="请输入留言内容"
+                android:maxLines="2"
+                android:lineSpacingExtra="2dp"
+                android:padding="10dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/submit_message"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_sharp"
+            android:text="提交留言"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_regin_text" />
+    </LinearLayout>
+</RelativeLayout>

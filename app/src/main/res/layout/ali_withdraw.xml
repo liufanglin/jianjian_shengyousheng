@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--title-->
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_height="48dp"
+        android:background="@color/mianColor"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/header_back_icon" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cen_title"
+            android:text="支付宝提现"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/max" />
+    </RelativeLayout>
+
+    <View
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/text_black"
+            android:textSize="14sp"
+            android:text="支付宝账户"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_alinumber"
+            android:layout_marginLeft="5dp"
+            android:hint="请输入您的支付宝账号"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/text_black"
+            android:textSize="14sp"
+            android:text="您的姓名"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_marginLeft="5dp"
+            android:hint="请输入您的真实姓名"
+            android:textSize="12sp"
+            android:background="@null"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/text_black"
+            android:textSize="14sp"
+            android:text="您的手机号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_marginLeft="5dp"
+            android:hint="请输入您的手机号码"
+            android:textSize="12sp"
+            android:background="@null"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <Button
+            android:id="@+id/btn_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_sharp"
+            android:text="确定"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_regin_text" />
+    </RelativeLayout>
+    <!--积分返利说明-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@mipmap/fanli_shuomingbg"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/xu_line"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="奖赏提现说明"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/xu_line"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_pointmsg1"
+                android:layout_marginTop="15dp"
+                android:textSize="12sp"
+                android:text="1、提现申请确认后在工作日24小时内到账"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_pointmsg2"
+                android:layout_marginTop="15dp"
+                android:textSize="12sp"
+                android:text="2、法定节假日以及双休暂停提现服务"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_pointmsg3"
+                android:text="3、奖赏转入您提供的支付宝账户"
+                android:layout_marginTop="15dp"
+                android:textSize="12sp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

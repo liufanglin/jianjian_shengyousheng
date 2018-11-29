@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--title-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/mianColor">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/header_back_icon" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cen_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="返利申请"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/max" />
+        <RelativeLayout
+            android:id="@+id/title＿right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/login_titleright"
+                android:paddingBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp"
+                android:text="申请返利"
+                android:textColor="#ff2c33"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:background="@color/white"
+                android:layout_height="80dp">
+                <ImageView
+                    android:id="@+id/iv_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_state"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!--10dp线-->
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+
+
+            <!--商品照片-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@color/white"
+                android:layout_height="45dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/fanli_img" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="本次已购买商品/服务"
+                        android:textColor="@color/text_black"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/mianColor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(1-4张)"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!--线-->
+            <View
+                android:layout_marginLeft="10dp"
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <!--店铺照片-->
+            <com.ximai.savingsmore.save.view.MyGridView
+                android:id="@+id/myGridview_1"
+                android:padding="5dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:numColumns="5" />
+            <!--10dp线-->
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+
+
+            <!--消费账单-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@color/white"
+                android:paddingRight="10dp"
+                android:layout_height="45dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/fanli_img" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="本次消费的结账单/发票/收据"
+                        android:textColor="@color/text_black"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/mianColor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="(商家名称及地址清晰可见)"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!--线-->
+            <View
+                android:layout_marginLeft="10dp"
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <!--店铺照片-->
+            <com.ximai.savingsmore.save.view.MyGridView
+                android:id="@+id/myGridview_2"
+                android:padding="5dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:numColumns="5" />
+            <!--10dp线-->
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+
+
+            <!--价格-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/fanli_money" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="本次消费的结账单/发票/收据金额"
+                        android:textColor="@color/text_black"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/mianColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp" />
+                    <TextView
+                        android:text="¥"
+                        android:visibility="gone"
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <View
+                    android:background="@color/line_color"
+                    android:layout_width="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <!--10dp线-->
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+
+
+            <!--定位当前位置-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="5dp"
+                        android:visibility="invisible"
+                        android:background="@mipmap/fanli_money" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="定位当前位置"
+                        android:textColor="@color/text_black"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="(地址显示不正确，请输入)"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@mipmap/sousuo_position"
+                        android:layout_marginRight="10dp" />
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:textSize="10sp"
+                        android:lineSpacingExtra="1dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:background="@color/line_color"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <!--10dp线-->
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <RelativeLayout
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="返利编号"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_number"
+                    android:layout_alignParentRight="true"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="1dp"/>
+            <RelativeLayout
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="返利申请日期"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_alignParentRight="true"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="消费金额"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_rebateprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <View
+                android:background="@color/line_color"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="1dp"/>
+            <RelativeLayout
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+                <TextView
+                    android:id="@+id/tv_nowmsg"
+                    android:textSize="14sp"
+                    android:text="本次积分"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_point"
+                    android:layout_alignParentRight="true"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_seepoint"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="80dp">
+                <Button
+                    android:id="@+id/btn_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_sharp"
+                    android:text="查看积分"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/login_regin_text" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pointmsg"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@mipmap/fanli_shuomingbg"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/xu_line"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_pointmsg"
+                        android:text="积分返利说明"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/xu_line"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_pointmsg1"
+                    android:text="1、本次返利积分已进入您的返利积分中心"
+                    android:layout_marginTop="30dp"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_pointmsg2"
+                    android:text="2、积分兑换现金的比例按照省又省积分返利规则执行"
+                    android:layout_marginTop="20dp"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

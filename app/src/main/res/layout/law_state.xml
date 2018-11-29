@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="“省又省”隐私权保护声明"
+            android:textColor="@color/text_black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      “省又省”非常重视用户信息的保护，在使用“省又省”的所有产品和服务前，请您务必仔细阅读并透彻理解本声明。一旦您选择使用，即表示您认可并接受本条款现有内容及其可能随时更新的内容。
+        本隐私权政策适用于“省又省”平台提供的所有服务，您访问“省又省”平台网站及/或登陆相关客户端使用“省又省”平台提供的服务，均适用本隐私权政策。
+        需要特别说明的是，本隐私权政策不适用于其他第三方向您提供的服务，例如以TP形式接入的第三方平台向您提供服务时，您向商家提供的个人信息不适用于本隐私权政策。"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="一、信息收集"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      “省又省”非常重视用户信息的保护，在使用“省又省”的所有产品和服务前，请您务必仔细阅读并透彻理解本声明。一旦您选择使用，即表示您认可并接受本条款现有内容及其可能随时更新的内容。
+        本隐私权政策适用于“省又省”平台提供的所有服务，您访问“省又省”平台网站及/或登陆相关客户端使用“省又省”平台提供的服务，均适用本隐私权政策。
+        需要特别说明的是，本隐私权政策不适用于其他第三方向您提供的服务，例如以TP形式接入的第三方平台向您提供服务时，您向商家提供的个人信息不适用于本隐私权政策。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="二、因您使用产品或服务所获取的信息"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      1. 日志信息。当您使用“省又省”服务时，服务器会自动记录一些信息，例如您对我们服务的使用情况、IP地址、所访问服务的URL、浏览器的类型和使用的语言以及访问日期和时间等。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      2. 设备信息。某些产品和/或服务包含唯一应用程序编号。当您安装、激活、更新、卸载相关服务或当这些服务定期与“省又省”通信（例如软件的更新）时，系统会将此编号以及与安装相关的信息（例如操作系统类型和应用程序版本号）发送给“省又省”。
+当您使用具有定位功能的“省又省”服务时，系统会自动处理有关设备的位置信息，以使得您不需要手动输入自身地理坐标就可获得相关服务。例如您在“省又省”使用“附近”进行地理查询，“省又省”可能会向您提供基于位置的服务。
+为了提供更好的服务与改善用户体验，“省又省”可能会记录硬件型号、操作系统版本号、国际移动设备身份码（IMEI）、网络设备硬件地址（MAC）等信息。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      3. Cookie和匿名标示符等工具。cookie主要的功能是便于您使用网站产品和/或服务，以及帮助网站统计独立访客数量等。运用cookie技术，“省又省”能够为您提供更加周到的个性化服务，并允许您设定您特定的服务选项。
+当您使用“省又省”产品或服务时，会向您的设备发送cookie。当您与我们提供给合作伙伴的服务（例如以TP形式接入的第三方供应商以及可能显示在其他网站上的由“省又省”提供的服务功能）进行交互时，我们允许cookie或者匿名标识符发送给“省又省”服务器。
+您可以选择拒绝 cookie。您可以通过修改浏览器设置的方式拒绝cookie。如果您选择拒绝cookie，则您可能无法登录或使用依赖于cookie的“省又省”服务或功能。
+如果您不希望在您访问“省又省”网站时，“省又省”基于cookie向您提供个性化的信息，可以通过个性化配置限制“省又省”对cookie的使用。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      4. 以上数据信息都采用匿名的方式。同时，我们也会对信息采取加密处理，保证信息的安全性。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="三、信息使用"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      1. 通过使用收集的信息，“省又省”会得以向您提供个性化的服务，同时这些信息还可以帮助“省又省”改善服务质量，完善和设计新的产品或服务，以向您提供更好的服务。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      2.“省又省”重视用户信息保护，除非事先获得您的授权或本声明另有规定外，不会将这些信息对外公开或向第三方提供（上海西麦企业管理咨询有限公司关联公司除外）； 在如下情况下，“省又省”可能会披露您的信息："
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （1）用户同意让第三方共享资料。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （2）用户同意公开其个人资料，享受为其提供的产品和服务。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （3）本站需要听从法庭传票、法律命令或遵循法律程序，或政府主管部门的强制性要求。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （4）符合相关服务条款或使用协议的规定。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （5）以学术研究或公共利益为目的。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （6）为维护上海西麦企业管理咨询有限公司的合法权益，例如查找、预防、处理欺诈或安全方面的问题。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      3. “省又省”可能会与合作伙伴共同向您提供您所要求的服务或者共同向您展示您可能感兴趣的内容。在信息为该项产品/服务所必须的情况下，您同意“省又省”可与其分享必要的信息。并且，“省又省”会要求其确保数据安全并且禁止用于任何其他用途。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      4. “省又省”可能会对产品使用情况进行统计。同时，“省又省”可能会与公众分享这些统计信息，以展示我们服务的整体使用趋势。这些统计信息不包含您的任何身份识别信息。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="四、未成年人信息保护"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      “省又省”非常重视对未成年人信息的保护。若您是18周岁以下的未成年人，在使用“省又省”的产品和/或服务前，应事先取得您的家长或法定监护人的同意。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="五、修订"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      “省又省”随时会对本隐私权保护声明进行修订。“省又省”会在网页中显著的位置予以发布。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:text="附：名词解释"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="1. 匿名标示符
+    匿名标示符通常是一类随机的字符串，通常用于识别包括特定移动设备在内的一些用户设备。例如手机的国际移动设备身份码（IMEI）、手机的网络设备的硬件地址（MAC）等。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="2. Cookie
+    支持服务器端（或者脚本）在客户端上存储和检索信息的一种机制，通过增加简单、持续的客户端状态来扩展基于Web的客户端/服务器应用。服务器在向客户端返回HTTP对象的同时发送一条状态信息，并由客户端保存。状态信息中说明了该状态下有效的URL范围。此后，客户端发起的该范围内的HTTP请求都将把该状态信息的当前值从客户端返回给服务器，这个状态信息被称为cookie。
+    如果您还有其他问题和建议，请联系“省又省”。“省又省”会始终致力于充分保护用户信息，并为您提供更优质的体验和服务。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="反作弊声明"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      为维护“省又省”（savingsmore.com）正常、公平之交易秩序，保护正常用户的合法权益不受非法侵害，“省又省”特发表以下声明："/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      1、用户不得通过任何手段恶意注册“省又省”账号，包括但不限于使用虚假手机号等方式注册多个“省又省”账号，以达到牟利、炒作、套现、转售、获奖、虚假交易等不正当的目的。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      2、用户不得通过盗用、不合理借用等其他方式利用他人的“省又省”账号进行任何交易。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      3、用户须保证在“省又省”上所发生的交易真实、合法、有效。“省又省”禁止用户单方面或与商家恶意串通损害“省又省”合法权益的作弊行为，一经发现，“省又省”保留追究其民事责任的权利，若涉嫌刑事犯罪的，“省又省”有权移交司法机关处理。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      4、在“省又省”举办或推广的活动中，除活动规则另有规定外，新用户（手机号码、邮箱、QQ号、微博号、微信号、联系方式、身份证件、银行卡号、支付帐号、收货地址、终端设备号等信息均为新，且上述信息均未曾在“省又省”上注册使用）及同一用户只限参加一次活动（活动包括但不限于促销优惠、新用户立减、秒杀、抽奖、摇一摇等形式）。不同用户帐号下的手机号码、邮箱、QQ号、微博号、微信号、联系方式、身份证件、银行卡号、支付帐号、终端设备号等两项或多项信息相同的或其他可以合理显示为同一用户的，均视为同一用户，不得重复参加活动。“省又省”有权根据产品策略调整优化用户参与活动享受优惠的频次、方式等内容，用户应予遵从。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      5、活动期间，如发现有用户通过不正当手段（包括但不限于侵犯第三人合法权益、作弊、扰乱系统、实施网络攻击、恶意套现、刷信誉、批量注册、用机器注册“省又省”账户、用机器模拟客户端、与商家串通进行虚假交易）参加活动而有碍其他用户公平参加“省又省”活动或有违反“省又省”活动目的及正常交易秩序之行为，“省又省”有权取消其获奖资格或其因参加活动所获赠品或权益。如该作弊行为给“省又省”造成损失的，“省又省”保留追究其民事责任的权利，若涉嫌犯罪的，“省又省”有权移交司法机关处理。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      6、对于恶意注册，盗用他人账号，通过不正当手段参加活动等侵害“省又省”实际经营交易的情形，“省又省”有权停止服务、封停账号并追究其法律责任。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      7、若“省又省”通过技术检测、人工抽检等手段有合理理由怀疑用户资料信息为错误、不实、失效或不完整，本网站有权暂停或终止用户的账号，并拒绝现在或将来使用本站网站网络服务的全部或部分，同时保留追索用户不当得利返还的权利。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      8、“省又省”一经发现并核实用户存在作弊及其他损害“省又省”合法权益的行为，“省又省”有权对用户购买的“省又省”券码进行冻结，并对冻结的“省又省”券码实行过期不退款政策。若用户认为自己不存在作弊行为，可使用“省又省”券码被冻结时请与我们联系申请退款或解冻。若用户使用“省又省”券码被冻结时绑定的手机号码无法使用或因其他原因不再使用，用户须提供下列证明申请退款或解冻：a）证明“省又省”券码被冻结时绑定的手机号码归属用户本人（例如：运营商的通话记录、充值记录等）的信息证明材料；b）证明“省又省”券码被冻结时支付信息归属用户本人的信息证明材料。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="“省又省”权利保护声明"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      “省又省”一贯高度重视知识产权保护并遵守中国各项知识产权法律、法规和具有约束力的规范性文件。重视正版，打击盗版。根据法律、法规和规范性文件要求，“省又省”制定了旨在保护权利人的合法权益的措施和步骤，当权利人发现在“省又省”生成的链接所指向的商户服务信息页面的内容侵犯其合法权益时，权利人应事先向“省又省”发出“权利通知”， “省又省”将根据中国法律法规和政府规范性文件采取措施移除相关内容或屏蔽相关链接。"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="具体措施和步骤如下："
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      权利通知任何个人或单位如果同时符合以下两个条件："/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      1.权利人发现网络用户利用网络服务侵害其合法权益。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      2. “省又省”的搜索引擎系统以自动检索方式而链接到商户服务信息页面的内容侵犯了上述权利人的合法权益。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      请上述个人或单位务必以书面的通讯方式向“省又省”提交权利通知。"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      请注意：如果权利通知的陈述失实，权利通知提交者将承担对由此造成的全部法律责任（包括但不限于赔偿各种费用及律师费）。如果上述个人或单位不确定网络上可获取的资料是否侵犯了其合法权益，“省又省”建议该个人或单位首先咨询专业人士。"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      为了“省又省”有效处理上述个人或单位的权利通知，请使用以下格式（包括各条款的序号）："/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      1.权利人对涉嫌侵权内容拥有商标权、著作权和/或其他依法可以行使权利的权属证明。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      2.请充分、明确地描述确信被侵犯了权利人合法权益的内容并请提供非法登载该作品的商户服务信息页面的链接网址。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      3.请指明涉嫌侵权网页的哪些内容侵犯了第2项中列明的权利人的合法权益。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      4.请提供权利人具体的联络信息，包括姓名、身份证或护照复印件（对自然人）、单位登记证明复印件（对单位）、通信地址、电话号码、传真和电子邮件。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      5.请在权利通知中加入如下关于通知内容真实性的声明："
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （1）我本人为所投诉内容的合法权利人。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （2）在我举报的商户服务信息页面的链接上登载的内容侵犯了本人相应的合法权益。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （3）本人确认：如果本权利通知内容不完全属实，本人将承担由此产生的一切法律责任。”"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      6.请在权利通知中加入以下陈述：“我保证，本通知中所述信息是充分、真实、准确的，我是所投诉内容的合法权利人，或，我已获授权，有权行使第2项中列明内容的权益。”"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      7.请您签署该文件，如果您是依法成立的机构或组织，请您加盖公章。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      请您把以上资料和联络方式书面发往以下地址："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      上海市浦东新区张杨路188号12a08室"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      邮政编码：200122"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="反通知："
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp"
+            android:text="      “省又省”根据前述通知移除相关内容或链接的，被移除内容的内容提供者或被移除链接的商户可以依法向“省又省”发出关于被移除内容不侵犯著作权或其他合法权益的反通知。反通知发出后，“省又省”可以恢复被移除的内容或链接，且依法对该恢复行为不承担法律责任。
+请您务必以书面（传真或邮寄信件）的通讯方式向我们提交“反通知”（除非有事先经“省又省”同意，请勿使用电子邮件方式提交通知）。请注意：如果您“反通知”的陈述失实，您将承担对由此造成的全部法律责任（包括但不限于赔偿各种费用及律师费）。如果您不确定网络上可获取的资料是否侵犯了他人的权利，我们建议您首先咨询专业人士。
+为了便于我们处理您的反对通知，请使用以下格式（包括各条款的序号）："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      1.请指明被“省又省”移除的信息或内容及其网址。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      2.被移除内容的合法性证明，包括但不限于您对已移除的内容拥有著作权或其他合法权益的权属证明或您可以合法使用该作品或该内容的证明。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      3.请提供具体的联络信息， 包括姓名、身份证或护照复印件（对自然人）、单位登记证明复印件（对单位）、通信地址、电话号码、传真和电子邮件。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      4.请在反通知中加入如下关于反通知内容真实性的声明："
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （1）我本人为该作品/该内容的合法权利人。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （2）我有权或已获授权提供或刊登上述被移除的信息或内容。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      （3）本人确认：如果本“反通知”内容不完全属实，本人将承担由此产生的一切法律责任。”"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      5.请在反通知中加入以下陈述：“我保证，本反通知中所述信息是充分、真实、准确的，我是该作品/该内容的合法权利人，或我已获授权或依法可以使用第2项中列明作品/内容。”"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      6.请您签署该文件，如果您是依法成立的机构或组织，请您加盖公章。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      请您把以上资料和联络方式书面发往以下地址："
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      上海市浦东新区张杨路188号12a08室"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      邮政编码：200122"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="“省又省”知识产权声明："
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      除非“省又省”另行声明，“省又省”平台内的所有产品、技术、软件、程序、数据及其他信息（包括但不限于文字、图像、图片、照片、音频、视频、图表、色彩、版面设计、电子文档）的所有知识产权（包括但不限于版权、商标权、专利权、商业秘密等）及相关权利，均归“省又省”或其关联公司所有。未经“省又省”许可，任何人不得擅自（包括但不限于：以非法的方式复制、传播、展示、镜像、上载、下载）使用，或通过非常规方式（如：恶意干预“省又省”数据）影响“省又省”的正常服务，任何人不得擅自以软件程序自动获得“省又省”数据。否则，“省又省”将依法追究法律责任。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      “省又省”平台的Logo、“省又省”、“savingsmore”等文字、图形及其组合，以及“省又省”平台的其他标识、徵记、产品和服务名称均为“省又省”及其关联公司的商标，未经“省又省”书面授权，任何人不得以任何方式展示、使用或作其他处理，也不得向他人表明您有权展示、使用或作其他处理。"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

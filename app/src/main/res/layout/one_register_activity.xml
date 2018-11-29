@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:id="@+id/one_step"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="1.填写手机号"
+            android:textSize="14sp"
+            android:textColor="@color/mianColor" />
+
+        <LinearLayout
+            android:id="@+id/two_step"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/next_step" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="2.设置密码"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/there_step"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/next_step" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="3.短信验证"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/input_number_item"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="100dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+86"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+            <ImageView
+                android:background="@mipmap/search_up3"
+                android:layout_marginLeft="3dp"
+                android:layout_width="15dp"
+                android:layout_height="10dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/input_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:inputType="number"
+            android:hint="请输入您的手机号"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/kuang1" />
+        <TextView
+            android:id="@+id/xieyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:layout_marginLeft="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/next_step"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_sharp"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_regin_text" />
+    </LinearLayout>
+</LinearLayout>

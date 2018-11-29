@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/stepcolor"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="自定义品牌"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_regin_text" />
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/white">
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/login_regin_text"
+                android:background="@null"
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="请输入自定义内容" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/comfirm"
+                android:background="@color/mianColor"
+                android:gravity="center"
+                android:textSize="@dimen/login_regin_text"
+                android:textColor="@color/white"
+                android:text="确定"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
+            <TextView
+                android:id="@+id/cannel"
+                android:background="@color/mianColor"
+                android:gravity="center"
+                android:textSize="@dimen/login_regin_text"
+                android:textColor="@color/white"
+                android:text="取消"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--title-->
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_height="48dp"
+        android:background="@color/mianColor"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/header_back_icon" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/cen_title"
+            android:text="奖赏中心"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/max" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_below="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="165dp"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/ll_defaultdata"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        android:layout_below="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@mipmap/pinglun_nocomment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="很抱歉，还没有数据~"
+            android:layout_marginTop="30dp"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!--金额-->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="165dp">
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="未提现奖赏："
+                android:textSize="14sp"
+                android:textColor="@color/mianColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_todaymoney"
+                android:text="¥9.9"
+                android:textSize="14sp"
+                android:textColor="@color/mianColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv1"
+                    android:text="奖赏累计："
+                    android:textSize="14sp"
+                    android:textColor="@color/mianColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_bigmoney"
+                    android:layout_toRightOf="@id/tv1"
+                    android:text="¥9.9"
+                    android:textSize="14sp"
+                    android:textColor="@color/mianColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:textColor="@color/text_black"
+            android:text="选择提现方式："
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/ll_aliwithdraw"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:background="@mipmap/reward_alipy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="支付宝提现"
+                    android:textSize="10sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_cardwithdraw"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:background="@mipmap/reward_idcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="银行卡提现"
+                    android:textSize="10sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

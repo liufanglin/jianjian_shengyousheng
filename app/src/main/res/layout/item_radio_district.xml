@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/rb_district"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="left|top"
+            android:background="@drawable/radio_district_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/fontcolor_one"
+            android:text="青秀区" />
+    </LinearLayout>
+
+</LinearLayout>

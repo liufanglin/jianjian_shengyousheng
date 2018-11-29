@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+        <TextView
+            android:id="@+id/push_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/login_regin_text" />
+        <ImageView
+            android:id="@+id/push_item_image"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="45dp" />
+    </RelativeLayout>
+    <!--这里是个人推送消息每4个就进行划分处理-->
+    <View
+        android:id="@+id/view_line"
+        android:visibility="gone"
+        android:background="@color/bg_search"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+</LinearLayout>

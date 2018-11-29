@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="服务协议(在线)"
+            android:textColor="@color/text_black"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="甲方(商户)：(App上注册公司名一致）"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="地址：( 线上促销门店地址一致）"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="联系电话：(与线上App注册电话一致）"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="联系人：（与线上注册信息一致）"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="乙方：上海西麦企业管理咨询有限公司"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="地址：上海市崇明秀山路8号3幢三层K区2120室"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="联系电话：021-58366991"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="邮件: savingsmore@talentmore.com"
+            android:textSize="14sp"
+            android:textColor="@color/text_black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      “省又省”促销App帮助实体商户发布促销信息，引导客户入店消费。同时，它也为实体商户建立移动销售网点，扩大店铺及品牌的的知名度，新增销量！"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第一部分：商务条款"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="1）入驻开通费 ：甲方支付人民币以线下协议为准；乙方开通后，甲方即可发布促销信息。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="2）促销广告费：首次入驻180天全部免费，发布促销品种数量不受限制，以后以线下协议为准；"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="3）销售佣金：前180天成交的订单，免收销售佣金，180天后成交订单以线下协议为准。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第二部分：甲方（商家）收益与责任"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:text="1）合约签订后自由入驻或退出“省又省”平台；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:text="2）入驻后前180天免费使用全功能服务，如广告促销，推送促销、获取线索及在线出售等；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="3）免费使用数字化智能促销系统，免除人工促销，实现无人销售；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="4）免费搭建商家品牌移动互联网商城，扩大品牌知名度，延伸销售区域，新增销售渠道；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="5）数字化发布促销信息，直接传促销的模式，引导更多客户入店，刺激其他商品销售；"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="6）在线获取客户意向订单的推送服务，实现销售增量；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="7）查阅客户购买数据及客户的“足迹”，获悉消费习惯，调整商品范围，减少库存；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="8）免费使用推送功能，向异业客户主动推送促销信息，邀约入店；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="9）承偌给“省又省”客户每次消费让利3%以上的优惠，在客户下单支付时兑现；"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="10）为“省又省”客户提供促销活动各项服务。"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第三部分：乙方权利与责任"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="1）向甲方提供7*24小时实时广告促销服务；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="2）向甲方提供专属互联网空间，设立甲方促销商品销售移动专店；"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="3）向甲方提供出售促销商品的全部在线销售功能，支持甲方实现在线出售商品； "
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="4）负责“省又省”全部客户的满意度管理，运用积分返利+的手段黏住客户；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="5）向甲方开放“省又省”全部客户资源，包括联系方式及购买习惯数据；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="10dp"
+            android:text="6）基于大数据的计算，向甲方主动推送异业关联客户的意向订单；"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="7）对甲方在“省又省”发布的信息和图文进行审核，必要时可删改；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="8）对甲方申请入驻的资格进行审核，可以拒绝或退出甲方入驻“省又省”平台；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="9）要求甲方在“省又省”平台及时新增、删除、更换及修改所发布的商品图文信息；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="10）有义务向甲方提供各种促销策略的咨询及线下促销的技巧提升的免费培训；"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="11）入驻商户在180天使用试行结束后，有权要求促销效果不好商户退出“省又省”。"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第四部分：知识产权"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="      本协议下“省又省”App以及PC端口和后台的品牌、名称、技术、设计的图文、App的功能、商业模式/盈利模式、各种统计汇总记录如客户的交易记录、客户的评价记录、客户收藏及分享商品的记录等、专利权保护内容如市场及客户的营销手段和软件技术等归乙方所有。“省又省”商户和消费者两端客户的联系信息包括姓名/名称、电话、地址等联系方式等归乙方所有；甲方（实体商户或品牌厂家）的知识产权内容包括其经营商店品牌名称、经营权、促销的商品及促销活动发布的各种图文、信息及促销的策略归甲方拥有。"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第五部分：违约责任"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="1、任何一方违反本协议所规定的义务导致另一方收到包括但不限于投诉、举报、诉讼或处罚、赔偿等损失，违约方在收到守约方要求纠正其违约行为的书面通知之日，应立即停止其违约的行为，并在10日内赔偿守约方因此受到的所有损失。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="2、本协议任何一方均应对其获得的对方的业务、经营、财务状况和其他保密资料予以严格保密，不得以任何形式向任何第三方披露。如因任何一方未能履行保密义务而给其他方造成任何损失的，应承担赔偿责任。"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第六部分：协议开始、终止及更新"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="1、本协议期限为甲方入驻开始日起至退出后为止；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="2、本合同终止后，乙方有权删除“省又省”APP及PC平台上的甲方已发布的促销商品信息，且有权拒绝提供相关信息；乙方有权保存甲方资质信息、商品信息、交易记录等相关资料；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"
+            android:text="3、由于本APP的软件更新，旧版无法使用，甲方无法保证旧版的相关服务内容的有效性，请乙方及时下载省又省更新版本，按新版内容执行；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第七部分：免责条款"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      因战争、自然灾害、政府行为、互联网系统故障、互联网通讯提供商故障等不可抗力因素导致“省又省”促销信息不能正常运行，乙方无须承担任何责任；"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="第八部分：争议解决"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="      根据《中华人民共和国合同法》及相关法律、法规的规定，甲乙双方基于在互惠互利、合作共赢的基础上，达成本协议的所有条款。本协议项下争议由双方友好协商解决，无法达成一致情形，任何一方有权将整体提交至乙方所在地有管辖权的人民法院诉讼解决。"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="      本合同分为8个部分组成，每个部分都是本合同不可分割的组成部分，与本合同具有同等法律效力。"
+            android:lineSpacingExtra="2dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="甲方：入驻“省又省”APP及PC后台的主体商户"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乙方：上海西麦企业管理咨询有限公司"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="2017年12月"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/text_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

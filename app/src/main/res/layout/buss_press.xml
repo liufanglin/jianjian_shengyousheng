@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="15"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/tv_id"
+            android:text="0"
+            android:textSize="9sp"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_vipname"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_vipname"
+                android:text="0"
+                android:textSize="9sp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_vipnamechoose"
+                android:layout_toRightOf="@+id/tv_vipname"
+                android:background="@mipmap/iv_yes"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_linepay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_linipay"
+                android:text="0"
+                android:textSize="9sp"
+                android:layout_weight="2"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_linipaychoose"
+                android:layout_toRightOf="@+id/tv_linipay"
+                android:background="@mipmap/iv_yes"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mendianpay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_mendianpay"
+                android:text="0"
+                android:textSize="9sp"
+                android:layout_weight="2"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_mendianpaychoose"
+                android:layout_toRightOf="@+id/tv_mendianpay"
+                android:background="@mipmap/iv_yes"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_collect"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_collect"
+                android:text="0"
+                android:textSize="9sp"
+                android:layout_weight="2"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_collectchoose"
+                android:layout_toRightOf="@+id/tv_collect"
+                android:background="@mipmap/iv_yes"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_shark"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_shark"
+                android:text="0"
+                android:textSize="9sp"
+                android:layout_weight="2"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_sharkchoose"
+                android:layout_toRightOf="@+id/tv_shark"
+                android:background="@mipmap/iv_yes"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_through"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_through"
+                android:text="0"
+                android:textSize="9sp"
+                android:layout_weight="2"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_throughchoose"
+                android:layout_toRightOf="@+id/tv_through"
+                android:background="@mipmap/iv_yes"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <View
+        android:background="@color/bg_search"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>
