@@ -139,7 +139,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     private TextView tv_pushnum;
     private GoodsList goodsList;
     private boolean isComment, isHit, isCollect;
-
+    public Goods shareGoods;
 
     @Nullable
     @Override
@@ -503,17 +503,22 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
 //        shareUtils.show(share_app);
 
         //这里是对商品的进行一个分享
+        if (shareGoods==null){
+            return;
+        }
         PreferencesUtils.putString(getActivity(),"isGoodsShark","1");
         ShareData data = new ShareData();
         data.setTitleUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
         data.setUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
-        data.setTitle("省又省-实体门店促销APP");
-        data.setImagePath(FileSystem.getCachesDir(getActivity(), true).getAbsolutePath() + File.separator + "icon.jpg");
-        if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
-            data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");
-        }else{
-            data.setText("您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！");
-        }
+        data.setTitle(shareGoods.Name+"-"+shareGoods.PromotionTypeName);
+//        data.setImagePath(FileSystem.getCachesDir(getActivity(), true).getAbsolutePath() + File.separator + "icon.jpg");
+//        if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
+//            data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");
+//        }else{
+//            data.setText("您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！");
+//        }
+        data.setImageUrl(URLText.img_url+shareGoods.Image);
+        data.setText(shareGoods.StoreName+"开始促销了！货比三家，该商品最优惠！欢迎您来店！");
         shareUtils = new ShareUtils(data, getActivity(),id);
         shareUtils.show(share);
     }
@@ -844,6 +849,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                     List<Goods> mainData = goodsList.MainData;
                     if (null != mainData && mainData.size() > 0 ){//有数据 - 进行分享第一个数据
                         String id = mainData.get(0).Id;
+                        shareGoods=mainData.get(0);
                         shark(id);
                         Log.e("tag","1111111111111111111111111111111111111111111111111111111111");
                     }else{//没有数据

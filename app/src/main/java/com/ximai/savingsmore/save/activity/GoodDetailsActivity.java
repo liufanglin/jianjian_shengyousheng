@@ -124,7 +124,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
     private ImageView iv_play;
     private String path;
     private int bioaji;
-
+    private String isPeopleAndBusiness;
 
     Runnable scrollRunnable = new Runnable() {
         int i;
@@ -243,7 +243,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
         adapter = new DataAdapter(this);
 
         //3是商家 - 2是个人
-        String isPeopleAndBusiness = PrefUtils.getString(this, "isPeopleAndBusiness", "");
+        isPeopleAndBusiness = PrefUtils.getString(this, "isPeopleAndBusiness", "");
         if ("3".equals(isPeopleAndBusiness)){
             buy.setVisibility(View.GONE);//购买隐藏
             share.setVisibility(View.VISIBLE);//分享隐藏
@@ -532,13 +532,22 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                 ShareData data = new ShareData();
                 data.setTitleUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
                 data.setUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
-                data.setTitle("省又省-实体门店促销APP");
-                data.setImagePath(FileSystem.getCachesDir(GoodDetailsActivity.this, true).getAbsolutePath() + File.separator + "icon.jpg");
-                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
-                    data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");
-                }else{
-                    data.setText("您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！");
+                data.setTitle(goodDetial.Name+"-"+goodDetial.PromotionTypeName);
+//                data.setImagePath(FileSystem.getCachesDir(GoodDetailsActivity.this, true).getAbsolutePath() + File.separator + "icon.jpg");
+//                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
+//                    data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");
+//                }else{
+//                    data.setText("您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！");
+//                }
+                data.setImageUrl(URLText.img_url+goodDetial.Image);
+                if ("2".equals(isPeopleAndBusiness)){
+                    data.setText("您的朋友\"省又省\"与你分享！点击看！ 商品在促销，限时有折扣！快去看！");
+
+                }else {
+                    //商家
+                    data.setText(store_name.getText().toString()+"开始促销了！货比三家,该商品最优惠！欢迎您来电");
                 }
+
                 shareUtils = new ShareUtils(data, GoodDetailsActivity.this,id);
                 shareUtils.show(share);
                 break;

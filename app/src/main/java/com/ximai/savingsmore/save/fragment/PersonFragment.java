@@ -583,13 +583,15 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                 ShareData data = new ShareData();
                 data.setTitleUrl("http://login.savingsmore.com/Home/Download");
                 data.setUrl("http://login.savingsmore.com/Home/Download");
-                data.setTitle("省又省-实体门店促销APP");
+                data.setTitle("门店在促销,每天\"11.11\"");
                 data.setImagePath(FileSystem.getCachesDir(getActivity(), true).getAbsolutePath() + File.separator + "icon.jpg");
-                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
-                    data.setText("您的好友给您推荐了一个促销专用APP，快去看！更多促销，一搜就知道。");
-                }else{
-                    data.setText("您的好友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"给您推荐了一个促销专用APP，快去看！更多促销，一搜就知道。");
-                }
+//                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
+//                    data.setText("您的好友给您推荐了一个促销专用APP，快去看！更多促销，一搜就知道。");
+//                }else{
+//                    data.setText("您的好友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"给您推荐了一个促销专用APP，快去看！更多促销，一搜就知道。");
+//                }
+                data.setText("各家门店做促销，省又省App全有！样样品质，件件有折扣！下载一个App，足够！");
+
                 shareUtils = new ShareUtils(data, getActivity());
                 shareUtils.show(share_app);
                 break;
