@@ -118,7 +118,12 @@ public class SalesGoodsAdapter extends RecyclerView.Adapter<SalesGoodsAdapter.Vi
                 holder.end_time.setText(list.get(position).EndTimeName.substring(0,10));
             }
 
-            holder.tv_volume.setText("销 "+list.get(position).HitCount);
+            if ("0".equals(list.get(position).HitCount)){
+                holder.tv_volume.setVisibility(View.GONE);
+            }else {
+                holder.tv_volume.setText("销 " + list.get(position).HitCount);
+                holder.tv_volume.setVisibility(View.VISIBLE);
+            }
         }
         /**
          * 设置布局监听

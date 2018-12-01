@@ -120,9 +120,15 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
                 holder.end_time.setText(list.get(position).EndTimeName.substring(0,10));
             }
             if (null == list.get(position).SaleCount){//销量
+                holder.tv_volume.setVisibility(View.GONE);
                 holder.tv_volume.setText("销 "+0);
             }else{
-                holder.tv_volume.setText("销 "+list.get(position).SaleCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    holder.tv_volume.setVisibility(View.GONE);
+                }else {
+                    holder.tv_volume.setText("销 "+list.get(position).SaleCount);
+                    holder.tv_volume.setVisibility(View.VISIBLE);
+                }
             }
         }
         /**

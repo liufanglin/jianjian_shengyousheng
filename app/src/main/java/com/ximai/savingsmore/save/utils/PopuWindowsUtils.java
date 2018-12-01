@@ -194,7 +194,12 @@ public class PopuWindowsUtils implements View.OnClickListener {
             }
 
             if (null != list.get(position).SaleCount) {
-                sales_number.setText("销 " + list.get(position).SaleCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    sales_number.setVisibility(View.GONE);
+                }else {
+                    sales_number.setText("销 " + list.get(position).SaleCount);
+                    sales_number.setVisibility(View.VISIBLE);
+                }
             }
 
 

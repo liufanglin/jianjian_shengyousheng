@@ -451,7 +451,12 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
             if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)){
                 viewHodel.end_time.setText(list.get(position).EndTimeName.substring(0,10));
             }
-            viewHodel.tv_volume.setText("销 "+list.get(position).SaleCount);//销量
+            if (TextUtils.isEmpty(list.get(position).SaleCount)||"0".equals(list.get(position).SaleCount)){
+                viewHodel.tv_volume.setVisibility(View.GONE);
+            }else {
+                viewHodel.tv_volume.setText("销 " + list.get(position).SaleCount);//销量
+                viewHodel.tv_volume.setVisibility(View.VISIBLE);
+            }
         }
         @Override
         public int getItemCount() {

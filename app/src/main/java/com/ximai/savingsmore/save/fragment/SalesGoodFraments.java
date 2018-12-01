@@ -161,7 +161,12 @@ public class SalesGoodFraments extends Fragment implements SwipeItemClickListene
                 viewHodel.name.setText(list.get(position).Name);
             }
             if (null != list.get(position).SaleCount) {
-                viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    viewHodel.sales_number.setVisibility(View.GONE);
+                }else {
+                    viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
+                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                }
             }
             if (null != list.get(position).ChainStores){//---------------------------------------------------------进行分店的实现
                 if (list.get(position).ChainStores.size() > 0){

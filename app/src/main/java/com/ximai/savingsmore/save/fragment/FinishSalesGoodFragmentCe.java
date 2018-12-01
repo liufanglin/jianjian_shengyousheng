@@ -184,7 +184,12 @@ public class FinishSalesGoodFragmentCe extends Fragment implements SwipeItemClic
                 viewHodel.name.setText(list.get(position).Name);
             }
             if (null != list.get(position).SaleCount) {
-                viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    viewHodel.sales_number.setVisibility(View.GONE);
+                }else {
+                    viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
+                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                }
             }
 //            if (null != list.get(position).StoreName) {
 //                viewHodel.shop_name.setText(list.get(position).StoreName);

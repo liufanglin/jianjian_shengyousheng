@@ -205,7 +205,12 @@ public class MyCommentLeftFrament extends Fragment {
                 viewHodel.name.setText(all_list.get(position).Name);
             }
             if (null != all_list.get(position).SaleCount) {
-                viewHodel.sales_number.setText("销 " + all_list.get(position).SaleCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    viewHodel.sales_number.setVisibility(View.GONE);
+                }else {
+                    viewHodel.sales_number.setText("销 " + all_list.get(position).SaleCount);
+                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                }
             }
 
 

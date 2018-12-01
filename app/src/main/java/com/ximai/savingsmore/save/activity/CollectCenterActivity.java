@@ -437,8 +437,14 @@ public class CollectCenterActivity extends BaseActivity implements View.OnClickL
 
             if (null == listGoods.get(position).SaleCount){
                 viewHodel.tv_volume.setText("0");
+                viewHodel.tv_volume.setVisibility(View.GONE);
             }else{
-                viewHodel.tv_volume.setText("销 " + listGoods.get(position).SaleCount);
+                if ("0".equals(listGoods.get(position).SaleCount)){
+                    viewHodel.tv_volume.setVisibility(View.GONE);
+                }else {
+                    viewHodel.tv_volume.setText("销 " + listGoods.get(position).SaleCount);
+                    viewHodel.tv_volume.setVisibility(View.VISIBLE);
+                }
             }
 
             if (null == listGoods.get(position).SharedCount){

@@ -175,7 +175,12 @@ public class PushMessageActivity extends BaseActivity implements SwipeItemClickL
                 viewHodel.name.setText(mainDataList.get(position).Name);
             }
             if (null != mainDataList.get(position).SaleCount) {
-                viewHodel.sales_number.setText("销 " + mainDataList.get(position).SaleCount);
+                if ("0".equals(mainDataList.get(position).SaleCount)){
+                    viewHodel.sales_number.setVisibility(View.GONE);
+                }else {
+                    viewHodel.sales_number.setText("销 " + mainDataList.get(position).SaleCount);
+                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                }
             }
 //            if (null != mainDataList.get(position).StoreName) {
 //                viewHodel.shop_name.setText(mainDataList.get(position).StoreName);

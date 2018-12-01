@@ -242,7 +242,12 @@ public class SharkDataLeftFrament extends Fragment {
                 viewHodel.name.setText(list.get(position).Name);
             }
             if (null != list.get(position).SaleCount) {
-                viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    viewHodel.sales_number.setVisibility(View.GONE);
+                }else {
+                    viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
+                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                }
             }
 
 

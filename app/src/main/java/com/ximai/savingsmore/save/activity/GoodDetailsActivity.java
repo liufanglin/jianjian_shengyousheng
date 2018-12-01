@@ -361,7 +361,12 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                         if (null != goodDetial.Name) {
                             name.setText(goodDetial.Name);
                         }
-                        sales_count.setText("销 " + goodDetial.SaleCount);
+                        if (TextUtils.isEmpty(goodDetial.SaleCount)||"0".equals(goodDetial.SaleCount)){
+                            sales_count.setVisibility(View.GONE);
+                        }else {
+                            sales_count.setText("销 " + goodDetial.SaleCount);
+                            sales_count.setVisibility(View.VISIBLE);
+                        }
                         price.setText(goodDetial.Currency.Name+" "+ UIUtils.formatPrice(Double.parseDouble(goodDetial.Price)));
                         high_price.setText(goodDetial.Currency.Name+" "+ UIUtils.formatPrice(Double.parseDouble(goodDetial.OriginalPrice)));
 

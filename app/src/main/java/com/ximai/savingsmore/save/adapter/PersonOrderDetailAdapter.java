@@ -148,7 +148,12 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
                 if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)){
                     holder.end_time.setText(list.get(position).EndTimeName.substring(0,10));
                 }
-                holder.tv_volume.setText("销 "+list.get(position).SalesCount);
+                if ("0".equals(list.get(position).SaleCount)){
+                    holder.tv_volume.setVisibility(View.GONE);
+                }else {
+                    holder.tv_volume.setText("销 " + list.get(position).SalesCount);
+                    holder.tv_volume.setVisibility(View.VISIBLE);
+                }
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
                 MyUserInfoUtils.getInstance().myUserInfo.ProductId = list.get(position).ProductId;//再来一单的ProductId
