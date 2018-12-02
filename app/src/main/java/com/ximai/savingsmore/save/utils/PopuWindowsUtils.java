@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
@@ -43,10 +44,11 @@ public class PopuWindowsUtils implements View.OnClickListener {
     private Button goBtn; //到这里去按钮
     private ViewPager viewPager;
     private List<Goods> list;
-    private List<View> viewList;
+//    private List<View> viewList;
     private MyAdapter myAdapter;
     private callBack callBack;
     private boolean isScoll = false;
+    private LayoutInflater inflater=null;
 
     public static final int MIN_CLICK_DELAY_TIME = 3000;//禁止重复点击事件
     private long lastClickTime = 0;
@@ -55,22 +57,31 @@ public class PopuWindowsUtils implements View.OnClickListener {
         this.callBack = callBack;
         this.context = context;
         this.list = list;
-        View view = LayoutInflater.from(context).inflate(R.layout.item_share_layout, null);
-        viewList = new ArrayList<View>();
-        for (int i = 0; i < list.size(); i++) {
-            View item = LayoutInflater.from(context).inflate(R.layout.salegood_item, null);
-            viewList.add(item);
-        }
+        inflater=LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.item_share_layout, null);
+//        viewList = new ArrayList<View>();
+//        for (int i = 0; i < list.size(); i++) {
+//            View item = LayoutInflater.from(context).inflate(R.layout.salegood_item, null);
+//            viewList.add(item);
+//        }
         myAdapter = new MyAdapter();
         viewPager = (ViewPager) view.findViewById(R.id.viewPage);
         viewPager.setAdapter(myAdapter);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled( int position, float positionOffset, int positionOffsetPixels) {
             }
             @Override
-            public void onPageSelected(int position) {
-                callBack.call(position);
+            public void onPageSelected(final int position) {
+              //  callBack.call(position);
+//延迟两秒跳转
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        callBack.call(position);
+                    }
+                }, 2000);
             }
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -144,7 +155,7 @@ public class PopuWindowsUtils implements View.OnClickListener {
     class MyAdapter extends PagerAdapter {
         @Override
         public int getCount() {
-            return viewList.size();
+            return list.size();
         }
         @Override
         public boolean isViewFromObject(View view, Object object) {
@@ -152,11 +163,11 @@ public class PopuWindowsUtils implements View.OnClickListener {
         }
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(viewList.get(position));
+            container.removeView((View) object);
         }
         @Override
         public Object instantiateItem(final ViewGroup container, final int position) {
-            View itemView = viewList.get(position);
+            View itemView =inflater.inflate(R.layout.salegood_item, null);
             TextView sales_number;
             ImageView imageView;
             TextView shop_name;

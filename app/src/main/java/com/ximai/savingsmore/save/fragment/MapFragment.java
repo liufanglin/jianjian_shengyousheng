@@ -108,6 +108,8 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
     private String city1;
     private String district;
     private String pageSize;
+    private String areaId;
+    private String currentAreaId;
 
     @Nullable
     @Override
@@ -144,7 +146,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         /**
          * 获取商品数据
          */
-        getAllGoods();
+      //  getAllGoods();
         return view;
     }
 
@@ -370,7 +372,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                 aMapLocation.getStreet();//街道信息
                 aMapLocation.getStreetNum();//街道门牌号信息
                 aMapLocation.getCityCode();//城市编码
-                aMapLocation.getAdCode();//地区编码
+                currentAreaId=aMapLocation.getAdCode();//地区编码
                 //保存地址到全局 - 在非促销品返利
                 BaseApplication.getInstance().userAddress = aMapLocation.getAddress()+aMapLocation.getAoiName();
                 /**
@@ -557,6 +559,9 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         list_gray.clear();
         list_red.clear();
         mark_list.clear();
+        if (popuWindowsUtils!=null){
+            popuWindowsUtils.dismixss();
+        }
         //将弹框独享设置为空
         popuWindowsUtils = null;
         //设置数据
@@ -566,7 +571,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         }else{
             pageSize = number;
         }
-        WebRequestHelper.json_post(context, URLText.GET_GOODS, RequestParamsPool.getAllGoods("true", null, null, null, null, null, 1, Integer.parseInt(pageSize), false, false, false, false, "", "", "", "", "", "", ""), new MyAsyncHttpResponseHandler(context) {
+        WebRequestHelper.json_post(context, URLText.GET_GOODS, RequestParamsPool.getAllGoods("true", null, null, null, Longitude+"", Latitude+"", 1, Integer.parseInt(pageSize), false, false, false, false, "", "", "", "", "", "", ""), new MyAsyncHttpResponseHandler(context) {
             @Override
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
                 goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
@@ -641,6 +646,13 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         /**
          * 数据回调到mainactivity
          */
+
+        areaId=regeocodeAddress.getAdCode();
+        if (!areaId.equals(currentAreaId)){
+            currentAreaId=areaId;
+            getAllGoods();
+        }
+
         callBack.location(province + district,Latitude,Longitude);
     }
 
