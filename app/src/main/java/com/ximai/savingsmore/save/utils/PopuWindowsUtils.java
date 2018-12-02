@@ -171,6 +171,13 @@ public class PopuWindowsUtils implements View.OnClickListener {
             TextView dazhe_style;
             TextView high_price;
             TextView tv_lookthroughs;
+            TextView tv_store_count;
+            TextView tv_care;
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+
+            tv_care.setText("关注"+list.get(position).CareCount);
+            tv_store_count.setText("到店人次"+list.get(position).StoreCount);
 
             sales_number = (TextView) itemView.findViewById(R.id.tv_volume);
             name = (TextView) itemView.findViewById(R.id.name);

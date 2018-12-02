@@ -249,7 +249,8 @@ public class IsBagGoodFragment extends Fragment {
             }else{
                 viewHodel.dazhe_style.setText(list.get(position).Preferential);
             }
-
+            viewHodel.tv_care.setText("关注"+list.get(position).CareCount);
+            viewHodel.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
             viewHodel.high_price.setText(list.get(position).Currency+" "+ list.get(position).OriginalPrice);
 //            viewHodel.high_price.setText("原价:¥" + list.get(position).OriginalPrice.substring(0, list.get(position).OriginalPrice.indexOf(".")));
         }
@@ -284,6 +285,9 @@ public class IsBagGoodFragment extends Fragment {
         public TextView dazhe_style;
         public TextView high_price;
         public TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
+
         public MyViewHodel(View itemView, final OnItemClickEventListener lis) {
             super(itemView);
             sales_number = (TextView) itemView.findViewById(R.id.tv_volume);
@@ -301,6 +305,8 @@ public class IsBagGoodFragment extends Fragment {
             high_price = (TextView) itemView.findViewById(R.id.tv_agoprice);
             tv_lookthroughs = (TextView) itemView.findViewById(R.id.tv_lookthroughs);
             high_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
             if (null != lis) {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

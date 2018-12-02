@@ -369,6 +369,8 @@ public class CollectCenterActivity extends BaseActivity implements View.OnClickL
                 viewHodel.tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                 viewHodel.isEditor = (ImageView) convertView.findViewById(R.id.isSelect);
                 viewHodel.select = (LinearLayout) convertView.findViewById(R.id.select);
+                viewHodel.tv_store_count= (TextView) convertView.findViewById(R.id.tv_store_count);
+                viewHodel.tv_care= (TextView) convertView.findViewById(R.id.tv_care);
                 convertView.setTag(viewHodel);
             }
             viewHodel = (GoodsViewHodel) convertView.getTag();
@@ -473,7 +475,8 @@ public class CollectCenterActivity extends BaseActivity implements View.OnClickL
             }else{
                 viewHodel.tv_favourable.setText(listGoods.get(position).Preferential);
             }
-
+            viewHodel.tv_care.setText("关注"+listGoods.get(position).CareCount);
+            viewHodel.tv_store_count.setText("到店人次"+listGoods.get(position).StoreCount);
             viewHodel.tv_price.setText(listGoods.get(position).Currency+" " +listGoods.get(position).Price);
             viewHodel.tv_agoprice.setText(listGoods.get(position).Currency+" " +listGoods.get(position).OriginalPrice);
             return convertView;
@@ -584,6 +587,8 @@ public class CollectCenterActivity extends BaseActivity implements View.OnClickL
         private TextView tv_agoprice;
         private TextView tv_favourable;
         private TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
     }
     static class BusinessViewHodel {
         TextView into_shop;

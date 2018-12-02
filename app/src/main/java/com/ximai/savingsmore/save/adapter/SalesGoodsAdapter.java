@@ -117,7 +117,8 @@ public class SalesGoodsAdapter extends RecyclerView.Adapter<SalesGoodsAdapter.Vi
             if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)){
                 holder.end_time.setText(list.get(position).EndTimeName.substring(0,10));
             }
-
+            holder.tv_care.setText("关注"+list.get(position).CareCount);
+            holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
             if ("0".equals(list.get(position).HitCount)){
                 holder.tv_volume.setVisibility(View.GONE);
             }else {
@@ -155,6 +156,8 @@ public class SalesGoodsAdapter extends RecyclerView.Adapter<SalesGoodsAdapter.Vi
         private TextView tv_agoprice;
         private TextView tv_favourable;
         private TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -173,6 +176,8 @@ public class SalesGoodsAdapter extends RecyclerView.Adapter<SalesGoodsAdapter.Vi
             tv_volume = (TextView) itemView.findViewById(R.id.tv_volume);//销量
             tv_lookthroughs = (TextView) itemView.findViewById(R.id.tv_lookthroughs);//浏览
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
         }
     }
 

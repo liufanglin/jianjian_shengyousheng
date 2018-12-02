@@ -93,4 +93,6 @@ public class Goods implements Serializable {
     public String PromotionTypeName;
     public String ImageId;
     public String CreateTimeName;
+    public String CareCount;//关注数量
+    public String StoreCount;//到店人数
 }

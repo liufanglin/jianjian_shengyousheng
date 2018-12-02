@@ -236,6 +236,9 @@ public class PushMessageActivity extends BaseActivity implements SwipeItemClickL
                 viewHodel.dazhe_style.setText(mainDataList.get(position).Preferential);
             }
             viewHodel.high_price.setText("原价¥" + mainDataList.get(position).OriginalPrice);
+            viewHodel.tv_care.setText("关注"+mainDataList.get(position).CareCount);
+            viewHodel.tv_store_count.setText("到店人次"+mainDataList.get(position).StoreCount);
+
         }
         @Override
         public int getItemCount() {
@@ -264,6 +267,8 @@ public class PushMessageActivity extends BaseActivity implements SwipeItemClickL
         public TextView dazhe_style;
         public TextView high_price;
         public TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
         public MyViewHodel(View itemView) {
             super(itemView);
             sales_number = (TextView) itemView.findViewById(R.id.tv_volume);
@@ -281,6 +286,8 @@ public class PushMessageActivity extends BaseActivity implements SwipeItemClickL
             high_price = (TextView) itemView.findViewById(R.id.tv_agoprice);
             tv_lookthroughs = (TextView) itemView.findViewById(R.id.tv_lookthroughs);
             high_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
         }
     }
 

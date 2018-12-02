@@ -99,6 +99,7 @@ public class GoodDetial  implements Serializable{
     public FirstClass FirstClass;
     public DeliveryService DeliveryService;//送货服务
     public Premium Premium;//送货保险
+    public String StoreCount;
 
 //        public String Area;
 //        public List<String> ChainStores;

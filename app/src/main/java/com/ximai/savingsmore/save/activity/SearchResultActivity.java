@@ -457,6 +457,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 viewHodel.tv_volume.setText("销 " + list.get(position).SaleCount);//销量
                 viewHodel.tv_volume.setVisibility(View.VISIBLE);
             }
+            viewHodel.tv_care.setText("关注"+list.get(position).CareCount);
+            viewHodel.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
         }
         @Override
         public int getItemCount() {
@@ -491,6 +493,9 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
         private TextView tv_agoprice;
         private TextView tv_favourable;
         private TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
+
         public MyViewHodel(View itemView, final OnItemClickEventListener lis) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.image);
@@ -508,6 +513,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
             tv_volume = (TextView) itemView.findViewById(R.id.tv_volume);//销量
             tv_lookthroughs = (TextView) itemView.findViewById(R.id.tv_lookthroughs);//浏览
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
 
 
             if (null != lis) {

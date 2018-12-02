@@ -69,6 +69,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
     private GoodDetial goodDetial;
     private String isgood;
     private TextView tv_addressmsg;
+    private TextView tv_store_people;
     private LinearLayout ll_car;
 //    private TakeMeJiaoCheDialog takeMeJiaoCheDialog;
     private String isMuBiaoClick;//1不是目标位置 2是目标位置点击
@@ -106,6 +107,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         yingye_date = (TextView) findViewById(R.id.yingye_date);//营业日期
         tv_addressmsg = (TextView) findViewById(R.id.tv_addressmsg);
         ll_car = (LinearLayout) findViewById(R.id.ll_car);//叫车
+        tv_store_people= (TextView) findViewById(R.id.tv_store_people);
     }
 
     /**
@@ -116,9 +118,11 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         if ("true".equals(isgood)){
             setCenterTitle("带我去门店");
             tv_addressmsg.setText("门店地址");
+            tv_store_people.setVisibility(View.VISIBLE);
         }else if ("false".equals(isgood)){
             setCenterTitle("带我去商家");
             tv_addressmsg.setText("商家地址");
+            tv_store_people.setVisibility(View.GONE);
         }
 
         if ("true".equals(isgood)) {//带我去门店
@@ -128,6 +132,10 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         } else if ("false".equals(isgood)){//带我去门店
             businessMessage = (BusinessMessage) getIntent().getSerializableExtra("good");
             userExtInfo = businessMessage.UserExtInfo;
+        }
+
+        if (goodDetial!=null){
+            tv_store_people.setText("到店人次:"+goodDetial.StoreCount);
         }
 
         if (null != user && null != userExtInfo) {

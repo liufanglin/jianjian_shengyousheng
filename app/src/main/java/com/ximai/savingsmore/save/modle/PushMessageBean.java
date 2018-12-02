@@ -53,5 +53,7 @@ public class PushMessageBean {
         public String Longitude;
         public String Latitude;
         public List<ChainStores> ChainStores;
+        public String CareCount;//关注数量
+        public String StoreCount;//到店人数
     }
 }

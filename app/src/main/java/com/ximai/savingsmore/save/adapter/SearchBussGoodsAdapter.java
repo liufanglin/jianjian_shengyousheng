@@ -130,6 +130,9 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
                     holder.tv_volume.setVisibility(View.VISIBLE);
                 }
             }
+            holder.tv_care.setText("关注"+list.get(position).CareCount);
+            holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
+
         }
         /**
          * 设置布局监听
@@ -161,6 +164,8 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
         private TextView tv_agoprice;
         private TextView tv_favourable;
         private TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -179,6 +184,8 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
             tv_volume = (TextView) itemView.findViewById(R.id.tv_volume);//销量
             tv_lookthroughs = (TextView) itemView.findViewById(R.id.tv_lookthroughs);//浏览
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
         }
     }
 
