@@ -546,7 +546,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
 //                }
                 data.setImageUrl(URLText.img_url+goodDetial.Image);
                 if ("2".equals(isPeopleAndBusiness)){
-                    data.setText("您的朋友\"省又省\"与你分享！点击看！ 商品在促销，限时有折扣！快去看！");
+                    data.setText("您的朋友\"省又省\"与你分享！点击看！ 商品在促销，限时有折扣！");
 
                 }else {
                     //商家
