@@ -67,6 +67,7 @@ public class PopuWindowsUtils implements View.OnClickListener {
         myAdapter = new MyAdapter();
         viewPager = (ViewPager) view.findViewById(R.id.viewPage);
         viewPager.setAdapter(myAdapter);
+        viewPager.setOffscreenPageLimit(5);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled( int position, float positionOffset, int positionOffsetPixels) {
@@ -81,7 +82,7 @@ public class PopuWindowsUtils implements View.OnClickListener {
                     public void run() {
                         callBack.call(position);
                     }
-                }, 2000);
+                }, 500);
             }
             @Override
             public void onPageScrollStateChanged(int state) {

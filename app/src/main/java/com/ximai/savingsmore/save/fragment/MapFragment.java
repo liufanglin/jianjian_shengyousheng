@@ -486,7 +486,12 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                     if (posiiton != marker_position) {
                         aMap.clear();
                         mark_list.clear();
-                        list_gray.add(list.get(posiiton));
+                        if (list.size()==0){
+                            return;
+                        }
+                        if (list.size()>posiiton) {
+                            list_gray.add(list.get(posiiton));
+                        }
 
                         for (int i = 0; i < c; i++) {
                             if (list_gray.contains(list.get(i))) {
