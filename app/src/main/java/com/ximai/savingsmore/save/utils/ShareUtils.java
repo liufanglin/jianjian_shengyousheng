@@ -239,7 +239,7 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                     Uri smsToUri = Uri.parse("smsto:");
                     Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
                     String s = "http://www.savingsmore.com/Product/SharedProductDetail/" + id;
-                    intent.putExtra("sms_body", "您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！"+s);
+                    intent.putExtra("sms_body", data.getTitle()+"\n"+data.getText()+s);
                     context.startActivity(intent);
                 }
             }else{//下载链接的分享 - 侧边栏的分享 - 判断是商家还是个人
@@ -247,17 +247,21 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                     //            shareApp("短信");
                     PreferencesUtils.putString(context,"SMS","1");
                     dismiss();
+                    String s="http://login.savingsmore.com/Home/Download";
                     Uri smsToUri = Uri.parse("smsto:");
                     Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
-                    intent.putExtra("sms_body", "各品牌实体门店都在促销，手机一搜，“省又省”带你去。http://login.savingsmore.com/Home/Download");
+                    intent.putExtra("sms_body", data.getTitle()+"\n"+data.getText()+s);
                     context.startActivity(intent);
                 }else if ("3".equals(isPeopleAndBusiness)){
                     //            shareApp("短信");
                     PreferencesUtils.putString(context,"SMS","1");
                     dismiss();
+                    String s="http://login.savingsmore.com/Home/Download";
                     Uri smsToUri = Uri.parse("smsto:");
                     Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
-                    intent.putExtra("sms_body", "您的朋友"+MyUserInfoUtils.getInstance().myUserInfo.ShowName +"向您推荐促销商品，快去看！促销结束就无效了！http://login.savingsmore.com/Home/Download");
+                    intent.putExtra("sms_body", data.getTitle()+"\n"+data.getText()+s);
+
+//                    intent.putExtra("sms_body", "您的朋友"+MyUserInfoUtils.getInstance().myUserInfo.ShowName +"向您推荐促销商品，快去看！促销结束就无效了！http://login.savingsmore.com/Home/Download");
                     context.startActivity(intent);
                 }
             }
@@ -271,9 +275,9 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                     Intent email = new Intent(android.content.Intent.ACTION_SEND);
                     email.setType("plain/text");
                     String s = "http://www.savingsmore.com/Product/SharedProductDetail/" + id;
-                    String emailBody = "您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！"+s;
-                    email.putExtra(android.content.Intent.EXTRA_SUBJECT, "省又省-促销专卖APP");//邮件主题
-                    email.putExtra(android.content.Intent.EXTRA_TEXT, emailBody);//邮件内容
+//                    String emailBody = "您的朋友"+ MyUserInfoUtils.getInstance().myUserInfo.ShowName +"分享了一个促销商品，快去看！促销结束就无效了！"+s;
+                    email.putExtra(android.content.Intent.EXTRA_SUBJECT, data.getTitle());//邮件主题
+                    email.putExtra(android.content.Intent.EXTRA_TEXT, data.getText()+s);//邮件内容
                     context.startActivity(Intent.createChooser(email, "请选择邮件发送内容"));
                 }
             }else{//下载链接的分享 - 在这李进行商家或者是个人的判断
@@ -281,17 +285,19 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                     dismiss();
                     Intent email = new Intent(android.content.Intent.ACTION_SEND);
                     email.setType("plain/text");
+                    String s="http://login.savingsmore.com/Home/Download";
                     String emailBody = "各品牌实体门店都在促销，手机一搜，“省又省”带你去。http://login.savingsmore.com/Home/Download";
-                    email.putExtra(android.content.Intent.EXTRA_SUBJECT, "省又省-促销专卖APP");//邮件主题
-                    email.putExtra(android.content.Intent.EXTRA_TEXT, emailBody);//邮件内容
+                    email.putExtra(android.content.Intent.EXTRA_SUBJECT, data.getTitle());//邮件主题
+                    email.putExtra(android.content.Intent.EXTRA_TEXT, data.getText()+s);//邮件内容
                     context.startActivity(Intent.createChooser(email, "请选择邮件发送内容"));
                 }else if ("3".equals(isPeopleAndBusiness)){
                     dismiss();
                     Intent email = new Intent(android.content.Intent.ACTION_SEND);
                     email.setType("plain/text");
-                    String emailBody = "您的朋友"+MyUserInfoUtils.getInstance().myUserInfo.ShowName +"向您推荐促销商品，快去看！促销结束就无效了！http://login.savingsmore.com/Home/Download";
-                    email.putExtra(android.content.Intent.EXTRA_SUBJECT, "省又省-促销专卖APP");//邮件主题
-                    email.putExtra(android.content.Intent.EXTRA_TEXT, emailBody);//邮件内容
+                    String s="http://login.savingsmore.com/Home/Download";
+//                    String emailBody = "您的朋友"+MyUserInfoUtils.getInstance().myUserInfo.ShowName +"向您推荐促销商品，快去看！促销结束就无效了！http://login.savingsmore.com/Home/Download";
+                    email.putExtra(android.content.Intent.EXTRA_SUBJECT, data.getTitle());//邮件主题
+                    email.putExtra(android.content.Intent.EXTRA_TEXT, data.getText()+s);//邮件内容
                     context.startActivity(Intent.createChooser(email, "请选择邮件发送内容"));
                 }
             }
