@@ -154,6 +154,8 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
                     holder.tv_volume.setText("销 " + list.get(position).SalesCount);
                     holder.tv_volume.setVisibility(View.VISIBLE);
                 }
+                holder.tv_care.setText("关注"+list.get(position).CareCount);
+                holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
                 MyUserInfoUtils.getInstance().myUserInfo.ProductId = list.get(position).ProductId;//再来一单的ProductId
@@ -188,6 +190,8 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
         private TextView tv_goodsnumber;
         private TextView tv_goodsdata;
         private TextView tv_lookthroughs;
+        public TextView tv_store_count;
+        public TextView tv_care;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -210,6 +214,8 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
             rl_coll_com_shark = (RelativeLayout) itemView.findViewById(R.id.rl_coll_com_shark);
             ll_cuxiaodate = (LinearLayout) itemView.findViewById(R.id.ll_cuxiaodate);
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
         }
     }
 

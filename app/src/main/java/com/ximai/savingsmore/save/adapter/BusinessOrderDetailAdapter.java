@@ -167,6 +167,8 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
                 }
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
+                holder.tv_care.setText("关注"+list.get(position).CareCount);
+                holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
             }
         }
     }
@@ -202,6 +204,8 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
         private TextView tv_lookthroughs;
         private LinearLayout ll_cuxiaodate;
         private RelativeLayout rl_coll_com_shark;
+        public TextView tv_store_count;
+        public TextView tv_care;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -224,6 +228,8 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
             rl_coll_com_shark = (RelativeLayout) itemView.findViewById(R.id.rl_coll_com_shark);
             ll_cuxiaodate = (LinearLayout) itemView.findViewById(R.id.ll_cuxiaodate);
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
+            tv_care= (TextView) itemView.findViewById(R.id.tv_care);
         }
     }
 

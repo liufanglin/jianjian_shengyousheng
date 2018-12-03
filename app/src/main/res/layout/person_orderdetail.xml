@@ -94,6 +94,10 @@
                         android:textColor="@color/black"
                         android:maxLines="1"
                         android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/tv_care"
+                        style="@style/text_care_color"
+                        android:text=""/>
                 </LinearLayout>
 
                 <RelativeLayout
@@ -219,6 +223,10 @@
                     android:gravity="center_vertical"
                     android:text="上海西麦咨询有限公司"
                     android:textSize="9sp" />
+                <TextView
+                    android:id="@+id/tv_store_count"
+                    android:text=""
+                    style="@style/text_care_color" />
             </LinearLayout>
 
 

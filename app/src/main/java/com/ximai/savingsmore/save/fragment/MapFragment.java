@@ -355,6 +355,8 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                 aMapLocation.getLongitude();//获取经度
                 BaseApplication.getInstance().Longitude = aMapLocation.getLongitude();
                 BaseApplication.getInstance().Latitude = aMapLocation.getLatitude();
+                Longitude=aMapLocation.getLongitude();
+                Latitude=aMapLocation.getLatitude();
                 aMapLocation.getAccuracy();//获取精度信息
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date date = new Date(aMapLocation.getTime());
@@ -417,6 +419,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                             + aMapLocation.getStreetNum());
                     isFirstLoc = false;
                 }
+                getAllGoods();
                 //数据本来是移动地图实时鞥更新数据 - 但是现在先凡在这里面
                 callBack.location(aMapLocation.getCity()+ aMapLocation.getDistrict(), aMapLocation.getLatitude(),aMapLocation.getLongitude());
             } else {

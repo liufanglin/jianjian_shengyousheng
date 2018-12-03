@@ -95,5 +95,6 @@ public class UserExtInfo  implements Serializable{
 
     public SecondClass SecondClass = new SecondClass();
     public String FirstClassId;//商品类别
+    public String StoreCount;
 
 }
