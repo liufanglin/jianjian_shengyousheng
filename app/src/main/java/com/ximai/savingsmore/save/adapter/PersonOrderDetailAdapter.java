@@ -35,6 +35,7 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
     private List<Goods> list = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
     private PersonOrderDetialBean orderDetial;
+    private String StoreCount;
 
     public PersonOrderDetailAdapter(Context context) {
         this.context = context;
@@ -45,6 +46,9 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
      */
     public void setData(List<Goods> list) {
         this.list = list;
+    }
+    public void setStoreCount(String StoreCount){
+        this.StoreCount=StoreCount;
     }
 
     /**
@@ -155,7 +159,9 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
                     holder.tv_volume.setVisibility(View.VISIBLE);
                 }
                 holder.tv_care.setText("关注"+list.get(position).CareCount);
-                holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
+                if (!TextUtils.isEmpty(StoreCount)) {
+                    holder.tv_store_count.setText("到店人次" + StoreCount);
+                }
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
                 MyUserInfoUtils.getInstance().myUserInfo.ProductId = list.get(position).ProductId;//再来一单的ProductId

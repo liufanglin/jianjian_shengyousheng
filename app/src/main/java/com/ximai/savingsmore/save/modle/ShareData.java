@@ -1,5 +1,7 @@
 package com.ximai.savingsmore.save.modle;
 
+import android.graphics.Bitmap;
+
 //分享的数据
 public class ShareData {
     public String dialogTitle;
@@ -11,6 +13,16 @@ public class ShareData {
 	private String site;
 	private String siteurl;
 	private String titleurl;
+	private Bitmap bitmap;
+
+	public Bitmap getBitmap() {
+		return bitmap;
+	}
+
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
+	}
+
 	public String getImageUrl() {
 		return imageUrl;
 	}

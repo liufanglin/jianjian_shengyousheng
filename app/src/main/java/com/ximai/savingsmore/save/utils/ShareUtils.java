@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.util.Log;
@@ -373,6 +374,7 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
             String shareSite = data.getSite();
             String shareSiteUrl = data.getSiteUrl();
             String shareTitltUrl = data.getTitleurl();
+            Bitmap bitmap=data.getBitmap();
             if (type == PENGYOUQUAN) {
        /*        微信分享图文：必须设置title，imageUrl（imagepath，ImageData) text为可选参数
                 微信分享文本：title text都必须有
@@ -384,7 +386,7 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                     params.setShareType(Platform.SHARE_WEBPAGE);
                     params.setUrl(shareUrl);
                 } else {
-                    if (shareimageUrl != null || shareImagePath != null) {
+                    if (shareimageUrl != null || shareImagePath != null||bitmap!=null) {
                         params.setShareType(Platform.SHARE_IMAGE);
                     } else {
                         params.setShareType(Platform.SHARE_TEXT);
@@ -399,6 +401,9 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                 }
                 if (shareimageUrl != null) {
                     params.setImageUrl(shareimageUrl);
+                }
+                if (bitmap!=null){
+                    params.setImageData(bitmap);
                 }
                 if (shareTitle != null) {
                     params.setTitle(shareTitle);

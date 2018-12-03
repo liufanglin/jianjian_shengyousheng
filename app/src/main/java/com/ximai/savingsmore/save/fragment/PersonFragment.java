@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -584,7 +586,8 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                 data.setTitleUrl("http://login.savingsmore.com/Home/Download");
                 data.setUrl("http://login.savingsmore.com/Home/Download");
                 data.setTitle("门店在促销,每天\"11.11\"");
-                data.setImagePath(FileSystem.getCachesDir(getActivity(), true).getAbsolutePath() + File.separator + "icon.jpg");
+                data.setBitmap(getBitmapFormResources(getActivity(),R.raw.ximaiicon));
+               // data.setImagePath(FileSystem.getCachesDir(getActivity(), true).getAbsolutePath() + File.separator + "icon.jpg");
 //                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
 //                    data.setText("您的好友给您推荐了一个促销专用APP，快去看！更多促销，一搜就知道。");
 //                }else{
@@ -1157,5 +1160,9 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
         builder.setOutsideTouchable(true);
 //        builder.setBackTouchable(true);
         builder.show();
+    }
+
+    public static Bitmap getBitmapFormResources(Context context, int resId){
+        return BitmapFactory.decodeResource(context.getResources(),resId);
     }
 }

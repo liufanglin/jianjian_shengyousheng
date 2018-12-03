@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -40,6 +42,7 @@ import com.ximai.savingsmore.save.common.BaseApplication;
 import com.ximai.savingsmore.save.modle.AlipaySignResult;
 import com.ximai.savingsmore.save.modle.Goods;
 import com.ximai.savingsmore.save.modle.MyUserInfoUtils;
+import com.ximai.savingsmore.save.modle.OrderDetial;
 import com.ximai.savingsmore.save.modle.OrderStateResult;
 import com.ximai.savingsmore.save.modle.PersonOrderDetialBean;
 import com.ximai.savingsmore.save.modle.WeChatSign;
@@ -290,6 +293,7 @@ public class PersonOrderDetailActivity extends BaseActivity implements View.OnCl
                         if (orderList.size() > 0){
                             tv_paymoney.setText(orderList.get(0).Currency + UIUtils.formatPrice(Double.parseDouble(orderDetial.Price)));
                         }
+                        personOrderDetailAdapter.setStoreCount(orderDetial.Seller.UserExtInfo.StoreCount);
                         personOrderDetailAdapter.setData(orderList);//将商品数据传递
                         personOrderDetailAdapter.setOrderDetailData(orderDetial);
                         personOrderDetailAdapter.notifyDataSetChanged();
@@ -707,4 +711,6 @@ public class PersonOrderDetailActivity extends BaseActivity implements View.OnCl
         //builder.setBackTouchable(true);
         builder.show();
     }
+
+
 }
