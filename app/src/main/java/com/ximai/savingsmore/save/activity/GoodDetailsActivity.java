@@ -105,6 +105,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
     private ShareUtils shareUtils = null;
     private TextView sales_count;
     private TextView tv_more;
+    private TextView tv_store_count;
     private List<GoodSalesType> Serive_list = new ArrayList<GoodSalesType>();
     List<Goods> list = new ArrayList<Goods>();
     private CartDetail cartDetail;
@@ -234,6 +235,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
         iv_picture = (ImageView) findViewById(R.id.iv_picture);
         iv_play = (ImageView) findViewById(R.id.iv_play);
         iv_video_yulan = (ImageView) findViewById(R.id.iv_video_yulan);//video预览
+        tv_store_count= (TextView) findViewById(R.id.tv_store_count);
     }
 
     /**
@@ -421,6 +423,10 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                             }
                         }
 
+                        if (goodDetial.User!=null&&goodDetial.User.UserExtInfo!=null) {
+                            tv_store_count.setText("到店人次" + goodDetial.User.UserExtInfo.StoreCount);
+                        }
+
 
                         double v = Double.parseDouble(goodDetial.Distance)  / 1000;
                         distance.setText(v + "km");//显示距离
@@ -537,7 +543,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                 ShareData data = new ShareData();
                 data.setTitleUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
                 data.setUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
-                data.setTitle(goodDetial.Name+"-"+goodDetial.PromotionTypeName);
+                data.setTitle(goodDetial.Name+"-"+goodDetial.PromotionTypeName+"！");
 //                data.setImagePath(FileSystem.getCachesDir(GoodDetailsActivity.this, true).getAbsolutePath() + File.separator + "icon.jpg");
 //                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
 //                    data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");

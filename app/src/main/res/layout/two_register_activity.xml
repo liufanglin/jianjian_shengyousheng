@@ -118,8 +118,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:maxLength="18"
-                android:hint="请输入6-18位字母或数字"
+                android:maxLength="6"
+                android:hint="请设置6位数"
                 android:password="true"
                 android:textSize="12sp" />
 
@@ -167,8 +167,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:maxLength="18"
-                android:hint="请再次输入密码"
+                android:maxLength="6"
+                android:hint="重复以上6位数"
                 android:textSize="12sp" />
             <RelativeLayout
                 android:layout_width="wrap_content"
