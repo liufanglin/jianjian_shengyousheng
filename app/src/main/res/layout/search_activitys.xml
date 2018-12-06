@@ -343,7 +343,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="想了解类似商品促销活动，"
+                    android:text="委托省又省寻找该品类商品的折扣优惠，请联系"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

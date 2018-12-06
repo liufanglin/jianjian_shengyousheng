@@ -23,7 +23,7 @@
             android:layout_height="55dp">
             <Button
                 android:id="@+id/btn_one"
-                android:text="您好，我们帮你寻找促销。"
+                android:text="您好！您需要什么商品，折扣多少？"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="#879ca6"
@@ -48,7 +48,7 @@
             android:background="@color/white"
             android:layout_height="55dp">
             <TextView
-                android:text="“省又省”促销导购"
+                android:text="“给我们致电"
                 android:textSize="18sp"
                 android:textColor="@color/text_black"
                 android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
             android:background="@color/white"
             android:layout_height="55dp">
             <TextView
-                android:text="与商家直接联系"
+                android:text="描述需求请留言"
                 android:textSize="18sp"
                 android:textColor="@color/text_black"
                 android:layout_width="wrap_content"
