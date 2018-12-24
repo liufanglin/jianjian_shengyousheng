@@ -12,4 +12,5 @@ public class BusinessDate implements Serializable {
     public String SortNo;
     public String IsBag;
     public String StoreName;
+    public String Id;
 }

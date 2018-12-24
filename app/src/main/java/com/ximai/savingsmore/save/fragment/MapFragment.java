@@ -583,6 +583,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
             @Override
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
                 goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
+                if (goodsList==null) return;
                 if (goodsList.IsSuccess) {
                     if (null != goodsList.MainData) {
                         list = goodsList.MainData;

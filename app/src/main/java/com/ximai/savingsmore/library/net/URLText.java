@@ -7,9 +7,11 @@ import com.ximai.savingsmore.library.constants.AppConstants;
  * @author wangguodong
  */
 public interface URLText {
-    public static final String img_url = "http://fileupload.savingsmore.com/ServerFiles/";
-    public static final String upLoad = "http://fileupload.savingsmore.com/api/";
+//    public static final String img_url = "http://fileupload.savingsmore.com/ServerFiles/";
+//    public static final String upLoad = "http://fileupload.savingsmore.com/api/";
 
+    public static final String img_url = "http://139.196.4.238:10002/ServerFiles/";
+    public static final String upLoad = "http://139.196.4.238:10002/api/";
     public static final String baseUrl = AppConstants.BASEURL;
     //登录接口
     public static final String LOGIN_URL = baseUrl + "Account/Signin";
@@ -31,6 +33,8 @@ public interface URLText {
     public static final String GET_SALES_GOODS = baseUrl + "Product/QueryMyProduct";
     //添加收藏商品
     public static final String ADD_COLLECT = baseUrl + "Product/Favourite";
+    //记录到店
+    public static final String RECODE_SHOP=baseUrl+"User/SellerStore";
     //取消收藏商品
     public static final String CANCEL_COLLECT = baseUrl + "Product/RemoveFavourite";
     // 添加收藏店铺
@@ -173,7 +177,7 @@ public interface URLText {
     //移除商家推送消息
     public static final String REMOVE_PUSH_BUSS = baseUrl + "PushRecord/RemovePush";
     //图片验证码
-    public static final String PHOTO_CODE = "http://api.savingsmore.com/Home/VerificationCode?deviceId=";
+    public static final String PHOTO_CODE = "http://139.196.4.238:10001/Home/VerificationCode?deviceId=";
     //商品地址列表
     public static final String SEARCH_LOCATION_DATA = baseUrl + "Product/QueryPlace";
     //商家地址列表

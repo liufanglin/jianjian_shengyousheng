@@ -573,6 +573,8 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                 startActivity(intent);
                 break;
             case R.id.flow_me://带我去门店
+                recodeShop(goodDetial.User.Id);
+
                 if ("0".equals(goodDetial.User.UserExtInfo.RebatePercent) || null == goodDetial.User.UserExtInfo.RebatePercent){
                     goToMenDians();
                 }else{
@@ -913,6 +915,21 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
             }
         });
     }
+
+    /**
+     * 到店人数
+    * */
+
+    private void recodeShop(String id) {
+        WebRequestHelper.json_post(GoodDetailsActivity.this, URLText.RECODE_SHOP, RequestParamsPool.addColect(id), new MyAsyncHttpResponseHandler(GoodDetailsActivity.this) {
+            @Override
+            public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
+                String result = new String(responseBody);
+
+            }
+        });
+    }
+
 
     /**
      * 取消收藏商品
