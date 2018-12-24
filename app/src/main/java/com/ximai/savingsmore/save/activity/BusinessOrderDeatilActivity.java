@@ -204,6 +204,7 @@ public class BusinessOrderDeatilActivity extends BaseActivity implements View.On
                         if (orderList.size() > 0){
                             tv_paymoney.setText(orderList.get(0).Currency + UIUtils.formatPrice(Double.parseDouble(orderDetial.Price)));
                         }
+                        businessOrderDetailAdapter.setStoreCoun(orderDetial.Seller.UserExtInfo.StoreCount);
                         businessOrderDetailAdapter.setData(orderList);
                         businessOrderDetailAdapter.setOrderDeatil(orderDetial);
                         businessOrderDetailAdapter.notifyDataSetChanged();

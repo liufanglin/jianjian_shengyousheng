@@ -106,6 +106,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
     private TextView sales_count;
     private TextView tv_more;
     private TextView tv_store_count;
+    private TextView tv_care;
     private List<GoodSalesType> Serive_list = new ArrayList<GoodSalesType>();
     List<Goods> list = new ArrayList<Goods>();
     private CartDetail cartDetail;
@@ -236,6 +237,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
         iv_play = (ImageView) findViewById(R.id.iv_play);
         iv_video_yulan = (ImageView) findViewById(R.id.iv_video_yulan);//video预览
         tv_store_count= (TextView) findViewById(R.id.tv_store_count);
+        tv_care= (TextView) findViewById(R.id.tv_care);
     }
 
     /**
@@ -427,6 +429,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                         if (goodDetial.User!=null&&goodDetial.User.UserExtInfo!=null) {
                             tv_store_count.setText("到店人次" + goodDetial.User.UserExtInfo.StoreCount);
                         }
+                            tv_care.setText("关注"+goodDetial.CareCount);
 
 
                         double v = Double.parseDouble(goodDetial.Distance)  / 1000;

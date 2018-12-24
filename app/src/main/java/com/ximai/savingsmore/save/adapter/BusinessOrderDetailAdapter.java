@@ -33,7 +33,7 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
     private List<Goods> list = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
     private PersonOrderDetialBean orderDetial;
-
+    private String StoreCount;
     public BusinessOrderDetailAdapter(Context context) {
         this.context = context;
     }
@@ -42,6 +42,9 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
         this.list = list;
     }
 
+    public void setStoreCoun(String StoreCount){
+        this.StoreCount=StoreCount;
+    }
     /**
      * layout
      * @param parent
@@ -168,7 +171,7 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
                 holder.tv_care.setText("关注"+list.get(position).CareCount);
-                holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
+                holder.tv_store_count.setText("到店人次"+StoreCount);
             }
         }
     }

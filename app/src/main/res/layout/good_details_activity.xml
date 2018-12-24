@@ -154,6 +154,22 @@
                         android:singleLine="true"
                         android:textColor="@color/fontcolor_two"
                         android:textSize="@dimen/smart" />
+                    <TextView
+                        android:id="@+id/tv_care"
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="2dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:singleLine="true"
+                        android:textColor="@color/mianColor"
+                        android:textSize="@dimen/smart" />
+
+
+
                 </LinearLayout>
             </RelativeLayout>
 
