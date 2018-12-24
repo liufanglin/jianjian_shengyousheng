@@ -260,7 +260,6 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
         /**
          * 根据id获取商品详情数据
          */
-        getgood_detial(id,BaseApplication.getInstance().Longitude+"",BaseApplication.getInstance().Latitude+"");
     }
 
     /**
@@ -307,6 +306,8 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
     @Override
     protected void onResume() {
         super.onResume();
+        getgood_detial(id,BaseApplication.getInstance().Longitude+"",BaseApplication.getInstance().Latitude+"");
+
         mHandler.removeCallbacks(scrollRunnable);
         mHandler.removeCallbacksAndMessages(null);
         mHandler.postDelayed(scrollRunnable, 10);
@@ -574,7 +575,6 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                 break;
             case R.id.flow_me://带我去门店
                 recodeShop(goodDetial.User.Id);
-
                 if ("0".equals(goodDetial.User.UserExtInfo.RebatePercent) || null == goodDetial.User.UserExtInfo.RebatePercent){
                     goToMenDians();
                 }else{

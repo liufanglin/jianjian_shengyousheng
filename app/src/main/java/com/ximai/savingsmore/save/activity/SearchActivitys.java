@@ -345,6 +345,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
     private SearchAddressAdapter searchAddressAdapter;
     private TextView mTvSearchMsg1;
     private TextView mTvSearchMsg2;
+    private boolean isFirst=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -491,6 +492,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        isFirst=true;
                         if (TextUtils.isEmpty(ProvinceId)){
                             getAllGoods(null,null,true,goodsId);
                         }else{
@@ -526,6 +528,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        isFirst=true;
                         if (TextUtils.isEmpty(ProvinceId)){
                             getAllGoods(null,null,false,goodsId);
                         }else{
@@ -699,6 +702,18 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
             }
         });
     }
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        if (isFirst){
+//            if (TextUtils.isEmpty(ProvinceId)){
+//                getAllGoods(null,null,false,goodsId);
+//            }else{
+//                getAllGoods(ProvinceId,null,false,goodsId);
+//            }
+//        }
+//    }
 
     /**
      * 开始搜索
