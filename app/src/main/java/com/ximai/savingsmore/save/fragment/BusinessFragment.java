@@ -510,7 +510,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
         ShareData data = new ShareData();
         data.setTitleUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
         data.setUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
-        data.setTitle(shareGoods.Name+"-"+shareGoods.PromotionTypeName);
+        data.setTitle(shareGoods.Name+"-"+shareGoods.PromotionTypeName+"！");
 //        data.setImagePath(FileSystem.getCachesDir(getActivity(), true).getAbsolutePath() + File.separator + "icon.jpg");
 //        if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
 //            data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");

@@ -557,7 +557,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
 
                 }else {
                     //商家
-                    data.setText(store_name.getText().toString()+"开始促销了！货比三家,该商品最优惠！欢迎您来电");
+                    data.setText(store_name.getText().toString()+"开始促销了！货比三家,该商品最优惠！欢迎您来店！");
                 }
 
                 shareUtils = new ShareUtils(data, GoodDetailsActivity.this,id);
