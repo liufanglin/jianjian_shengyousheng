@@ -558,7 +558,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                 data.setImageUrl(URLText.img_url+goodDetial.Image);
                 if ("2".equals(isPeopleAndBusiness)){
                     String name=MyUserInfoUtils.getInstance().myUserInfo.ShowName;
-                    data.setText("您的朋友\""+name+"\"与你分享！点击看！ 商品在促销，限时有折扣！");
+                    data.setText("您的朋友"+name+"与你分享！点击看！ 商品在促销，限时有折扣！");
 
                 }else {
                     //商家
