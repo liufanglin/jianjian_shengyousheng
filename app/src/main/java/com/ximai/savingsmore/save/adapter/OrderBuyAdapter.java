@@ -112,7 +112,7 @@ public class OrderBuyAdapter extends RecyclerView.Adapter<OrderBuyAdapter.ViewHo
                 holder.tv_volume.setVisibility(View.GONE);
             }else {
                 holder.tv_volume.setText("销 " + list.get(position).SaleCount);
-                holder.tv_volume.setVisibility(View.VISIBLE);
+                holder.tv_volume.setVisibility(View.GONE);
             }
             holder.tv_care.setText("关注"+list.get(position).CareCount);
             holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);

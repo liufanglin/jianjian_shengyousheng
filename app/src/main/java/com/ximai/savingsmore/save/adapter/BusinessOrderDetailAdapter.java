@@ -87,7 +87,7 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
                 holder.rl_coll_com_shark.setVisibility(View.VISIBLE);
                 holder.ll_cuxiaodate.setVisibility(View.VISIBLE);
                 holder.tv_agoprice.setVisibility(View.VISIBLE);
-                holder.tv_volume.setVisibility(View.VISIBLE);
+                holder.tv_volume.setVisibility(View.INVISIBLE);
 
                 //            MyImageLoader.displayDefaultImage(URLText.img_url + list.get(position).Image, holder.image);
                 Glide.with(context).load(URLText.img_url + list.get(position).Image).into(holder.image);
@@ -166,7 +166,7 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
                     holder.tv_volume.setVisibility(View.GONE);
                 }else {
                     holder.tv_volume.setText("销 " + list.get(position).SalesCount);
-                    holder.tv_volume.setVisibility(View.VISIBLE);
+                    holder.tv_volume.setVisibility(View.GONE);
                 }
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量

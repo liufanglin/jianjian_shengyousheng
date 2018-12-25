@@ -455,7 +455,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 viewHodel.tv_volume.setVisibility(View.GONE);
             }else {
                 viewHodel.tv_volume.setText("销 " + list.get(position).SaleCount);//销量
-                viewHodel.tv_volume.setVisibility(View.VISIBLE);
+                viewHodel.tv_volume.setVisibility(View.GONE);
             }
             viewHodel.tv_care.setText("关注"+list.get(position).CareCount);
             viewHodel.tv_store_count.setText("到店人次"+list.get(position).StoreCount);

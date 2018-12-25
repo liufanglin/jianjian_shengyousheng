@@ -356,6 +356,7 @@
                         android:layout_centerVertical="true"
                         android:text="销量:1000件"
                         android:maxLines="1"
+                        android:visibility="gone"
                         android:textSize="8sp" />
                 </RelativeLayout>
             </LinearLayout>

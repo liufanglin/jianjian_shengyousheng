@@ -95,7 +95,7 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
                 holder.rl_coll_com_shark.setVisibility(View.VISIBLE);
                 holder.ll_cuxiaodate.setVisibility(View.VISIBLE);
                 holder.tv_agoprice.setVisibility(View.VISIBLE);
-                holder.tv_volume.setVisibility(View.VISIBLE);
+                holder.tv_volume.setVisibility(View.INVISIBLE);
 
                 Glide.with(context).load(URLText.img_url + list.get(position).Image).into(holder.image);
 //                holder.tv_favourable.setText(list.get(position).Preferential);
@@ -156,7 +156,7 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
                     holder.tv_volume.setVisibility(View.GONE);
                 }else {
                     holder.tv_volume.setText("销 " + list.get(position).SalesCount);
-                    holder.tv_volume.setVisibility(View.VISIBLE);
+                    holder.tv_volume.setVisibility(View.GONE);
                 }
                 holder.tv_care.setText("关注"+list.get(position).CareCount);
                 if (!TextUtils.isEmpty(StoreCount)) {

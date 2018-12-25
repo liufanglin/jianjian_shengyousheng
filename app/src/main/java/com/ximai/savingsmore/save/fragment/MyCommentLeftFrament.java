@@ -209,7 +209,7 @@ public class MyCommentLeftFrament extends Fragment {
                     viewHodel.sales_number.setVisibility(View.GONE);
                 }else {
                     viewHodel.sales_number.setText("销 " + all_list.get(position).SaleCount);
-                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                    viewHodel.sales_number.setVisibility(View.GONE);
                 }
             }
 

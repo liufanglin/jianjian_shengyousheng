@@ -217,7 +217,7 @@ public class PopuWindowsUtils implements View.OnClickListener {
                     sales_number.setVisibility(View.GONE);
                 }else {
                     sales_number.setText("销 " + list.get(position).SaleCount);
-                    sales_number.setVisibility(View.VISIBLE);
+                    sales_number.setVisibility(View.GONE);
                 }
             }
 

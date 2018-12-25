@@ -123,7 +123,7 @@ public class SalesGoodsAdapter extends RecyclerView.Adapter<SalesGoodsAdapter.Vi
                 holder.tv_volume.setVisibility(View.GONE);
             }else {
                 holder.tv_volume.setText("销 " + list.get(position).HitCount);
-                holder.tv_volume.setVisibility(View.VISIBLE);
+                holder.tv_volume.setVisibility(View.GONE);
             }
         }
         /**

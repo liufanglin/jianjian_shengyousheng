@@ -246,7 +246,7 @@ public class LookThroughLeftFrament extends Fragment {
                     viewHodel.sales_number.setVisibility(View.GONE);
                 }else {
                     viewHodel.sales_number.setText("销 " + list.get(position).SaleCount);
-                    viewHodel.sales_number.setVisibility(View.VISIBLE);
+                    viewHodel.sales_number.setVisibility(View.GONE);
                 }
             }
 //            if (null != list.get(position).StoreName) {

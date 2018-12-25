@@ -127,7 +127,7 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
                     holder.tv_volume.setVisibility(View.GONE);
                 }else {
                     holder.tv_volume.setText("销 "+list.get(position).SaleCount);
-                    holder.tv_volume.setVisibility(View.VISIBLE);
+                    holder.tv_volume.setVisibility(View.GONE);
                 }
             }
             holder.tv_care.setText("关注"+list.get(position).CareCount);

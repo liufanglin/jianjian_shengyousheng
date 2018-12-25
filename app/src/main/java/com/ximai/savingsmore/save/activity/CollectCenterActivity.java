@@ -445,7 +445,7 @@ public class CollectCenterActivity extends BaseActivity implements View.OnClickL
                     viewHodel.tv_volume.setVisibility(View.GONE);
                 }else {
                     viewHodel.tv_volume.setText("销 " + listGoods.get(position).SaleCount);
-                    viewHodel.tv_volume.setVisibility(View.VISIBLE);
+                    viewHodel.tv_volume.setVisibility(View.GONE);
                 }
             }
 

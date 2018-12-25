@@ -368,6 +368,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:text="销量:1000件"
+                        android:visibility="gone"
                         android:maxLines="1"
                         android:textSize="8sp" />
                 </RelativeLayout>
