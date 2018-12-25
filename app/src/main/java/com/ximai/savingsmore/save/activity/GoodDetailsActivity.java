@@ -548,7 +548,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                 ShareData data = new ShareData();
                 data.setTitleUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
                 data.setUrl("http://www.savingsmore.com/Product/SharedProductDetail/"+id);
-                data.setTitle(goodDetial.Name+"-"+goodDetial.PromotionTypeName+"！");
+                data.setTitle(goodDetial.Name+"-"+goodDetial.Preferential+"！");
 //                data.setImagePath(FileSystem.getCachesDir(GoodDetailsActivity.this, true).getAbsolutePath() + File.separator + "icon.jpg");
 //                if (null == MyUserInfoUtils.getInstance().myUserInfo.ShowName){
 //                    data.setText("您的朋友分享了一个促销商品，快去看！促销结束就无效了！");
