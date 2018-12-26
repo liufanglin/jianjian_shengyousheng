@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,10 +41,12 @@ import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.ximai.savingsmore.R;
 import com.ximai.savingsmore.library.net.MyAsyncHttpResponseHandler;
+import com.ximai.savingsmore.library.net.RequestParamsPool;
 import com.ximai.savingsmore.library.net.URLText;
 import com.ximai.savingsmore.library.net.WebRequestHelper;
 import com.ximai.savingsmore.library.toolbox.GsonUtils;
 import com.ximai.savingsmore.save.activity.ChatActivity;
+import com.ximai.savingsmore.save.activity.GoodDetailsActivity;
 import com.ximai.savingsmore.save.activity.LeaveMessageActivity;
 import com.ximai.savingsmore.save.activity.TakeMeActivity;
 import com.ximai.savingsmore.save.adapter.GridImageAdapterNoDelete;
@@ -192,6 +195,7 @@ public class BusinessIntroduceFragment extends Fragment implements View.OnClickL
         tv_zhaoping = (TextView) view.findViewById(R.id.tv_zhaoping);//招聘兼职转发
     }
 
+
     private void initData() {
 
         /**
@@ -233,6 +237,7 @@ public class BusinessIntroduceFragment extends Fragment implements View.OnClickL
                 gridImgAdapter.notifyDataSetChanged();
             }
             store_name.setText(businessMessage.ShowName);
+//            flow_me.setText("带我去商家(到店人次"+businessMessage.UserExtInfo.StoreCount+")");
             address.setText(businessMessage.Province.Name + " " + businessMessage.City.Name);
             if (null != businessMessage.UserExtInfo) {
                 if (TextUtils.isEmpty(businessMessage.UserExtInfo.WebSite)){
@@ -353,6 +358,8 @@ public class BusinessIntroduceFragment extends Fragment implements View.OnClickL
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        Log.i("------------------",businessMessage.UserExtInfo.StoreCount);
     }
 
     /**
@@ -466,13 +473,31 @@ public class BusinessIntroduceFragment extends Fragment implements View.OnClickL
     }
 
     /**
+     * 到店人数
+     * */
+
+    private void recodeShop(String id) {
+        WebRequestHelper.json_post(getActivity(), URLText.RECODE_SHOP, RequestParamsPool.addColect(id), new MyAsyncHttpResponseHandler(getActivity()) {
+            @Override
+            public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
+                String result = new String(responseBody);
+
+            }
+        });
+    }
+
+
+    /**
      * 事件处理
      * @param v
      */
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.flow_me://带我去商家
+                recodeShop(businessMessage.Id);
+
                 Intent intent1 = new Intent(getActivity(), TakeMeActivity.class);
                 intent1.putExtra("isgood", "false");
                 intent1.putExtra("good", businessMessage);

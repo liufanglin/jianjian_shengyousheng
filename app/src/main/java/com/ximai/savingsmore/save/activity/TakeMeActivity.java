@@ -122,7 +122,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         }else if ("false".equals(isgood)){
             setCenterTitle("带我去商家");
             tv_addressmsg.setText("商家地址");
-            tv_store_people.setVisibility(View.GONE);
+            tv_store_people.setVisibility(View.VISIBLE);
         }
 
         if ("true".equals(isgood)) {//带我去门店
