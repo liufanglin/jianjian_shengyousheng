@@ -16,6 +16,7 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
+import com.luck.picture.lib.tools.Constant;
 import com.ximai.savingsmore.R;
 import com.ximai.savingsmore.library.net.MyAsyncHttpResponseHandler;
 import com.ximai.savingsmore.library.net.RequestParamsPool;
@@ -132,6 +133,12 @@ public class BusinessMessageActivity extends BaseActivity implements View.OnClic
 //        if ("3".equals(isPeopleAndBusiness)){
 //            focus.setVisibility(View.GONE);
 //        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         getBusinessMessage(id);
     }
 
@@ -233,6 +240,7 @@ public class BusinessMessageActivity extends BaseActivity implements View.OnClic
 
                     String MainData = new String(object.optString("MainData"));
                     businessMessage = GsonUtils.fromJson(MainData, BusinessMessage.class);
+                    Constant.storeCount=businessMessage.UserExtInfo.StoreCount;
     //                MyImageLoader.displayDefaultImage(URLText.img_url + businessMessage.PhotoPath, head_image);
                     /*
                      * 加载圆角图片

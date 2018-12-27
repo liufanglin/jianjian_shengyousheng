@@ -359,7 +359,6 @@ public class BusinessIntroduceFragment extends Fragment implements View.OnClickL
             e.printStackTrace();
         }
 
-        Log.i("------------------",businessMessage.UserExtInfo.StoreCount);
     }
 
     /**

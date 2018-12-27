@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.easemob.easeui.EaseConstant;
+import com.luck.picture.lib.tools.Constant;
 import com.ximai.savingsmore.R;
 import com.ximai.savingsmore.save.common.BaseActivity;
 import com.ximai.savingsmore.save.common.BaseApplication;
@@ -135,7 +136,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         }
 
         if (userExtInfo!=null){
-            tv_store_people.setText("到店人次:"+userExtInfo.StoreCount);
+            tv_store_people.setText("到店人次:"+ Constant.storeCount);
         }
 
         if (null != user && null != userExtInfo) {

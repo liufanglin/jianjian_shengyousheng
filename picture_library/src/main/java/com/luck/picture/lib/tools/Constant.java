@@ -19,4 +19,5 @@ public class Constant {
 
     // SD卡写入权限 Flag
     public static final int WRITE_EXTERNAL_STORAGE = 0x01;
+    public static String storeCount;
 }
