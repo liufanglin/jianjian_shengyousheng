@@ -371,8 +371,10 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                             sales_count.setVisibility(View.GONE);
                         }else {
                             sales_count.setText("销 " + goodDetial.SaleCount);
-                            sales_count.setVisibility(View.VISIBLE);
+                            sales_count.setVisibility(View.GONE);
                         }
+                        sales_count.setVisibility(View.GONE);
+
                         price.setText(goodDetial.Currency.Name+" "+ UIUtils.formatPrice(Double.parseDouble(goodDetial.Price)));
                         high_price.setText(goodDetial.Currency.Name+" "+ UIUtils.formatPrice(Double.parseDouble(goodDetial.OriginalPrice)));
 

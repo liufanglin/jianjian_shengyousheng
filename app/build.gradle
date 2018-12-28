@@ -15,7 +15,7 @@ android {
         applicationId "com.ximai.savingsmore"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 45
+        versionCode 46
         versionName "3.5.7"
     }
     buildTypes {

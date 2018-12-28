@@ -135,9 +135,14 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
             userExtInfo = businessMessage.UserExtInfo;
         }
 
-        if (userExtInfo!=null){
-            tv_store_people.setText("到店人次:"+ Constant.storeCount);
+        if ("true".equals(isgood)){
+            tv_store_people.setText("到店人次:"+userExtInfo.StoreCount);
+        }else {
+            if (userExtInfo!=null){
+                tv_store_people.setText("到店人次:"+ Constant.storeCount);
+            }
         }
+
 
         if (null != user && null != userExtInfo) {
 //            Store_name.setText(userExtInfo.StoreName);
