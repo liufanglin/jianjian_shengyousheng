@@ -176,6 +176,7 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
         Toast.makeText(context, "分享成功", Toast.LENGTH_SHORT).show();
         if ("1".equals(isGoodsShark)){//1是商品
 //            shareProduct(id,Remark);
+          //  shareProduct(id,Remark);
             shareApp(Remark);
             Log.e("tag","22222222222222222222222222222222222222222222222222222222");
         }else{//2不是商品
@@ -203,6 +204,7 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
      */
     @Override
     public void onClick(View v) {
+
         SharePlatfrom sharePlatfrom = new SharePlatfrom();
         if (v.getId() == R.id.wechat) {
             Remark = "微信";
@@ -317,6 +319,9 @@ public class ShareUtils implements OnClickListener, PlatformActionListener {
                     }
                 }
             },40000);
+        }
+        if ("1".equals(isGoodsShark)) {//1是商品
+            shareProduct(id,Remark);
         }
     }
 
