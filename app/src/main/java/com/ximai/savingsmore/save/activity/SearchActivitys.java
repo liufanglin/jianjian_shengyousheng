@@ -1787,22 +1787,25 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                     break;
                 //与商家直接联系
                 case R.id.ll_car2:
-                    tv_chooses.setText("选择商品");
-                    cen_title.setText("促销商家搜索");
-                    etInput.setHint("商家店铺名称");
-                    //产品和服务按钮
-                    show_chanping.setVisibility(View.GONE);
-                    //方格
-                    recycle_view_fg.setVisibility(View.GONE);
-                    //暂无数据
-                    ll_defaultdata.setVisibility(View.GONE);
-                    ll_businessdata.setVisibility(View.GONE);
-                    ll_businessNoDada.setVisibility(View.VISIBLE);
-                    tv_liebiao.setVisibility(View.GONE);
-                    ll_paixu.setVisibility(View.GONE);
-                    recycle_view_shangping.setVisibility(View.GONE);
-                    isGoodsAndBUsiness = false;
-                    getBUsinessList(null,null,null,null);
+                    Intent leave = new Intent(SearchActivitys.this, LeaveMessageActivity.class);
+                    startActivity(leave);
+//                    tv_chooses.setText("选择商品");
+//                    cen_title.setText("促销商家搜索");
+//                    etInput.setHint("商家店铺名称");
+//                    //产品和服务按钮
+//                    show_chanping.setVisibility(View.GONE);
+//                    //方格
+//                    recycle_view_fg.setVisibility(View.GONE);
+//                    //暂无数据
+//                    ll_defaultdata.setVisibility(View.GONE);
+//                    ll_businessdata.setVisibility(View.GONE);
+//                    ll_businessNoDada.setVisibility(View.VISIBLE);
+//                    tv_liebiao.setVisibility(View.GONE);
+//                    ll_paixu.setVisibility(View.GONE);
+//                    recycle_view_shangping.setVisibility(View.GONE);
+//                    isGoodsAndBUsiness = false;
+//                    getBUsinessList(null,null,null,null);
+
                     break;
                 default:
                     break;
