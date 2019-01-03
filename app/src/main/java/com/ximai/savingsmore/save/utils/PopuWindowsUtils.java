@@ -30,6 +30,7 @@ import com.ximai.savingsmore.save.activity.GoodDetailsActivity;
 import com.ximai.savingsmore.save.activity.LoginActivity;
 import com.ximai.savingsmore.save.common.BaseApplication;
 import com.ximai.savingsmore.save.modle.*;
+import com.ximai.savingsmore.save.view.imagepicker.Utils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -185,6 +186,7 @@ public class PopuWindowsUtils implements View.OnClickListener {
             TextView tv_lookthroughs;
             TextView tv_store_count;
             TextView tv_care;
+            ImageView iv_endtime;
             tv_care= (TextView) itemView.findViewById(R.id.tv_care);
             tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
 
@@ -205,6 +207,7 @@ public class PopuWindowsUtils implements View.OnClickListener {
             dazhe_style = (TextView) itemView.findViewById(R.id.tv_favourable);
             high_price = (TextView) itemView.findViewById(R.id.tv_agoprice);
             tv_lookthroughs = (TextView) itemView.findViewById(R.id.tv_lookthroughs);
+            iv_endtime= (ImageView) itemView.findViewById(R.id.iv_endtime);
             high_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 //            MyImageLoader.displayDefaultImage(URLText.img_url + list.get(position).Image, imageView);
             Glide.with(context).load(URLText.img_url + list.get(position).Image).into(imageView);
@@ -267,7 +270,21 @@ public class PopuWindowsUtils implements View.OnClickListener {
             }
             if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)) {
                 end_time.setText(list.get(position).EndTimeName.split(" ")[0]);
+                try {
+                    long time=Utils.dateToStamp(list.get(position).EndTimeName)-System.currentTimeMillis();
+                    if (time<3*24*60*60*1000&&time>0){
+                        Glide.with(context).load(R.mipmap.end_time_git).into(iv_endtime);
+                        iv_endtime.setVisibility(View.VISIBLE);
+                    }else {
+                        iv_endtime.setVisibility(View.GONE);
+
+                    }
+                }catch (Exception e){
+
+                }
             }
+
+
             price.setText(list.get(position).Currency+" "+ list.get(position).Price);
 //            dazhe_style.setText(list.get(position).Preferential);
             if (list.get(position).Preferential.length() > 5){

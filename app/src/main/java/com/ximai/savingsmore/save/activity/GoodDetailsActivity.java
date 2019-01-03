@@ -64,6 +64,7 @@ import com.ximai.savingsmore.save.view.KyLoadingBuilder;
 import com.ximai.savingsmore.save.view.SelectPopupWindow;
 import com.ximai.savingsmore.save.view.XiMaiPopDialog;
 import com.ximai.savingsmore.save.view.imagepicker.PhotoPreviewActivity;
+import com.ximai.savingsmore.save.view.imagepicker.Utils;
 import com.ximai.savingsmore.save.view.imagepicker.model.PhotoModel;
 import com.ximai.savingsmore.save.view.imagepicker.util.CommonUtils;
 import com.yanzhenjie.alertdialog.AlertDialog;
@@ -93,7 +94,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
     private ScrollView scrollView;
     private LinearLayout business_message;
     GoodDetial goodDetial;
-    private ImageView share, collect, big_imae, message, phone, comment1, comment2, comment3, comment4, comment5;
+    private ImageView share, collect, big_imae, message, phone, comment1, comment2, comment3, comment4, comment5,iv_endtime;
     private TextView name, price, high_price, dazhe_style, start_time, end_time, comment_number,
             store_name, location, distance, pingpai, danwei, style, reson, bizhong, explain, descript,service, score,busine_name;
     private Button flow_me ,buy,servise;
@@ -239,6 +240,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
         tv_store_count= (TextView) findViewById(R.id.tv_store_count);
         tv_care= (TextView) findViewById(R.id.tv_care);
         tv_care1= (TextView) findViewById(R.id.tv_care1);
+        iv_endtime= (ImageView) findViewById(R.id.iv_endtime);
     }
 
     /**
@@ -410,7 +412,21 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                         }
                         if (null != goodDetial.EndTimeName && !TextUtils.isEmpty(goodDetial.EndTimeName)){
                             end_time.setText(goodDetial.EndTimeName.substring(0,11));
+                            try {
+                                long time= Utils.dateToStamp(goodDetial.EndTimeName)-System.currentTimeMillis();
+                                if (time<3*24*60*60*1000&&time>0){
+                                    Glide.with(GoodDetailsActivity.this).load(R.mipmap.end_time_git).into(iv_endtime);
+                                    iv_endtime.setVisibility(View.VISIBLE);
+                                }else {
+                                    iv_endtime.setVisibility(View.GONE);
+
+                                }
+                            }catch (Exception e){
+
+                            }
+
                         }
+
 
 //                        store_name.setText(goodDetial.User.ShowName);//商家名称
 

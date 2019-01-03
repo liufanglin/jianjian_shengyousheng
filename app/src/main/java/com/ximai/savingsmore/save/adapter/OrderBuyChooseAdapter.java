@@ -18,6 +18,7 @@ import com.ximai.savingsmore.library.net.URLText;
 import com.ximai.savingsmore.save.modle.Goods;
 import com.ximai.savingsmore.save.utils.PrefUtils;
 import com.ximai.savingsmore.save.utils.UIUtils;
+import com.ximai.savingsmore.save.view.imagepicker.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -140,6 +141,20 @@ public class OrderBuyChooseAdapter extends RecyclerView.Adapter<OrderBuyChooseAd
                 }
                 if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)){
                     holder.end_time.setText(list.get(position).EndTimeName.substring(0,10));
+
+                    try {
+                        long time= Utils.dateToStamp(list.get(position).EndTimeName)-System.currentTimeMillis();
+                        if (time<3*24*60*60*1000&&time>0){
+                            Glide.with(context).load(R.mipmap.end_time_git).into(holder.iv_endtime);
+                            holder.iv_endtime.setVisibility(View.VISIBLE);
+                        }else {
+                            holder.iv_endtime.setVisibility(View.GONE);
+
+                        }
+                    }catch (Exception e){
+
+                    }
+
                 }
                 if (null == list.get(position).SaleCount||"0".equals(list.get(position).SaleCount)){
                     holder.tv_volume.setText("销 "+0);
@@ -227,6 +242,7 @@ public class OrderBuyChooseAdapter extends RecyclerView.Adapter<OrderBuyChooseAd
         private final LinearLayout ll_cuxiaodate;
         public TextView tv_store_count;
         public TextView tv_care;
+        public ImageView iv_endtime;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -257,7 +273,7 @@ public class OrderBuyChooseAdapter extends RecyclerView.Adapter<OrderBuyChooseAd
             ll_cuxiaodate = (LinearLayout) itemView.findViewById(R.id.ll_cuxiaodate);
             tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
             tv_care= (TextView) itemView.findViewById(R.id.tv_care);
-
+            iv_endtime= (ImageView) itemView.findViewById(R.id.iv_endtime);
         }
     }
 

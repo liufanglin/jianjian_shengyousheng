@@ -278,6 +278,14 @@
                     android:layout_marginLeft="3dp"
                     android:text="2017-12-12"
                     android:textSize="8sp" />
+
+                <ImageView
+                    android:id="@+id/iv_endtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    />
+
             </LinearLayout>
 
 
