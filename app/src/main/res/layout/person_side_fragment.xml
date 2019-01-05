@@ -198,8 +198,15 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:text=""
                     android:gravity="center"
                     android:textSize="12sp" />
+                <View
+                    android:id="@+id/view_dot1"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:visibility="gone"
+                    android:background="@drawable/dot_bg"/>
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
@@ -408,6 +415,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textSize="12sp" />
+                <View
+                    android:id="@+id/view_dot2"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="2dp"
+                    android:visibility="gone"
+                    android:background="@drawable/dot_bg"/>
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
@@ -438,6 +452,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:background="@mipmap/order" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -459,6 +474,13 @@
                     android:layout_centerVertical="true"
                     android:gravity="center"
                     android:textSize="12sp" />
+                <View
+                    android:id="@+id/view_dot3"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="2dp"
+                    android:background="@drawable/dot_bg"/>
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"

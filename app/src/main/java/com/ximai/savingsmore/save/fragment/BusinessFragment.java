@@ -140,6 +140,13 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     private GoodsList goodsList;
     private boolean isComment, isHit, isCollect;
     public Goods shareGoods;
+    public View view_dot1;
+    public View view_dot2;
+    public View view_dot3;
+    public View view_dot4;
+    public View view_dot5;
+    public View view_dot6;
+    public View view_dot7;
 
     @Nullable
     @Override
@@ -201,6 +208,15 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
         ll_push = (LinearLayout) view.findViewById(R.id.ll_push);//推送
         rl_pushdata = (RelativeLayout) view.findViewById(R.id.rl_pushdata);
         tv_pushnum = (TextView) view.findViewById(R.id.tv_pushnum);
+        view_dot1=view.findViewById(R.id.view_dot1);
+        view_dot2=view.findViewById(R.id.view_dot2);
+        view_dot3=view.findViewById(R.id.view_dot3);
+        view_dot4=view.findViewById(R.id.view_dot4);
+        view_dot5=view.findViewById(R.id.view_dot5);
+        view_dot6=view.findViewById(R.id.view_dot6);
+        view_dot7=view.findViewById(R.id.view_dot7);
+
+
     }
 
     /**
@@ -571,6 +587,72 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                 }
             }
         });
+    }
+
+    String orderNumHot="";
+    String cuxiaoNumHot="";
+    String pinjiaNumHot="";
+    String kehuduihuaNumHot="";
+    String collectNumHot="";
+    String liulanNumHot="";
+    public void isshow1(String orderNum){
+        orderNumHot=orderNum;
+        String number = PreferencesUtils.getString(getContext(), "orderNum_dot_buss", null);
+        if (orderNum!=null&&!orderNum.equals(number)){
+            view_dot1.setVisibility(View.VISIBLE);
+        }else {
+            view_dot1.setVisibility(View.GONE);
+        }
+    }
+    public void isshow2(String cuxiaoNum){
+        cuxiaoNumHot=cuxiaoNum;
+        String number = PreferencesUtils.getString(getContext(), "cuxiaoNumHot_dot_buss", null);
+        if (cuxiaoNum!=null&&!cuxiaoNum.equals(number)){
+            view_dot2.setVisibility(View.VISIBLE);
+        }else {
+            view_dot2.setVisibility(View.GONE);
+        }
+
+    }
+    public void isshow3(String kehuduihuaNum){
+        kehuduihuaNumHot=kehuduihuaNum;
+        String number = PreferencesUtils.getString(getContext(), "kehuduihuaNum_dot_buss", null);
+        if (kehuduihuaNum!=null&&!kehuduihuaNum.equals(number)){
+            view_dot3.setVisibility(View.VISIBLE);
+        }else {
+            view_dot3.setVisibility(View.GONE);
+        }
+
+    }
+    public void isshow4(String pinjiaNum){
+        pinjiaNumHot=pinjiaNum;
+        String number = PreferencesUtils.getString(getContext(), "pinjiaNum_dot_buss", null);
+        if (pinjiaNum!=null&&!pinjiaNum.equals(number)){
+            view_dot4.setVisibility(View.VISIBLE);
+        }else {
+            view_dot4.setVisibility(View.GONE);
+        }
+
+    }
+    public void isshow5(String collectNum){
+        collectNumHot=collectNum;
+        String number = PreferencesUtils.getString(getContext(), "collectNum_dot_buss", null);
+        if (collectNum!=null&&!collectNum.equals(number)){
+            view_dot5.setVisibility(View.VISIBLE);
+        }else {
+            view_dot5.setVisibility(View.GONE);
+        }
+
+    }
+    public void isshow6(String liulanNum){
+        liulanNumHot=liulanNum;
+        String number = PreferencesUtils.getString(getContext(), "liulanNum_dot_buss", null);
+        if (liulanNum!=null&&!liulanNum.equals(number)){
+            view_dot6.setVisibility(View.VISIBLE);
+        }else {
+            view_dot6.setVisibility(View.GONE);
+        }
+
     }
 
     /**

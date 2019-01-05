@@ -204,6 +204,14 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp" />
+
+                    <View
+                        android:id="@+id/view_dot1"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -328,6 +336,13 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp" />
+                    <View
+                        android:id="@+id/view_dot2"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -379,6 +394,13 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp" />
+                    <View
+                        android:id="@+id/view_dot3"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -477,6 +499,14 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp"/>
+
+                    <View
+                        android:id="@+id/view_dot4"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -527,6 +557,13 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp"/>
+                    <View
+                        android:id="@+id/view_dot5"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -576,6 +613,14 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp" />
+                    <View
+                        android:id="@+id/view_dot6"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
+
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -625,6 +670,14 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:textSize="12sp"  />
+                    <View
+                        android:id="@+id/view_dot7"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:visibility="gone"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/dot_bg"/>
+
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"

@@ -152,7 +152,9 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
     private LinearLayout ll_setting;
     private LinearLayout ll_push;
     private TextView tv_lianxibus;
-
+    private View view_dot1;
+    private View view_dot2;
+    private View view_dot3;
 
     @Nullable
     @Override
@@ -263,6 +265,9 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
         tv_pushnum = (TextView) view.findViewById(R.id.tv_pushnum);//推送数量
         ll_push = (LinearLayout) view.findViewById(R.id.ll_push);
         tv_lianxibus = (TextView) view.findViewById(R.id.tv_lianxibus);
+        view_dot1=view.findViewById(R.id.view_dot1);
+        view_dot2=view.findViewById(R.id.view_dot2);
+        view_dot3=view.findViewById(R.id.view_dot3);
     }
 
     /**
@@ -467,6 +472,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
             Hashtable<String, EMConversation> allConversations = EMChatManager.getInstance().getAllConversations();
             if (null != allConversations){
                 message_number.setText(allConversations.size() + "");//获取聊天信息的列表数据
+                isShowMessageDot(allConversations.size() + "");
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -717,6 +723,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                 startActivity(intent0);
                 break;
             case R.id.hot_sales:
+                PreferencesUtils.putString(getContext(), "hot_dot", numberHot);
                 Intent intent = new Intent(getActivity(), HotSalesGoods.class);
                 intent.putExtra("title", "最热门促销");
                 startActivity(intent);
@@ -737,6 +744,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                 Intent intent6 = new Intent(getActivity(), MessageCenterActivity.class);
                 intent6.putExtra("list", result);
                 startActivity(intent6);
+                PreferencesUtils.putString(getContext(), "message_dot", messageHot);
                 break;
             case R.id.jifen_manager://积分返利
                 Intent intent4 = new Intent(getActivity(), PointManagerActivity.class);
@@ -746,6 +754,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                 Intent intent5 = new Intent(getActivity(), OrderCenterCeActivity.class);
                 intent5.putExtra("title", "收货中心");
                 startActivity(intent5);
+                PreferencesUtils.putString(getContext(), "Receipting_dot", ReceiptingHot);
                 break;
             case R.id.rl_rebate://我要返利
                 startActivity(new Intent(getActivity(), RebateApplyCenterCeActivity.class));
@@ -1065,11 +1074,13 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                     if (null != menuNumber) {
                         tv_searchcuxiao.setText(menuNumber.Product);//搜索促销的数据
                         hot.setText(menuNumber.Product);//热门促销
-                        order.setText(menuNumber.Receipting);
+                        order.setText(menuNumber.Receipting);//订单
                         jifen.setText(menuNumber.Point);
                         comment.setText(menuNumber.Favourite);
                         share.setText(menuNumber.Shared);
                         tv_rebate.setText(menuNumber.Rebate);
+                        isShowHotDot(menuNumber.Product);
+                        isReceiptingDot(menuNumber.Receipting);
                     }
                     if (null != builder){
                         builder.dismiss();
@@ -1086,6 +1097,41 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                 }
             }
         });
+    }
+
+
+    String numberHot="";
+    String messageHot="";
+    String ReceiptingHot="";
+    public void isShowHotDot(String hot){
+        numberHot=hot;
+        String number = PreferencesUtils.getString(getContext(), "hot_dot", null);
+        if (hot!=null&&!hot.equals(number)){
+            view_dot1.setVisibility(View.VISIBLE);
+        }else {
+            view_dot1.setVisibility(View.GONE);
+        }
+
+    }
+
+    public void isShowMessageDot(String message){
+        messageHot=message;
+        String number = PreferencesUtils.getString(getContext(), "message_dot", null);
+        if (message!=null&&!message.equals(number)){
+            view_dot2.setVisibility(View.VISIBLE);
+        }else {
+            view_dot2.setVisibility(View.GONE);
+        }
+
+    }
+    public void isReceiptingDot(String Receipting){
+        ReceiptingHot=Receipting;
+        String number = PreferencesUtils.getString(getContext(), "Receipting_dot", null);
+        if (Receipting!=null&&!Receipting.equals(number)){
+            view_dot3.setVisibility(View.VISIBLE);
+        }else {
+            view_dot3.setVisibility(View.GONE);
+        }
     }
 
     /**
