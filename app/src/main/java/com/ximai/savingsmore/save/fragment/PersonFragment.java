@@ -1130,7 +1130,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                     /**
                      * 发布的促销进行语音
                      */
-                    VoiceUtils.getInstance().initmTts(getContext(),"您关注的促销开始了");
+                    VoiceUtils.getInstance().initmTts(getContext(),"您关注商品开始促销了");
 
                 }else if (Constants.FUJIN_BUSINESS.equals(eventName)){//附近商家正在促销
                     businessNum.add(cid.toString());
