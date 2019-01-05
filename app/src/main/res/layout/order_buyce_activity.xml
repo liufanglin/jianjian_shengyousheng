@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollview"
     android:layout_width="match_parent"
@@ -499,7 +499,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="本店其他促销商品"
+                android:text="更多促销商品"
+                android:background="@drawable/button_gray"
+                android:clickable="false"
+                android:padding="5dp"
                 android:textColor="@color/text_black"
                 android:textSize="14sp" />
             <TextView
@@ -645,4 +648,4 @@
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>

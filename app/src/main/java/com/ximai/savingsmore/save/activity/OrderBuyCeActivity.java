@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -178,11 +179,11 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
     private TextView tv_yunsong;
     private TextView tv_songhuo;
     private PayDialog payDialog;//支付dialog
-    private ScrollView scrollview;
+    private NestedScrollView scrollview;
     private RelativeLayout back;
     private LinearLayoutManager mLayoutManager;
     private DefaultItemDecoration mItemDecoration;
-
+    private TextView tvOther;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,8 +205,9 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
          * 将标题隐藏
          */
         toolbar.setVisibility(View.GONE);
+        tvOther= (TextView) findViewById(R.id.tv1);
 
-        scrollview = (ScrollView) findViewById(R.id.scrollview);//scrollview
+        scrollview = (NestedScrollView) findViewById(R.id.scrollview);//scrollview
         back = (RelativeLayout) findViewById(R.id.back);
         name = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);
@@ -350,6 +352,7 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
      * inti - event
      */
     public void initEvent(){
+        tvOther.setOnClickListener(this);
         more_good.setOnClickListener(this);
         rl_liuyan.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -498,6 +501,24 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.tv1:
+                iv_iszhangkai.setImageResource(R.mipmap.shouqi);
+                orderBuyAdapter.setIsMoreGood(true);
+                orderBuyAdapter.notifyDataSetChanged();
+//                if (isZhangKai == false){
+//                    iv_iszhangkai.setImageResource(R.mipmap.shouqi);
+//                    orderBuyAdapter.setIsMoreGood(true);
+//                    orderBuyAdapter.notifyDataSetChanged();
+//                    isZhangKai = true;
+//                }else{
+//                    iv_iszhangkai.setImageResource(R.mipmap.zhankai);
+//                    hot_up.setVisibility(View.GONE);
+//                    orderBuyAdapter.setIsMoreGood(false);
+//                    orderBuyAdapter.notifyDataSetChanged();
+//                    isZhangKai = false;
+//                }
+
+                break;
             case R.id.more_good://差看更多
                 if (isZhangKai == false){
                     iv_iszhangkai.setImageResource(R.mipmap.shouqi);
@@ -617,7 +638,7 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
                 }
                 break;
             case R.id.hot_sales:
-                more_good.setVisibility(View.VISIBLE);
+                more_good.setVisibility(View.GONE);
                 iv_iszhangkai.setImageResource(R.mipmap.zhankai);
                 tv_iszhangkai.setText("更多促销商品");
                 hot_up.setVisibility(View.GONE);
@@ -812,7 +833,9 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
                         }
                         orderBuyAdapter.setData(list_good);
                         if (list_good.size() > 2) {
-                            more_good.setVisibility(View.VISIBLE);
+                            tvOther.setBackgroundResource(R.drawable.button_sharp);
+                            tvOther.setClickable(true);
+                            more_good.setVisibility(View.GONE);
                         }
                         orderBuyAdapter.notifyDataSetChanged();
                     }
