@@ -475,7 +475,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="销量"
+                    android:text="最多关注"
                     android:textSize="14sp"
                     android:textColor="@color/text_black" />
                 <ImageView
@@ -512,7 +512,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="价格"
+                    android:text="最低价格"
                     android:textSize="14sp"
                     android:textColor="@color/text_black" />
                 <ImageView
@@ -549,7 +549,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="促销日期"
+                    android:text="最快结束"
                     android:textSize="14sp"
                     android:textColor="@color/text_black" />
                 <ImageView
@@ -585,7 +585,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="距离"
+                    android:text="最近距离"
                     android:textSize="14sp"
                     android:textColor="@color/text_black" />
                 <ImageView

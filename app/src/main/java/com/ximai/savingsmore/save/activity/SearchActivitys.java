@@ -1063,6 +1063,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         iv_xiaoliang.setBackgroundResource(R.mipmap.up3);
                     }
                 }
+                cen_title.setText("同品对比-人气");
                 break;
             //价格排序
             case R.id.jiage:
@@ -1091,6 +1092,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         iv_jiage.setBackgroundResource(R.mipmap.up3);
                     }
                 }
+                cen_title.setText("同品对比-价格");
                 break;
             //日期排序
             case R.id.riqi:
@@ -1139,6 +1141,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         iv_riqi.setBackgroundResource(R.mipmap.up3);
                     }
                 }
+                cen_title.setText("同品对比-时间");
+
                 break;
             //距离排序
             case R.id.juli:
@@ -1167,6 +1171,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         iv_juli.setBackgroundResource(R.mipmap.up3);
                     }
                 }
+                cen_title.setText("同品对比-距离");
+
                 break;
                 default:
                     break;
