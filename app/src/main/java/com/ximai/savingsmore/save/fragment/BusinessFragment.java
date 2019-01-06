@@ -347,6 +347,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
             Hashtable<String, EMConversation> allConversations = EMChatManager.getInstance().getAllConversations();
             if (null != allConversations){
                 message_number.setText(allConversations.size() + "");//获取消息的聊天列表
+                isshow3(allConversations.size() + "");
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -407,6 +408,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.search://谁咋促销
+                PreferencesUtils.putString(getContext(),"cuxiaoNumHot_dot_buss",cuxiaoNumHot);
                 Intent intent1 = new Intent(getActivity(), SearchActivitys.class);
                 startActivity(intent1);
                 break;
@@ -435,24 +437,32 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.comment_center://评论汇总
+                PreferencesUtils.putString(getContext(),"pinjiaNum_dot_buss",pinjiaNumHot);
+
                 Intent intent4 = new Intent(getActivity(), MyCommentCenterActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.message_center://消息中心
+                PreferencesUtils.putString(getContext(),"kehuduihuaNum_dot_buss",kehuduihuaNumHot);
+
                 Intent intent6 = new Intent(getActivity(), MessageCenterActivity.class);
                 intent6.putExtra("list", result);
                 startActivity(intent6);
                 break;
             case R.id.order_center://订单中心
+                PreferencesUtils.putString(getContext(),"orderNum_dot_buss",orderNumHot);
                 Intent intent7 = new Intent(getActivity(), OrderCenterCeActivity.class);
                 intent7.putExtra("title", "订单中心");
                 startActivity(intent7);
                 break;
             case R.id.collect://收藏汇总
+                PreferencesUtils.putString(getContext(),"collectNum_dot_buss",collectNumHot);
+
                 Intent intent8 = new Intent(getActivity(), CollectionAllAcitvity.class);
                 startActivity(intent8);
                 break;
             case R.id.liulan://分享汇总
+                PreferencesUtils.putString(getContext(),"shareNum_dot_buss",shareNumHot);
                 Intent intent9 = new Intent(getActivity(), BrowseActivity.class);
                 startActivity(intent9);
                 break;
@@ -479,6 +489,8 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.rl_liulan://浏览汇总
+                PreferencesUtils.putString(getContext(),"liulanNum_dot_buss",liulanNumHot);
+
                 Intent intent10 = new Intent(getActivity(), LookThroughActivity.class);
                 startActivity(intent10);
                 break;
@@ -559,6 +571,12 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                         liulan_number.setText(menuNumber.Shared);//分享
                         collect_number.setText(menuNumber.Favourite);//收藏数量
                         tv_liulan.setText(menuNumber.Hit);//浏览汇总
+                        isshow1(menuNumber.Receipting);
+                        isshow2(menuNumber.TotalProduct);
+                        isshow4(menuNumber.Comment);
+                        isshow5(menuNumber.Shared);
+                        isshow6(menuNumber.Favourite);
+                        isshow7(menuNumber.Hit);
 //                        tv_usergroup.setText(menuNumber.NormalUserCount);//显示客户总人数-------
                         if (true == menuNumber.ProductRedPacket){//发布商品是否有未打开的红包
                             iv_fbcxreward.setBackgroundResource(R.mipmap.iv_shang);
@@ -593,6 +611,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     String cuxiaoNumHot="";
     String pinjiaNumHot="";
     String kehuduihuaNumHot="";
+    String shareNumHot="";
     String collectNumHot="";
     String liulanNumHot="";
     public void isshow1(String orderNum){
@@ -634,23 +653,34 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
         }
 
     }
-    public void isshow5(String collectNum){
-        collectNumHot=collectNum;
-        String number = PreferencesUtils.getString(getContext(), "collectNum_dot_buss", null);
-        if (collectNum!=null&&!collectNum.equals(number)){
+    public void isshow5(String shareNum){
+        shareNumHot=shareNum;
+        String number = PreferencesUtils.getString(getContext(), "shareNum_dot_buss", null);
+        if (shareNum!=null&&!shareNum.equals(number)){
             view_dot5.setVisibility(View.VISIBLE);
         }else {
             view_dot5.setVisibility(View.GONE);
         }
 
     }
-    public void isshow6(String liulanNum){
-        liulanNumHot=liulanNum;
-        String number = PreferencesUtils.getString(getContext(), "liulanNum_dot_buss", null);
-        if (liulanNum!=null&&!liulanNum.equals(number)){
+
+    public void isshow6(String collectNum){
+        collectNumHot=collectNum;
+        String number = PreferencesUtils.getString(getContext(), "collectNum_dot_buss", null);
+        if (collectNum!=null&&!collectNum.equals(number)){
             view_dot6.setVisibility(View.VISIBLE);
         }else {
             view_dot6.setVisibility(View.GONE);
+        }
+
+    }
+    public void isshow7(String liulanNum){
+        liulanNumHot=liulanNum;
+        String number = PreferencesUtils.getString(getContext(), "liulanNum_dot_buss", null);
+        if (liulanNum!=null&&!liulanNum.equals(number)){
+            view_dot7.setVisibility(View.VISIBLE);
+        }else {
+            view_dot7.setVisibility(View.GONE);
         }
 
     }
