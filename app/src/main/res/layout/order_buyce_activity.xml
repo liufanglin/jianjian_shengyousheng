@@ -503,7 +503,7 @@
                 android:background="@drawable/button_gray"
                 android:clickable="false"
                 android:padding="5dp"
-                android:textColor="@color/text_black"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
             <TextView
                 android:id="@+id/tv_cuxiaojia"

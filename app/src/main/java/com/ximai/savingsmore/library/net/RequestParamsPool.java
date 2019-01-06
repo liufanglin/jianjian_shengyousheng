@@ -239,6 +239,37 @@ public class RequestParamsPool {
      * 得到所有商品 - 目前搜索商品
      * @return
      */
+    public static StringEntity getAllGoods(String Radius,String Longitude, String Latitude) {
+        JSONObject object = new JSONObject();
+        JSONObject object1 = new JSONObject();
+        try {
+            object.put("PageNo", 1);
+            object.put("PageSize", 1000);
+            object1.put("PageParameter", object);
+            object1.put("IsPromotion", true);//是否是在促销日期中的
+            object1.put("Radius", Radius);
+            object1.put("Longitude", Longitude);
+            //是否是产品还是服务
+            object1.put("Latitude", Latitude);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        StringEntity stringEntity = null;
+        try {
+            // stringEntity  = new StringEntity("{\"Keyword\":\"你\",\"PageParameter\":{\"PageSize\":10,\"PageNo\":1}}");
+            stringEntity = new StringEntity(object1.toString(), MyAsyncHttpResponseHandler.DEFAULT_CHARSET);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return stringEntity;
+    }
+
+
+    /**
+     * 得到所有商品 - 目前搜索商品
+     * @return
+     */
     public static StringEntity getAllGoodsNoIsBag(String Provice,String CityId,String Keyword ,String FirstClassId) {
         JSONObject object = new JSONObject();
         JSONObject object1 = new JSONObject();

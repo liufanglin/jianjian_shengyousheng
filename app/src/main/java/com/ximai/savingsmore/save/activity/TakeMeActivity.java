@@ -8,6 +8,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,17 +20,26 @@ import android.widget.Toast;
 import com.easemob.easeui.EaseConstant;
 import com.luck.picture.lib.tools.Constant;
 import com.ximai.savingsmore.R;
+import com.ximai.savingsmore.library.net.MyAsyncHttpResponseHandler;
+import com.ximai.savingsmore.library.net.RequestParamsPool;
+import com.ximai.savingsmore.library.net.URLText;
+import com.ximai.savingsmore.library.net.WebRequestHelper;
+import com.ximai.savingsmore.library.toolbox.GsonUtils;
+import com.ximai.savingsmore.save.adapter.SearchBussGoodsAdapter;
 import com.ximai.savingsmore.save.common.BaseActivity;
 import com.ximai.savingsmore.save.common.BaseApplication;
 import com.ximai.savingsmore.save.modle.AppInfo;
 import com.ximai.savingsmore.save.modle.BusinessMessage;
 import com.ximai.savingsmore.save.modle.GoodDetial;
+import com.ximai.savingsmore.save.modle.Goods;
+import com.ximai.savingsmore.save.modle.GoodsList;
 import com.ximai.savingsmore.save.modle.Location;
 import com.ximai.savingsmore.save.modle.MyUserInfoUtils;
 import com.ximai.savingsmore.save.modle.User;
 import com.ximai.savingsmore.save.modle.UserExtInfo;
 import com.ximai.savingsmore.save.utils.APPUtil;
 import com.ximai.savingsmore.save.utils.CallBack.DialogCallBack;
+import com.ximai.savingsmore.save.view.FullyLinearLayoutManager;
 import com.ximai.savingsmore.save.view.SelectCarPopupWindow;
 import com.ximai.savingsmore.save.view.SelectPopupWindow;
 import com.ximai.savingsmore.save.view.XiMaiPopDialog;
@@ -40,7 +51,10 @@ import com.yanzhenjie.permission.PermissionListener;
 import com.yanzhenjie.permission.Rationale;
 import com.yanzhenjie.permission.RationaleListener;
 
+import org.apache.http.Header;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -75,6 +89,11 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
 //    private TakeMeJiaoCheDialog takeMeJiaoCheDialog;
     private String isMuBiaoClick;//1不是目标位置 2是目标位置点击
     private SelectCarPopupWindow selectCarPopupWindow;
+    private RecyclerView recycle_view_shangping;
+    private TextView tv_look;
+    private SearchBussGoodsAdapter searchBussGoodsAdapter;
+    private List<Goods> listGoods = new ArrayList<>();
+
     // new Location(30.862644, 103.663077, "e");
 
     @Override
@@ -109,6 +128,32 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         tv_addressmsg = (TextView) findViewById(R.id.tv_addressmsg);
         ll_car = (LinearLayout) findViewById(R.id.ll_car);//叫车
         tv_store_people= (TextView) findViewById(R.id.tv_store_people);
+        tv_look= (TextView) findViewById(R.id.tv_look);
+        recycle_view_shangping = (RecyclerView) findViewById(R.id.recycle_view_shangping);
+        initRecycleView(recycle_view_shangping);
+        searchBussGoodsAdapter = new SearchBussGoodsAdapter(this);
+        tv_look.setOnClickListener(this);
+
+
+    }
+
+    /**
+     * 配置recycleview
+     */
+    private void initRecycleView(RecyclerView recyclerView) {
+        FullyLinearLayoutManager myLayoutManager = new FullyLinearLayoutManager(this) {
+            @Override
+            public boolean canScrollVertically() {
+                return true;
+            }
+        };
+        myLayoutManager.setOrientation(FullyLinearLayoutManager.VERTICAL);
+        configRecycleView(recyclerView, myLayoutManager);
+    }
+    private void configRecycleView(RecyclerView recyclerView, RecyclerView.LayoutManager layoutManager) {
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
     /**
@@ -218,6 +263,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
             loc_end = new Location(Double.parseDouble(user.Latitude), Double.parseDouble(user.Longitude));
             loc_now = new Location(BaseApplication.getInstance().Longitude, BaseApplication.getInstance().Latitude);
             System.out.print("=====================================");
+            getAllGoods("500",user.Longitude,user.Latitude);
         } else if (null != businessMessage && null != userExtInfo) {
             Store_name.setText(businessMessage.ShowName);
             phone_number.setText(userExtInfo.PhoneNumber);
@@ -261,6 +307,8 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
             System.out.print(BaseApplication.getInstance().Latitude);
             System.out.print("------------------------------------------");//打印地图坐标信息
             loc_now = new Location(BaseApplication.getInstance().Longitude, BaseApplication.getInstance().Latitude);
+            getAllGoods("500",businessMessage.Longitude,businessMessage.Latitude);
+
         }
         baidu = APPUtil.getAppInfoByPak(TakeMeActivity.this, "com.baidu.BaiduMap");//判断手机上是否安装地图
         gaode = APPUtil.getAppInfoByPak(TakeMeActivity.this, "com.autonavi.minimap");//判断手机上是否安装地图
@@ -401,6 +449,10 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
             case R.id.ll_car://叫车 - 进行弹框选择
                 selectCarPopupWindow = new SelectCarPopupWindow(TakeMeActivity.this, itemsCarOnClick);
                 selectCarPopupWindow.showAtLocation(ll_walk);
+                break;
+            case R.id.tv_look:
+                recycle_view_shangping.setVisibility(View.VISIBLE);
+                tv_look.setBackgroundResource(R.drawable.button_gray);
                 break;
         }
     }
@@ -739,4 +791,38 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
             Toast.makeText(TakeMeActivity.this, "地址解析错误", Toast.LENGTH_SHORT).show();
         }
     }
+    private GoodsList goodsList = new GoodsList();
+
+    /**
+     * 得到所有的商品 ----   添加是产品还是服务
+     */
+    private void getAllGoods(String Radius,String Longitude, String Latitude) {
+        WebRequestHelper.json_post(this, URLText.GET_GOODS,
+                RequestParamsPool.getAllGoods(Radius,Longitude, Latitude), new MyAsyncHttpResponseHandler(TakeMeActivity.this) {
+                    @Override
+                    public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
+                        String resule = new String(responseBody);
+                        try {
+                            listGoods.clear();//先将数据进行清除
+
+                            goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
+                            listGoods.addAll(goodsList.MainData);
+                            if (listGoods.size() == 0){
+                                tv_look.setVisibility(View.GONE);
+                                recycle_view_shangping.setVisibility(View.GONE);
+                            }else{
+                                tv_look.setVisibility(View.VISIBLE);
+                                searchBussGoodsAdapter.setData(listGoods);
+                                recycle_view_shangping.setAdapter(searchBussGoodsAdapter);
+                                searchBussGoodsAdapter.notifyDataSetChanged();
+                            }
+
+                        }catch (Exception e){
+                            e.printStackTrace();
+
+                        }
+                    }
+                });
+    }
+
 }
