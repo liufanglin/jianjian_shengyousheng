@@ -1106,7 +1106,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
     public void isShowHotDot(String hot){
         numberHot=hot;
         String number = PreferencesUtils.getString(getContext(), "hot_dot", null);
-        if (hot!=null&&!hot.equals(number)){
+        if (hot!=null&&!hot.equals("0")&&!hot.equals(number)){
             view_dot1.setVisibility(View.VISIBLE);
         }else {
             view_dot1.setVisibility(View.GONE);
@@ -1117,7 +1117,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
     public void isShowMessageDot(String message){
         messageHot=message;
         String number = PreferencesUtils.getString(getContext(), "message_dot", null);
-        if (message!=null&&!message.equals(number)){
+        if (message!=null&&!message.equals("0")&&!message.equals(number)){
             view_dot2.setVisibility(View.VISIBLE);
         }else {
             view_dot2.setVisibility(View.GONE);
@@ -1127,7 +1127,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
     public void isReceiptingDot(String Receipting){
         ReceiptingHot=Receipting;
         String number = PreferencesUtils.getString(getContext(), "Receipting_dot", null);
-        if (Receipting!=null&&!Receipting.equals(number)){
+        if (Receipting!=null&&!Receipting.equals("0")&&!Receipting.equals(number)){
             view_dot3.setVisibility(View.VISIBLE);
         }else {
             view_dot3.setVisibility(View.GONE);

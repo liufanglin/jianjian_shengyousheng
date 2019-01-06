@@ -617,7 +617,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow1(String orderNum){
         orderNumHot=orderNum;
         String number = PreferencesUtils.getString(getContext(), "orderNum_dot_buss", null);
-        if (orderNum!=null&&!orderNum.equals(number)){
+        if (orderNum!=null&&!orderNum.equals("0")&&!orderNum.equals(number)){
             view_dot1.setVisibility(View.VISIBLE);
         }else {
             view_dot1.setVisibility(View.GONE);
@@ -626,7 +626,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow2(String cuxiaoNum){
         cuxiaoNumHot=cuxiaoNum;
         String number = PreferencesUtils.getString(getContext(), "cuxiaoNumHot_dot_buss", null);
-        if (cuxiaoNum!=null&&!cuxiaoNum.equals(number)){
+        if (cuxiaoNum!=null&&!cuxiaoNum.equals("0")&&!cuxiaoNum.equals(number)){
             view_dot2.setVisibility(View.VISIBLE);
         }else {
             view_dot2.setVisibility(View.GONE);
@@ -636,7 +636,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow3(String kehuduihuaNum){
         kehuduihuaNumHot=kehuduihuaNum;
         String number = PreferencesUtils.getString(getContext(), "kehuduihuaNum_dot_buss", null);
-        if (kehuduihuaNum!=null&&!kehuduihuaNum.equals(number)){
+        if (kehuduihuaNum!=null&&!kehuduihuaNum.equals("0")&&!kehuduihuaNum.equals(number)){
             view_dot3.setVisibility(View.VISIBLE);
         }else {
             view_dot3.setVisibility(View.GONE);
@@ -646,7 +646,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow4(String pinjiaNum){
         pinjiaNumHot=pinjiaNum;
         String number = PreferencesUtils.getString(getContext(), "pinjiaNum_dot_buss", null);
-        if (pinjiaNum!=null&&!pinjiaNum.equals(number)){
+        if (pinjiaNum!=null&&!pinjiaNum.equals("0")&&!pinjiaNum.equals(number)){
             view_dot4.setVisibility(View.VISIBLE);
         }else {
             view_dot4.setVisibility(View.GONE);
@@ -656,7 +656,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow5(String shareNum){
         shareNumHot=shareNum;
         String number = PreferencesUtils.getString(getContext(), "shareNum_dot_buss", null);
-        if (shareNum!=null&&!shareNum.equals(number)){
+        if (shareNum!=null&&!shareNum.equals("0")&&!shareNum.equals(number)){
             view_dot5.setVisibility(View.VISIBLE);
         }else {
             view_dot5.setVisibility(View.GONE);
@@ -667,7 +667,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow6(String collectNum){
         collectNumHot=collectNum;
         String number = PreferencesUtils.getString(getContext(), "collectNum_dot_buss", null);
-        if (collectNum!=null&&!collectNum.equals(number)){
+        if (collectNum!=null&&!collectNum.equals("0")&&!collectNum.equals(number)){
             view_dot6.setVisibility(View.VISIBLE);
         }else {
             view_dot6.setVisibility(View.GONE);
@@ -677,7 +677,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
     public void isshow7(String liulanNum){
         liulanNumHot=liulanNum;
         String number = PreferencesUtils.getString(getContext(), "liulanNum_dot_buss", null);
-        if (liulanNum!=null&&!liulanNum.equals(number)){
+        if (liulanNum!=null&&!liulanNum.equals("0")&&!liulanNum.equals(number)){
             view_dot7.setVisibility(View.VISIBLE);
         }else {
             view_dot7.setVisibility(View.GONE);
