@@ -93,6 +93,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
     private TextView tv_look;
     private SearchBussGoodsAdapter searchBussGoodsAdapter;
     private List<Goods> listGoods = new ArrayList<>();
+    public boolean isShow=false;
 
     // new Location(30.862644, 103.663077, "e");
 
@@ -451,8 +452,16 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
                 selectCarPopupWindow.showAtLocation(ll_walk);
                 break;
             case R.id.tv_look:
-                recycle_view_shangping.setVisibility(View.VISIBLE);
-                tv_look.setBackgroundResource(R.drawable.button_gray);
+                if (isShow){
+                    isShow=false;
+                    recycle_view_shangping.setVisibility(View.GONE);
+                    tv_look.setBackgroundResource(R.drawable.button_sharp);
+                }else {
+                    isShow=true;
+                    recycle_view_shangping.setVisibility(View.VISIBLE);
+                    tv_look.setBackgroundResource(R.drawable.button_gray);
+                }
+
                 break;
         }
     }

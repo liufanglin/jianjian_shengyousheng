@@ -124,7 +124,7 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
     private SwipeMenuRecyclerView recycleview_buygoods;
     private OrderBuyChooseAdapter orderBuyChooseAdapter;//选中的需要购买的商品
     private boolean isZhangKai = false;//是否是张开
-
+    private boolean isShow=false;
     private String NoPayOrder = "";
 
     /**
@@ -502,9 +502,22 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv1:
-                iv_iszhangkai.setImageResource(R.mipmap.shouqi);
-                orderBuyAdapter.setIsMoreGood(true);
-                orderBuyAdapter.notifyDataSetChanged();
+
+                if (isShow){
+                    tvOther.setBackgroundResource(R.drawable.button_sharp);
+                    orderBuyAdapter.setIsMoreGood(false);
+                    orderBuyAdapter.notifyDataSetChanged();
+                    isShow=false;
+                }else {
+                    tvOther.setBackgroundResource(R.drawable.button_gray);
+                    orderBuyAdapter.setIsMoreGood(true);
+                    orderBuyAdapter.notifyDataSetChanged();
+                    isShow=true;
+                }
+
+//                iv_iszhangkai.setImageResource(R.mipmap.shouqi);
+//                orderBuyAdapter.setIsMoreGood(true);
+//                orderBuyAdapter.notifyDataSetChanged();
 //                if (isZhangKai == false){
 //                    iv_iszhangkai.setImageResource(R.mipmap.shouqi);
 //                    orderBuyAdapter.setIsMoreGood(true);
@@ -835,7 +848,11 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
                         if (list_good.size() > 2) {
                             tvOther.setBackgroundResource(R.drawable.button_sharp);
                             tvOther.setClickable(true);
+                            isShow=false;
                             more_good.setVisibility(View.GONE);
+                        }else {
+                            tvOther.setClickable(false);
+
                         }
                         orderBuyAdapter.notifyDataSetChanged();
                     }

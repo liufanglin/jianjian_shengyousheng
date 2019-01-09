@@ -42,6 +42,7 @@ import com.ximai.savingsmore.save.utils.PrefUtils;
 import com.ximai.savingsmore.save.view.KyLoadingBuilder;
 import com.ximai.savingsmore.save.view.SelectSearchPopupWindow;
 import com.ximai.savingsmore.save.view.XiMaiPopDialog;
+import com.ximai.savingsmore.save.view.imagepicker.Utils;
 
 import org.apache.http.Header;
 import org.apache.http.entity.StringEntity;
@@ -450,6 +451,18 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
             }
             if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)){
                 viewHodel.end_time.setText(list.get(position).EndTimeName.substring(0,10));
+                try {
+                    long time= Utils.dateToStamp(list.get(position).EndTimeName)-System.currentTimeMillis();
+                    if (time<3*24*60*60*1000&&time>0){
+                        Glide.with(SearchResultActivity.this).load(R.mipmap.end_time_git).into(viewHodel.iv_endtime);
+                        viewHodel.iv_endtime.setVisibility(View.VISIBLE);
+                    }else {
+                        viewHodel.iv_endtime.setVisibility(View.GONE);
+
+                    }
+                }catch (Exception e){
+
+                }
             }
             if (TextUtils.isEmpty(list.get(position).SaleCount)||"0".equals(list.get(position).SaleCount)){
                 viewHodel.tv_volume.setVisibility(View.GONE);
@@ -495,6 +508,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
         private TextView tv_lookthroughs;
         public TextView tv_store_count;
         public TextView tv_care;
+        public ImageView iv_endtime;
 
         public MyViewHodel(View itemView, final OnItemClickEventListener lis) {
             super(itemView);
@@ -515,6 +529,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
             tv_care= (TextView) itemView.findViewById(R.id.tv_care);
+            iv_endtime= (ImageView) itemView.findViewById(R.id.iv_endtime);
 
 
             if (null != lis) {
