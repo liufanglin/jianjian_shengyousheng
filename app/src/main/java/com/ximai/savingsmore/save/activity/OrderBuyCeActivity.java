@@ -256,8 +256,8 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
         /**
          * 默认设置更多数据的指示方向
          */
-        iv_iszhangkai.setImageResource(R.mipmap.zhankai);
-        tv_iszhangkai.setText("更多促销商品");
+    //    iv_iszhangkai.setImageResource(R.mipmap.zhankai);
+      //  tv_iszhangkai.setText("更多促销商品");
 
         goodDetial = (GoodDetial) getIntent().getSerializableExtra("good");
 
@@ -508,10 +508,12 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
                     orderBuyAdapter.setIsMoreGood(false);
                     orderBuyAdapter.notifyDataSetChanged();
                     isShow=false;
+                    more_good.setVisibility(View.GONE);
                 }else {
                     tvOther.setBackgroundResource(R.drawable.button_gray);
                     orderBuyAdapter.setIsMoreGood(true);
                     orderBuyAdapter.notifyDataSetChanged();
+                    more_good.setVisibility(View.VISIBLE);
                     isShow=true;
                 }
 
@@ -533,22 +535,27 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
 
                 break;
             case R.id.more_good://差看更多
-                if (isZhangKai == false){
-                    iv_iszhangkai.setImageResource(R.mipmap.shouqi);
-                    tv_iszhangkai.setText("收起");
-                    orderBuyAdapter.setIsMoreGood(true);
-                    orderBuyAdapter.notifyDataSetChanged();
-                    more_good.setVisibility(View.VISIBLE);
-                    hot_up.setVisibility(View.VISIBLE);
-                    isZhangKai = true;
-                }else{
-                    iv_iszhangkai.setImageResource(R.mipmap.zhankai);
-                    tv_iszhangkai.setText("更多促销商品");
-                    hot_up.setVisibility(View.GONE);
-                    orderBuyAdapter.setIsMoreGood(false);
-                    orderBuyAdapter.notifyDataSetChanged();
-                    isZhangKai = false;
-                }
+//                if (isZhangKai == false){
+//                    iv_iszhangkai.setImageResource(R.mipmap.shouqi);
+//             //       tv_iszhangkai.setText("收起");
+//                    orderBuyAdapter.setIsMoreGood(true);
+//                    orderBuyAdapter.notifyDataSetChanged();
+//                    more_good.setVisibility(View.VISIBLE);
+//                    hot_up.setVisibility(View.VISIBLE);
+//                    isZhangKai = true;
+//                }else{
+//                    iv_iszhangkai.setImageResource(R.mipmap.zhankai);
+//              //      tv_iszhangkai.setText("更多促销商品");
+//                    hot_up.setVisibility(View.GONE);
+//                    orderBuyAdapter.setIsMoreGood(false);
+//                    orderBuyAdapter.notifyDataSetChanged();
+//                    isZhangKai = false;
+//                }
+                tvOther.setBackgroundResource(R.drawable.button_sharp);
+                more_good.setVisibility(View.GONE);
+                orderBuyAdapter.setIsMoreGood(false);
+                orderBuyAdapter.notifyDataSetChanged();
+                isShow=false;
                 break;
             case R.id.rl_liuyan://给商家留言
                 if (beizhu.getVisibility() == View.GONE) {
@@ -652,8 +659,8 @@ public class OrderBuyCeActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.hot_sales:
                 more_good.setVisibility(View.GONE);
-                iv_iszhangkai.setImageResource(R.mipmap.zhankai);
-                tv_iszhangkai.setText("更多促销商品");
+           //     iv_iszhangkai.setImageResource(R.mipmap.zhankai);
+             //   tv_iszhangkai.setText("更多促销商品");
                 hot_up.setVisibility(View.GONE);
                 orderBuyAdapter.setIsMoreGood(false);
                 orderBuyAdapter.notifyDataSetChanged();

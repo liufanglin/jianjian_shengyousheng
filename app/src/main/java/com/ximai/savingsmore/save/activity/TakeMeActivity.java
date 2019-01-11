@@ -330,6 +330,23 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         ll_car.setOnClickListener(this);
         mubiao_location.setOnClickListener(this);
         more_good.setOnClickListener(this);
+        searchBussGoodsAdapter.setViewClickListener(new SearchBussGoodsAdapter.OnItemClickListener() {
+            @Override
+            public void onViewClcik(int postion, String id) {
+                if (null != listGoods  && listGoods.size() > 0){
+                    if (com.ximai.savingsmore.save.modle.LoginUser.getInstance().isLogin()) {
+                        Intent intent=new Intent(TakeMeActivity.this,GoodDetailsActivity.class);
+                        intent.putExtra("id",listGoods.get(postion).Id);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(TakeMeActivity.this, "温馨提示,您还没有登录", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(TakeMeActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
+        });
     }
 
     /**
@@ -457,6 +474,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.tv_look:
                 if (isShow){
+                    more_good.setVisibility(View.GONE);
                     isShow=false;
                     recycle_view_shangping.setVisibility(View.GONE);
                     tv_look.setBackgroundResource(R.drawable.button_sharp);

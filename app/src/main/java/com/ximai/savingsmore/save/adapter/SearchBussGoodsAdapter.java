@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.ximai.savingsmore.R;
 import com.ximai.savingsmore.library.net.URLText;
 import com.ximai.savingsmore.save.modle.Goods;
+import com.ximai.savingsmore.save.view.imagepicker.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,6 +119,19 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
 
             if (null != list.get(position).EndTimeName && !TextUtils.isEmpty(list.get(position).EndTimeName)){
                 holder.end_time.setText(list.get(position).EndTimeName.substring(0,10));
+                try {
+                    long time= Utils.dateToStamp(list.get(position).EndTimeName)-System.currentTimeMillis();
+                    if (time<3*24*60*60*1000&&time>0){
+                        Glide.with(context).load(R.mipmap.end_time_git).into(holder.iv_endtime);
+                        holder.iv_endtime.setVisibility(View.VISIBLE);
+                    }else {
+                        holder.iv_endtime.setVisibility(View.GONE);
+
+                    }
+                }catch (Exception e){
+
+                }
+
             }
             if (null == list.get(position).SaleCount){//销量
                 holder.tv_volume.setVisibility(View.GONE);
@@ -157,7 +171,7 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
         private TextView statr_time;
         private TextView end_time;
         private TextView tv_volume;
-        private ImageView image;
+        private ImageView image,iv_endtime;
 
         private TextView name;
         private TextView tv_price;
@@ -186,6 +200,8 @@ public class SearchBussGoodsAdapter extends RecyclerView.Adapter<SearchBussGoods
             tv_agoprice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             tv_store_count= (TextView) itemView.findViewById(R.id.tv_store_count);
             tv_care= (TextView) itemView.findViewById(R.id.tv_care);
+            iv_endtime= (ImageView) itemView.findViewById(R.id.iv_endtime);
+
         }
     }
 
