@@ -64,10 +64,11 @@ import java.util.List;
 public class TakeMeActivity extends BaseActivity implements View.OnClickListener {
     private TextView Store_name;
     private TextView phone_number;
-    private ImageView send_message, call;
+    private ImageView send_message, call,iv_iszhangkai;
     private TextView location;
     private TextView yingye_time;
     private TextView is_yingye;
+    private LinearLayout more_good;
     private User user;
     private UserExtInfo userExtInfo;
     private LinearLayout ll_walk, ll_bus, ll_talk;
@@ -131,6 +132,8 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         tv_store_people= (TextView) findViewById(R.id.tv_store_people);
         tv_look= (TextView) findViewById(R.id.tv_look);
         recycle_view_shangping = (RecyclerView) findViewById(R.id.recycle_view_shangping);
+        more_good= (LinearLayout) findViewById(R.id.more_good);
+        iv_iszhangkai= (ImageView) findViewById(R.id.iv_iszhangkai);
         initRecycleView(recycle_view_shangping);
         searchBussGoodsAdapter = new SearchBussGoodsAdapter(this);
         tv_look.setOnClickListener(this);
@@ -326,6 +329,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         send_message.setOnClickListener(this);
         ll_car.setOnClickListener(this);
         mubiao_location.setOnClickListener(this);
+        more_good.setOnClickListener(this);
     }
 
     /**
@@ -457,12 +461,19 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
                     recycle_view_shangping.setVisibility(View.GONE);
                     tv_look.setBackgroundResource(R.drawable.button_sharp);
                 }else {
+                    more_good.setVisibility(View.VISIBLE);
                     isShow=true;
                     recycle_view_shangping.setVisibility(View.VISIBLE);
                     tv_look.setBackgroundResource(R.drawable.button_gray);
                 }
-
                 break;
+            case R.id.more_good:
+                isShow=false;
+                recycle_view_shangping.setVisibility(View.GONE);
+                tv_look.setBackgroundResource(R.drawable.button_sharp);
+                more_good.setVisibility(View.GONE);
+                break;
+
         }
     }
 
