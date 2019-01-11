@@ -84,7 +84,7 @@ public class BaseApplication extends Application {
         //  ShareSDK.initSDK(this);
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
-
+        String ss=JPushInterface.getRegistrationID(this);
 
         //项目初始化，文件系统，缓存，网络,数据库等
         CoreJob.init(getApplicationContext());

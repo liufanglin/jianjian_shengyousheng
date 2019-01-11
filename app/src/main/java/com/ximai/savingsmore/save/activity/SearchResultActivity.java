@@ -230,6 +230,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.zhekou:
+                setCenterTitle("同品对比-人气");
                 if (IsRebateDesc == null) {
                     IsRebateDesc = false;
                 }
@@ -253,6 +254,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 }
                 break;
             case R.id.jiage://价格
+                setCenterTitle("同品对比-价格");
+
                 if (IsPriceDesc == null) {
                     IsPriceDesc = false;
                 }
@@ -276,6 +279,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 }
                 break;
             case R.id.riqi://日期
+                setCenterTitle("同品对比-时间");
                 if (IsStartTimeDesc == null) {
                     IsStartTimeDesc = false;
                 }
@@ -299,6 +303,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 }
                 break;
             case R.id.juli://距离
+                setCenterTitle("同品对比-距离");
+
                 if (IsDistanceDesc == null) {
                     IsDistanceDesc = false;
                 }

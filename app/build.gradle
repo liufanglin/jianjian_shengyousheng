@@ -17,6 +17,17 @@ android {
         targetSdkVersion 25
         versionCode 46
         versionName "3.5.7"
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "91457d6b413e12fd4e21d65f", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         debug {
@@ -81,13 +92,9 @@ dependencies {
     compile files('libs/MobTools-2016.1107.1809.jar')
     compile files('libs/ShareSDK-Core-2.7.10.jar')
     //    compile files('libs/ShareSDK-Email-2.7.10.jar')
-
     //    compile files('libs/ShareSDK-Facebook-2.7.10.jar')
-
     //    compile files('libs/ShareSDK-ShortMessage-2.7.10.jar')
-
     //    compile files('libs/ShareSDK-TencentWeibo-2.7.10.jar')
-
     //    compile files('libs/ShareSDK-Twitter-2.7.10.jar')
     compile files('libs/ShareSDK-QQ-2.7.10.jar')
     compile files('libs/ShareSDK-QZone-2.7.10.jar')
@@ -96,8 +103,6 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-Core-2.7.10.jar')
     compile files('libs/ShareSDK-Wechat-Favorite-2.7.10.jar')
     compile files('libs/ShareSDK-Wechat-Moments-2.7.10.jar')
-    compile files('libs/jcore-android_v1.0.0.jar')
-    compile files('libs/jpush-android_v3.0.0.jar')
     compile 'com.android.support:multidex:1.0.1'
     //打电话权限处理
     compile 'com.yanzhenjie:permission:1.1.2'
@@ -107,11 +112,12 @@ dependencies {
     compile project(':picture_library')
     compile project(':ucrop')
     //    compile 'com.squareup.okhttp:okhttp:2.4.0'
-
     //    compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.zhy:okhttputils:2.6.2'
     compile 'com.yanzhenjie:recyclerview-swipe:1.1.4'
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
     compile 'me.yokeyword:indexablerecyclerview:1.3.0'
+    compile files('libs/jcore-android-1.2.6.jar')
+    compile files('libs/jpush-android-3.1.8.jar')
 }

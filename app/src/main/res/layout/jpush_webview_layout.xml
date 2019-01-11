@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/imgRichpushBtnBack"
             android:clickable="false"
-            android:src="@mipmap/jpush_ic_richpush_actionbar_divider" />
+            android:src="@drawable/jpush_ic_richpush_actionbar_divider" />
 
         <TextView
             android:id="@+id/tvRichpushTitle"
