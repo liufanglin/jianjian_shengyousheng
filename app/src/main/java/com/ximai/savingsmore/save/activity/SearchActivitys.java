@@ -345,6 +345,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
     private SearchAddressAdapter searchAddressAdapter;
     private TextView mTvSearchMsg1;
     private TextView mTvSearchMsg2;
+    private TextView tv_bottom1,tv_bottom2,tv_bottom3,tv_bottom4;
     private boolean isFirst=false;
 
     @Override
@@ -426,6 +427,11 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
         recycle_view_address = (RecyclerView) findViewById(R.id.recycle_view_address);
         mTvSearchMsg1 = (TextView) findViewById(R.id.tv_search_msg1);
         mTvSearchMsg2 = (TextView) findViewById(R.id.tv_search_msg2);
+        tv_bottom1= (TextView) findViewById(R.id.tv_bottom1);
+        tv_bottom2= (TextView) findViewById(R.id.tv_bottom2);
+        tv_bottom3= (TextView) findViewById(R.id.tv_bottom3);
+        tv_bottom4= (TextView) findViewById(R.id.tv_bottom4);
+
     }
 
     /**
@@ -1050,6 +1056,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         xiaoliangbool = false;
                         iv_xiaoliang.setBackgroundResource(R.mipmap.down3);
+                        tv_bottom1.setText("最少关注");
+
                     }else{
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
@@ -1061,6 +1069,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         xiaoliangbool = true;
                         iv_xiaoliang.setBackgroundResource(R.mipmap.up3);
+                        tv_bottom1.setText("最多关注");
                     }
                 }
                 cen_title.setText("同品对比-人气");
@@ -1079,6 +1088,9 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         jiagebool = false;
                         iv_jiage.setBackgroundResource(R.mipmap.down3);
+                        tv_bottom2.setText("最高价格");
+
+
                     }else{
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
@@ -1090,6 +1102,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         jiagebool = true;
                         iv_jiage.setBackgroundResource(R.mipmap.up3);
+                        tv_bottom2.setText("最低价格");
+
                     }
                 }
                 cen_title.setText("同品对比-价格");
@@ -1118,6 +1132,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         riqibool = false;
                         iv_riqi.setBackgroundResource(R.mipmap.down3);
+                        tv_bottom3.setText("最晚结束");
+
                     }else{
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
@@ -1139,6 +1155,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         riqibool = true;
                         iv_riqi.setBackgroundResource(R.mipmap.up3);
+                        tv_bottom3.setText("最快结束");
                     }
                 }
                 cen_title.setText("同品对比-时间");
@@ -1158,6 +1175,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         julibool = false;
                         iv_juli.setBackgroundResource(R.mipmap.down3);
+                        tv_bottom4.setText("最远距离");
+
                     }else{
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
@@ -1169,6 +1188,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         });
                         julibool = true;
                         iv_juli.setBackgroundResource(R.mipmap.up3);
+                        tv_bottom4.setText("最近距离");
                     }
                 }
                 cen_title.setText("同品对比-距离");

@@ -196,6 +196,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_bottom1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最多关注"
@@ -239,9 +240,10 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_bottom2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="最忌价格"
+                        android:text="最近价格"
                         android:textSize="14sp"
                         android:textColor="@color/text_black" />
 
@@ -282,6 +284,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_bottom3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最快结束"
@@ -324,6 +327,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_bottom4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最近距离"
