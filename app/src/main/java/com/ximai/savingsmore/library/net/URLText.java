@@ -183,4 +183,6 @@ public interface URLText {
     public static final String SEARCH_LOCATION_DATA = baseUrl + "Product/QueryPlace";
     //商家地址列表
     public static final String SEARCH_BUSINESS_LOCATION_DATA = baseUrl + "User/QueryPlace";
+    //商品id记录到店
+    public static final String Product_ProductStore=baseUrl+"Product/ProductStore";
 }
