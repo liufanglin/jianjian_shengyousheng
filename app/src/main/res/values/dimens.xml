@@ -6,7 +6,7 @@
     <dimen name="smart">10dp</dimen>
     <dimen name="PaddingSmall">3dip</dimen>
     <dimen name="dp_70">70dp</dimen>
-
+    <dimen name="dp_five">5dp</dimen>
 
     <!--pickerView-->
     <!-- 顶部按钮栏高度 -->

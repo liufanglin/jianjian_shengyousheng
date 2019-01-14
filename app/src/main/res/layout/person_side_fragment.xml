@@ -206,6 +206,7 @@
                     android:layout_width="5dp"
                     android:layout_height="5dp"
                     android:visibility="gone"
+                    android:layout_marginBottom="@dimen/dp_five"
                     android:background="@drawable/dot_bg"/>
                 <ImageView
                     android:layout_width="15dp"
@@ -420,6 +421,7 @@
                     android:layout_width="5dp"
                     android:layout_height="5dp"
                     android:layout_marginLeft="2dp"
+                    android:layout_marginBottom="@dimen/dp_five"
                     android:visibility="gone"
                     android:background="@drawable/dot_bg"/>
                 <ImageView
@@ -479,6 +481,7 @@
                     android:layout_width="5dp"
                     android:layout_height="5dp"
                     android:visibility="gone"
+                    android:layout_marginBottom="@dimen/dp_five"
                     android:layout_marginLeft="2dp"
                     android:background="@drawable/dot_bg"/>
                 <ImageView
