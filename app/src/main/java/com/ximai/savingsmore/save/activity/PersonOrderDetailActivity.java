@@ -293,7 +293,7 @@ public class PersonOrderDetailActivity extends BaseActivity implements View.OnCl
                         if (orderList.size() > 0){
                             tv_paymoney.setText(orderList.get(0).Currency + UIUtils.formatPrice(Double.parseDouble(orderDetial.Price)));
                         }
-                        personOrderDetailAdapter.setStoreCount(orderDetial.Seller.UserExtInfo.StoreCount);
+//                        personOrderDetailAdapter.setStoreCount(orderDetial.Seller.UserExtInfo.StoreCount);
                         personOrderDetailAdapter.setData(orderList);//将商品数据传递
                         personOrderDetailAdapter.setOrderDetailData(orderDetial);
                         personOrderDetailAdapter.notifyDataSetChanged();

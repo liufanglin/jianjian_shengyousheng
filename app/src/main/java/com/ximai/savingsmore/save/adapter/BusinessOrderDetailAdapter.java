@@ -171,7 +171,7 @@ public class BusinessOrderDetailAdapter extends RecyclerView.Adapter<BusinessOrd
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
                 holder.tv_care.setText("关注"+list.get(position).CareCount);
-                holder.tv_store_count.setText("到店人次"+StoreCount);
+                holder.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
             }
         }
     }

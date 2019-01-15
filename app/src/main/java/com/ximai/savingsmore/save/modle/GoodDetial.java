@@ -82,6 +82,7 @@ public class GoodDetial  implements Serializable{
     public String ImagesJson;
     public String CommentCount;
     public String SaleCount;
+    public String StoreCount;
     public String Description;
     public String ChainStoresJson;
     public String StartTimeName;

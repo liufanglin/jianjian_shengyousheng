@@ -185,7 +185,7 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
         }
 
         if ("true".equals(isgood)){
-            tv_store_people.setText("到店人次:"+userExtInfo.StoreCount);
+            tv_store_people.setText("到店人次:"+goodDetial.StoreCount);
         }else {
             if (userExtInfo!=null){
                 tv_store_people.setText("到店人次:"+ Constant.storeCount);

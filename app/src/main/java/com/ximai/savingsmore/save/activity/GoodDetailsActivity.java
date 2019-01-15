@@ -446,7 +446,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                         }
 
                         if (goodDetial.User!=null&&goodDetial.User.UserExtInfo!=null) {
-                            tv_store_count.setText("到店人次" + goodDetial.User.UserExtInfo.StoreCount);
+                            tv_store_count.setText("到店人次" + goodDetial.StoreCount);
                         }
                             tv_care.setText("关注"+goodDetial.CareCount);
                             tv_care1.setText("关注"+goodDetial.CareCount);

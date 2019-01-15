@@ -159,9 +159,8 @@ public class PersonOrderDetailAdapter extends RecyclerView.Adapter<PersonOrderDe
                     holder.tv_volume.setVisibility(View.GONE);
                 }
                 holder.tv_care.setText("关注"+list.get(position).CareCount);
-                if (!TextUtils.isEmpty(StoreCount)) {
-                    holder.tv_store_count.setText("到店人次" + StoreCount);
-                }
+                holder.tv_store_count.setText("到店人次" + list.get(position).StoreCount);
+
                 holder.tv_goodsnumber.setText(list.get(position).Number);
                 holder.tv_goodsdata.setText(list.get(position).Quantity+"");//购买数量
                 MyUserInfoUtils.getInstance().myUserInfo.ProductId = list.get(position).ProductId;//再来一单的ProductId
