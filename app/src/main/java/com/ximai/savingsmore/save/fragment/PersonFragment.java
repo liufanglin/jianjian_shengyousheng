@@ -1171,12 +1171,13 @@ public class PersonFragment extends Fragment implements View.OnClickListener,Obs
                         String s = tv_pushnum.getText().toString();
                         tv_pushnum.setText(Integer.parseInt(s)+1+"");
                     }
+                    VoiceUtils.getInstance().initmTts(getContext(),"您关注商品开始促销了");
+
                     //不管是多少 - 都进行一个保存为了下一次进来的还是显示
                     PreferencesUtils.putString(getContext(),"pushNum",tv_pushnum.getText().toString());
                     /**
                      * 发布的促销进行语音
                      */
-                    VoiceUtils.getInstance().initmTts(getContext(),"您关注商品开始促销了");
 
                 }else if (Constants.FUJIN_BUSINESS.equals(eventName)){//附近商家正在促销
                     businessNum.add(cid.toString());

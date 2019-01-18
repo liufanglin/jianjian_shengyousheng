@@ -282,6 +282,8 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
          */
         NotificationCenter.defaultCenter().addObserver(notificationCenterObserver, Constants.BUSINESS_CEBIANLAN);
 
+        NotificationCenter.defaultCenter().addObserver(notificationCenterObserver, Constants.BUSSINESS_FABU);
+
         /**
          * 注册一个监听 - 商家后台消息的推送
          */
@@ -1030,6 +1032,10 @@ public class BusinessFragment extends Fragment implements View.OnClickListener {
                     }
                     //不管是多少 - 都进行一个保存为了下一次进来的还是显示
                     PreferencesUtils.putString(getContext(),"bussinessPushNum",tv_pushnum.getText().toString());
+                }else if (Constants.BUSSINESS_FABU.equals(eventName)){
+
+                    VoiceUtils.getInstance().initmTts(getContext(),"您关注商品开始促销了");
+
                 }
             }catch (Exception e){
                 e.printStackTrace();

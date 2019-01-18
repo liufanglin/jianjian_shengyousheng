@@ -43,6 +43,7 @@ import cn.jpush.android.api.JPushInterface;
  */
 public class JpushReceiver extends BroadcastReceiver {
     int a=0;
+
     private static final String TAG = "JPush";
 
     @Override
@@ -67,10 +68,11 @@ public class JpushReceiver extends BroadcastReceiver {
             Log.d(TAG, "[MyReceiver] 接收到推送下来的通知");
             int notifactionId = bundle.getInt(JPushInterface.EXTRA_NOTIFICATION_ID);//通知Id
             String string = bundle.getString(JPushInterface.EXTRA_ALERT);//通知消息
+            String title = bundle.getString(JPushInterface.EXTRA_NOTIFICATION_TITLE);//通知消息
 
             Log.d(TAG, "[MyReceiver] 接收到推送下来的通知的--ID: " + notifactionId);//列如：Bundle[{cn.jpush.android.ALERT=您发布了一个促销，获得一个奖赏，点击领取。, cn.jpush.android.EXTRA={"type":5}, cn.jpush.android.NOTIFICATION_ID=456786742, cn.jpush.android.NOTIFICATION_CONTENT_TITLE=您发布了一个促销，获得一个奖赏，点击领取。, cn.jpush.android.MSG_ID=2251802630545154}]
             if (!TextUtils.isEmpty(string)){//发布促销
-                if ("您关心的商品开始促销了，快去吧！".equals(string)){//发布商品的通知
+                if ("您关心的商品开始促销了，快去吧！".equals(string)||"您关注商品开始促销了！".equals(title)){//发布商品的通知
                     /**
                      * 接收到商家发布商品实现数量的显示
                      */
