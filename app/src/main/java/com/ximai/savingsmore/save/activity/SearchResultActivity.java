@@ -69,7 +69,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
     private int lastVisibleItem;
     private LinearLayout zhekou, jiage, date, juli;
     private ImageView zhekou_image, jiage_image, date_image, juli_image;
-    private Boolean IsRebateDesc = false, IsPriceDesc = true, IsStartTimeDesc = true, IsDistanceDesc = false;
+    private Boolean IsRebateDesc = false, IsPriceDesc = true, IsStartTimeDesc = true, IsDistanceDesc = true;
     private EditText search;
     private String isBag, state;
     private String classify1, classify2, brand, typeId, keyWord;
@@ -322,7 +322,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 setCenterTitle("同品对比-距离");
 
                 if (IsDistanceDesc == null) {
-                    IsDistanceDesc = false;
+                    IsDistanceDesc = true;
                 }
                 page = 1;
                 list.clear();
@@ -333,8 +333,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsPriceDesc = null;
                     IsRebateDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    juli_image.setBackgroundResource(R.mipmap.up3);
-                    tv_bottom4.setText("最近距离");
+                    juli_image.setBackgroundResource(R.mipmap.down3);
+                    tv_bottom4.setText("最远距离");
 
                 } else {
                     IsDistanceDesc = true;
@@ -342,8 +342,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsPriceDesc = null;
                     IsRebateDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    juli_image.setBackgroundResource(R.mipmap.down3);
-                    tv_bottom4.setText("最远距离");
+                    juli_image.setBackgroundResource(R.mipmap.up3);
+                    tv_bottom4.setText("最近距离");
 
                 }
                 break;

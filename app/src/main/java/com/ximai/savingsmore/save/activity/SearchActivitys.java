@@ -1168,7 +1168,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i = new Double(t1.Latitude).compareTo(new Double(goods.Latitude));
+                                int i = new Double(goods.Latitude).compareTo(new Double(t1.Latitude));
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
@@ -1181,7 +1181,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i = new Double(goods.Latitude).compareTo(new Double(t1.Latitude));
+                                int i = new Double(t1.Latitude).compareTo(new Double(goods.Latitude));
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
