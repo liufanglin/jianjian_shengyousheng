@@ -249,17 +249,16 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsStartTimeDesc = null;
                     IsDistanceDesc = null;
                     tv_bottom1.setText("最多关注");
-                    getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
                     zhekou_image.setBackgroundResource(R.mipmap.up3);
+                    getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
                 } else {
                     IsRebateDesc = true;
                     IsPriceDesc = null;
                     IsStartTimeDesc = null;
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    zhekou_image.setBackgroundResource(R.mipmap.down3);
                     tv_bottom1.setText("最少关注");
-
+                    zhekou_image.setBackgroundResource(R.mipmap.down3);
                 }
                 break;
             case R.id.jiage://价格
@@ -276,8 +275,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsRebateDesc = null;
                     IsStartTimeDesc = null;
                     IsDistanceDesc = null;
+                    jiage_image.setBackgroundResource(R.mipmap.down3);
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    jiage_image.setBackgroundResource(R.mipmap.up3);
                     tv_bottom2.setText("最高价格");
 
                 } else {
@@ -286,7 +285,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsStartTimeDesc = null;
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    jiage_image.setBackgroundResource(R.mipmap.down3);
+                    jiage_image.setBackgroundResource(R.mipmap.up3);
                     tv_bottom2.setText("最低价格");
 
                 }
@@ -304,9 +303,9 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsPriceDesc = null;
                     IsRebateDesc = null;
                     IsDistanceDesc = null;
-                    getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    date_image.setBackgroundResource(R.mipmap.up3);
                     tv_bottom3.setText("最晚结束");
+                    date_image.setBackgroundResource(R.mipmap.down3);
+                    getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
 
                 } else {
                     IsStartTimeDesc = true;
@@ -314,9 +313,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsRebateDesc = null;
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc,IsRebateDesc, keyWord);
-                    date_image.setBackgroundResource(R.mipmap.down3);
                     tv_bottom3.setText("最快结束");
-
+                    date_image.setBackgroundResource(R.mipmap.up3);
 
                 }
                 break;

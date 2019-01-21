@@ -326,7 +326,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
 
     private boolean xiaoliangbool = false;
     private boolean jiagebool = true;
-    private boolean riqibool = true;
+    private boolean riqibool = false;
     private boolean julibool = true;
     private ImageView iv_xiaoliang;
     private ImageView iv_jiage;
@@ -1055,8 +1055,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                             }
                         });
                         xiaoliangbool = false;
-                        iv_xiaoliang.setBackgroundResource(R.mipmap.down3);
                         tv_bottom1.setText("最少关注");
+                        iv_xiaoliang.setBackgroundResource(R.mipmap.up3);
 
                     }else{
                         Collections.sort(listGoods, new Comparator<Goods>() {
@@ -1068,7 +1068,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                             }
                         });
                         xiaoliangbool = true;
-                        iv_xiaoliang.setBackgroundResource(R.mipmap.up3);
+                        iv_xiaoliang.setBackgroundResource(R.mipmap.down3);
                         tv_bottom1.setText("最多关注");
                     }
                 }
@@ -1131,8 +1131,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                             }
                         });
                         riqibool = false;
-                        iv_riqi.setBackgroundResource(R.mipmap.down3);
-                        tv_bottom3.setText("最晚结束");
+                        iv_riqi.setBackgroundResource(R.mipmap.up3);
+                        tv_bottom3.setText("最快结束");
 
                     }else{
                         Collections.sort(listGoods, new Comparator<Goods>() {
@@ -1154,8 +1154,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                             }
                         });
                         riqibool = true;
-                        iv_riqi.setBackgroundResource(R.mipmap.up3);
-                        tv_bottom3.setText("最快结束");
+                        iv_riqi.setBackgroundResource(R.mipmap.down3);
+                        tv_bottom3.setText("最晚结束");
                     }
                 }
                 cen_title.setText("同品对比-时间");
