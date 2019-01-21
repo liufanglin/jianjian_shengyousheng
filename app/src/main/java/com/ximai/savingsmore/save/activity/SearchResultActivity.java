@@ -657,7 +657,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
         isRefreshing = true;
         swipeRefreshLayout.setRefreshing(isRefreshing);
 
-        showLoading(SearchResultActivity.this,"正在加载");
+      //  showLoading(SearchResultActivity.this,"正在加载");
 
         if (null != number ){
             pageSize = Integer.parseInt(number);
