@@ -198,6 +198,81 @@ public class RequestParamsPool {
         return stringEntity;
     }
 
+    //得到所有商品
+    public static StringEntity getAllGoods(String IsPromotion, String Provice, String City, String Area, String Longitude, String Latitude, int PageNo, int PageSize, Boolean IsRebateDesc, Boolean IsPriceDesc, Boolean IsStartTimeDesc, Boolean IsDistanceDesc,Boolean IsCareCountDesc, String Keyword,
+                                           String isBag, String isState, String class1, String class2, String brand, String type) {
+        JSONObject object = new JSONObject();
+        JSONObject object1 = new JSONObject();
+        try {
+            object.put("PageNo", PageNo);
+            object.put("PageSize", PageSize);
+            object1.put("PageParameter", object);
+            object1.put("IsPromotion", true);//是否是在促销日期中的
+            if (null != Longitude && !TextUtils.isEmpty(Longitude)) {
+                object1.put("Longitude", Longitude);
+            }
+            if (null != IsPromotion) {
+                object1.put("IsPromotion", IsPromotion);
+            }
+            if (null != Area && !TextUtils.isEmpty(Area)) {
+                object1.put("AreaId", Area);
+            }
+            if (null != Provice && !TextUtils.isEmpty(Provice)) {
+                object1.put("ProvinceId", Provice);
+            }
+            if (null != City && !TextUtils.isEmpty(City)) {
+                object1.put("CityId", City);
+            }
+            if (null != Latitude && !TextUtils.isEmpty(Latitude)) {
+                object1.put("Latitude", Latitude);
+            }
+            if (null != class1 && !TextUtils.isEmpty(class1)) {
+                object1.put("FirstClassId", class1);
+            }
+            if (null != class2 && !TextUtils.isEmpty(class2)) {
+                object1.put("SecondClassId", class2);
+            }
+            if (null != brand && !TextUtils.isEmpty(brand)) {
+                object1.put("BrandId", brand);
+            }
+            if (null != type && !TextUtils.isEmpty(type)) {
+                object1.put("PromotionType", type);
+            }
+            if (null != isBag && !TextUtils.isEmpty(isBag)) {
+                object1.put("IsBag", isBag);
+            }
+//            if (null != isState && !TextUtils.isEmpty(isState)) {
+//                object1.put("IsPromotion", isState);
+//            }
+            if (null != IsCareCountDesc) {
+                object1.put("IsCareCountDesc", IsCareCountDesc);
+            }
+            if (null != IsPriceDesc) {
+                object1.put("IsPriceDesc", IsPriceDesc);
+            }
+            if (null != IsStartTimeDesc) {
+                object1.put("IsStartTimeDesc", IsStartTimeDesc);
+            }
+            if (null != IsDistanceDesc) {
+                object1.put("IsDistanceDesc", IsDistanceDesc);
+            }
+            if (!TextUtils.isEmpty(Keyword)) {
+                object1.put("Keyword", Keyword);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        StringEntity stringEntity = null;
+        try {
+            // stringEntity  = new StringEntity("{\"Keyword\":\"你\",\"PageParameter\":{\"PageSize\":10,\"PageNo\":1}}");
+            stringEntity = new StringEntity(object1.toString(), MyAsyncHttpResponseHandler.DEFAULT_CHARSET);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return stringEntity;
+    }
+
     /**
      * 得到所有商品 - 目前搜索商品
      * @return

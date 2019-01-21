@@ -69,7 +69,7 @@ public class JpushReceiver extends BroadcastReceiver {
             int notifactionId = bundle.getInt(JPushInterface.EXTRA_NOTIFICATION_ID);//通知Id
             String string = bundle.getString(JPushInterface.EXTRA_ALERT);//通知消息
             String title = bundle.getString(JPushInterface.EXTRA_NOTIFICATION_TITLE);//通知消息
-
+            bundle.get(JPushInterface.EXTRA_EXTRA);
             Log.d(TAG, "[MyReceiver] 接收到推送下来的通知的--ID: " + notifactionId);//列如：Bundle[{cn.jpush.android.ALERT=您发布了一个促销，获得一个奖赏，点击领取。, cn.jpush.android.EXTRA={"type":5}, cn.jpush.android.NOTIFICATION_ID=456786742, cn.jpush.android.NOTIFICATION_CONTENT_TITLE=您发布了一个促销，获得一个奖赏，点击领取。, cn.jpush.android.MSG_ID=2251802630545154}]
             if (!TextUtils.isEmpty(string)){//发布促销
                 if ("您关心的商品开始促销了，快去吧！".equals(string)||"您关注商品开始促销了！".equals(title)){//发布商品的通知
@@ -126,11 +126,27 @@ public class JpushReceiver extends BroadcastReceiver {
             }
             LogUtils.instance.d("推送的类型=" + object.optString("type"));
             if (object.optString("type").equals("1")) {
-                Intent i = new Intent(context, PushMessageActivity.class);
-                i.putExtras(bundle);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                context.startActivity(i);
+//                Intent i = new Intent(context, PushMessageActivity.class);
+//                i.putExtras(bundle);
+//                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                context.startActivity(i);
+                String extras=bundle.getString(JPushInterface.EXTRA_EXTRA);
+                try {
+                    if (!TextUtils.isEmpty(extras)) {
+                        JSONObject extraJson = new JSONObject(extras);
+                        Intent i=new Intent(context,GoodDetailsActivity.class);
+                        i.putExtra("id",extraJson.optString("id"));
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        context.startActivity(i);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             } else if (object.optString("type").equals("3")) {
                 Intent i = new Intent(context, OrderCenterCeActivity.class);
                 i.putExtras(bundle);
