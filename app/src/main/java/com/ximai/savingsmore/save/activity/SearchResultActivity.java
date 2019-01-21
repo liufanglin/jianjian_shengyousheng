@@ -69,7 +69,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
     private int lastVisibleItem;
     private LinearLayout zhekou, jiage, date, juli;
     private ImageView zhekou_image, jiage_image, date_image, juli_image;
-    private Boolean IsRebateDesc = false, IsPriceDesc = false, IsStartTimeDesc = false, IsDistanceDesc = false;
+    private Boolean IsRebateDesc = false, IsPriceDesc = true, IsStartTimeDesc = true, IsDistanceDesc = false;
     private EditText search;
     private String isBag, state;
     private String classify1, classify2, brand, typeId, keyWord;
@@ -266,7 +266,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                 setCenterTitle("同品对比-价格");
 
                 if (IsPriceDesc == null) {
-                    IsPriceDesc = false;
+                    IsPriceDesc = true;
                 }
                 page = 1;
                 list.clear();
@@ -278,7 +278,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, keyWord);
                     jiage_image.setBackgroundResource(R.mipmap.up3);
-                    tv_bottom2.setText("最低价格");
+                    tv_bottom2.setText("最高价格");
 
                 } else {
                     IsPriceDesc = true;
@@ -287,14 +287,14 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, keyWord);
                     jiage_image.setBackgroundResource(R.mipmap.down3);
-                    tv_bottom2.setText("最高价格");
+                    tv_bottom2.setText("最低价格");
 
                 }
                 break;
             case R.id.riqi://日期
                 setCenterTitle("同品对比-时间");
                 if (IsStartTimeDesc == null) {
-                    IsStartTimeDesc = false;
+                    IsStartTimeDesc = true;
                 }
                 page = 1;
                 list.clear();
@@ -306,7 +306,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, keyWord);
                     date_image.setBackgroundResource(R.mipmap.up3);
-                    tv_bottom3.setText("最快结束");
+                    tv_bottom3.setText("最晚结束");
 
                 } else {
                     IsStartTimeDesc = true;
@@ -315,7 +315,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
                     IsDistanceDesc = null;
                     getAllGoods(ProvceId, CityId, AreaId, Longitude1, Latitude1, isBag, state, classify1, classify2, brand, typeId, page, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, keyWord);
                     date_image.setBackgroundResource(R.mipmap.down3);
-                    tv_bottom3.setText("最晚结束");
+                    tv_bottom3.setText("最快结束");
+
 
                 }
                 break;
