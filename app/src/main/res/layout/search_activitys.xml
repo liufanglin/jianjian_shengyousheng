@@ -476,7 +476,7 @@
                     android:id="@+id/tv_bottom1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="最多关注"
+                    android:text="最少关注"
                     android:textSize="14sp"
                     android:textColor="@color/text_black" />
                 <ImageView

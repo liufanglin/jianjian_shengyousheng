@@ -324,7 +324,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
     private LinearLayout riqi;
     private LinearLayout juli;
 
-    private boolean xiaoliangbool = true;
+    private boolean xiaoliangbool = false;
     private boolean jiagebool = true;
     private boolean riqibool = true;
     private boolean julibool = true;
@@ -1049,7 +1049,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i = Integer.parseInt(goods.HitCount) - Integer.parseInt(t1.HitCount);
+                                int i =Integer.parseInt(t1.HitCount) -  Integer.parseInt(goods.HitCount);
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
@@ -1062,7 +1062,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i =Integer.parseInt(t1.HitCount) -  Integer.parseInt(goods.HitCount);
+                                int i = Integer.parseInt(goods.HitCount) - Integer.parseInt(t1.HitCount);
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
@@ -1121,7 +1121,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                                     String time2=t1.StartTimeName;
                                     Date parse1 = format.parse(time1);
                                     Date parse2 = format.parse(time2);
-                                    int i =parse1.compareTo(parse2);
+                                    int i =parse2.compareTo(parse1);
                                     searchBussGoodsAdapter.notifyDataSetChanged();
                                     return i;
                                 } catch (Exception e) {
@@ -1144,7 +1144,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                                     String time2=t1.StartTimeName;
                                     Date parse1 = format.parse(time1);
                                     Date parse2 = format.parse(time2);
-                                    int i =parse2.compareTo(parse1);
+                                    int i =parse1.compareTo(parse2);
                                     searchBussGoodsAdapter.notifyDataSetChanged();
                                     return i;
                                 } catch (Exception e) {
@@ -1168,7 +1168,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i = new Double(goods.Latitude).compareTo(new Double(t1.Latitude));
+                                int i = new Double(t1.Latitude).compareTo(new Double(goods.Latitude));
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
@@ -1181,7 +1181,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i = new Double(t1.Latitude).compareTo(new Double(goods.Latitude));
+                                int i = new Double(goods.Latitude).compareTo(new Double(t1.Latitude));
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
