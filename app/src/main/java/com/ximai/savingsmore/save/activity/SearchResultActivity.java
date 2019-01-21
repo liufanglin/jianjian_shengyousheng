@@ -94,7 +94,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
     private SelectSearchPopupWindow selectSearchPopupWindow;
     private String number;
     private TextView tv_bottom1,tv_bottom2,tv_bottom3,tv_bottom4;
-
+    private int totalPage=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -651,6 +651,9 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
      * 得到所有的商品 - 获取所有的 - 和地图外面的不一样
      */
     private void getAllGoods(String Provice, String City, String AreaId, String Longitude, String Latitude, String isBag, String isState, String class1, String class2, String brand, String type, int pageNo, int pageSize, Boolean IsRebateDesc, Boolean IsPriceDesc, Boolean IsStartTimeDesc, Boolean IsDistanceDesc,Boolean IsCareCountDesc,String keyword) {
+        if (pageNo>totalPage){
+            return;
+        }
         isRefreshing = true;
         swipeRefreshLayout.setRefreshing(isRefreshing);
 
@@ -667,6 +670,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
+                    totalPage=goodsList.TotalPageCount;
                     if (goodsList.IsSuccess) {
                         if (null != goodsList.MainData) {
 //                            list.clear();

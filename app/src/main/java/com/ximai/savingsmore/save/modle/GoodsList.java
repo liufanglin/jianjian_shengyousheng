@@ -9,6 +9,7 @@ import java.util.List;
 public class GoodsList implements Serializable {
     public  Boolean IsSuccess;
     public  String Message;
+    public int TotalPageCount;
     public  List<Goods> MainData;
     public  List<Goods> ShowData;
 }
