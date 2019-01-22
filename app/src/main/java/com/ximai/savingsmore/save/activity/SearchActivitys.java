@@ -1049,7 +1049,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i =Integer.parseInt(t1.HitCount) -  Integer.parseInt(goods.HitCount);
+                                int i =Integer.parseInt(t1.CareCount) -  Integer.parseInt(goods.CareCount);
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
@@ -1062,7 +1062,7 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                         Collections.sort(listGoods, new Comparator<Goods>() {
                             @Override
                             public int compare(Goods goods, Goods t1) {
-                                int i = Integer.parseInt(goods.HitCount) - Integer.parseInt(t1.HitCount);
+                                int i = Integer.parseInt(goods.CareCount) - Integer.parseInt(t1.CareCount);
                                 searchBussGoodsAdapter.notifyDataSetChanged();
                                 return i;
                             }
@@ -1117,8 +1117,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                             public int compare(Goods goods, Goods t1) {
                                 try {
                                     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                                    String time1=goods.StartTimeName;
-                                    String time2=t1.StartTimeName;
+                                    String time1=goods.EndTimeName;
+                                    String time2=t1.EndTimeName;
                                     Date parse1 = format.parse(time1);
                                     Date parse2 = format.parse(time2);
                                     int i =parse2.compareTo(parse1);
@@ -1140,8 +1140,8 @@ public class SearchActivitys extends BaseActivity implements View.OnClickListene
                             public int compare(Goods goods, Goods t1) {
                                 try {
                                     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                                    String time1=goods.StartTimeName;
-                                    String time2=t1.StartTimeName;
+                                    String time1=goods.EndTimeName;
+                                    String time2=t1.EndTimeName;
                                     Date parse1 = format.parse(time1);
                                     Date parse2 = format.parse(time2);
                                     int i =parse1.compareTo(parse2);
