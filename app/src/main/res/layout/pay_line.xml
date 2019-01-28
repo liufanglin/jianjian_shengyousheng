@@ -264,6 +264,7 @@
         <TextView
             android:text="支付货款给门店后，请点击“确认已付款”，"
             android:textSize="12sp"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -272,7 +273,7 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <TextView
-                android:text="发送订单给门店，获得"
+                android:text="支付完成后，获取"
                 android:textSize="12sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -284,7 +285,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:text="积分。"
+                android:text="积分奖励!"
                 android:textSize="12sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

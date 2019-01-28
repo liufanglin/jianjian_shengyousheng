@@ -3,7 +3,10 @@ package com.ximai.savingsmore.save.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,14 +24,17 @@ import com.ximai.savingsmore.save.modle.OrderProducts;
 import com.ximai.savingsmore.save.modle.PersonOrderDetialBean;
 import com.ximai.savingsmore.save.modle.SubmitOrderResult;
 import com.ximai.savingsmore.save.modle.submitOrderResults;
+import com.ximai.savingsmore.save.utils.APPUtil;
 import com.ximai.savingsmore.save.utils.NotificationCenter;
 import com.ximai.savingsmore.save.utils.UIUtils;
 import com.ximai.savingsmore.save.view.KyLoadingBuilder;
+import com.ximai.savingsmore.save.view.PayDialog;
 
 import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -55,6 +61,7 @@ public class PayLineActivity extends BaseActivity implements View.OnClickListene
     private TextView tv_getjifen;
     private TextView tv_address;
     private KyLoadingBuilder builder;
+    private PayDialog payDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,13 +155,50 @@ public class PayLineActivity extends BaseActivity implements View.OnClickListene
                 finish();
                 break;
             case R.id.btn_yespay://线下支付
-                if (isWeiZhiFu == true){
-                    line_pay(personOrderDetialBean.Id);//订单Id
-                }else{
-                    if (null != submitOrderResult.MainData.get(0).Id){
-                        line_pay(submitOrderResult.MainData.get(0).Id);
-                    }
+                String price;
+                if (submitOrderResult!=null&&submitOrderResult.MainData!=null){
+                    price=submitOrderResult.MainData.get(0).OrderProducts.get(0).Currency+submitOrderResult.MainData.get(0).Price;
+                }else {
+                    price="0.00";
                 }
+
+                payDialog = new PayDialog(PayLineActivity.this, price);
+                Window window = payDialog.getWindow();
+                WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+                //设置x坐标
+                params.x = 0;
+                //设置y坐标
+                params.y = 0;
+                window.setAttributes(params);
+                //设置点击Dialog外部任意区域关闭Dialog
+                payDialog.setCanceledOnTouchOutside(true);
+                payDialog.setOnClickHandler(new PayDialog.OnClickHandler() {
+                    @Override
+                    public void onClick(View view) {
+                        switch (view.getId()) {
+                            case R.id.paymode_wx:
+                                APPUtil.isGoWechat(PayLineActivity.this);
+                                break;
+                            case R.id.paymode_zfb:
+                                APPUtil.isGoPay(PayLineActivity.this);
+                                break;
+                            case R.id.paymode_md:
+                                if (isWeiZhiFu == true){
+                                    line_pay(personOrderDetialBean.Id);//订单Id
+                                }else{
+                                    if (null != submitOrderResult.MainData.get(0).Id){
+                                        line_pay(submitOrderResult.MainData.get(0).Id);
+                                    }
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
+                payDialog.show();
+                payDialog.setLinePay();
+
                 break;
                 default:
                     break;

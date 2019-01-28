@@ -32,6 +32,7 @@ public class PayDialog extends AlertDialog{
     private RelativeLayout paymode_wx;
     private RelativeLayout paymode_zfb;
     private RelativeLayout paymode_md;
+    private TextView tv_line_pay;
 
     public void setOnClickHandler(OnClickHandler onClickHandler) {
         this.onClickHandler = onClickHandler;
@@ -43,6 +44,10 @@ public class PayDialog extends AlertDialog{
         this.price = price;
     }
 
+    public void setLinePay(){
+        tv_line_pay.setText("现金支付");
+
+    }
     /**
      * init-
      * @param savedInstanceState
@@ -69,6 +74,7 @@ public class PayDialog extends AlertDialog{
         paymode_wx = (RelativeLayout) findViewById(R.id.paymode_wx);
         paymode_zfb = (RelativeLayout) findViewById(R.id.paymode_zfb);
         paymode_md = (RelativeLayout) findViewById(R.id.paymode_md);
+        tv_line_pay= (TextView) findViewById(R.id.tv_line_pay);
     }
 
     private void initData() {

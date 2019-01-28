@@ -1,5 +1,6 @@
 package com.ximai.savingsmore.save.utils;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -153,6 +154,38 @@ public class APPUtil {
         return packageNames.contains(packageName);
     }
 
+
+    /**
+     * 跳转到微信*/
+    public static void isGoWechat(Context context){
+        String packageName="com.tencent.mm";
+        if (isAvilible(context,packageName)){
+            Intent intent = new Intent();
+            ComponentName cmp = new ComponentName(packageName, "com.tencent.mm.ui.LauncherUI");
+            intent.setAction(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setComponent(cmp);
+            context.startActivity(intent);
+        }else {
+            Toast.makeText(context,"请先安装微信",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * 跳转到支付宝*/
+    public static void isGoPay(Context context){
+        String packageName="com.eg.android.AlipayGphone";
+        if (isAvilible(context,packageName)){
+            PackageManager packageManager
+                    = context.getApplicationContext().getPackageManager();
+            Intent intent = packageManager.
+                    getLaunchIntentForPackage(packageName);
+            context.startActivity(intent);
+        }else {
+            Toast.makeText(context,"请先安支付宝应用",Toast.LENGTH_SHORT).show();
+        }
+    }
     /**
      * 通过包名获取应用信息
      * @param context

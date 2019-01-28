@@ -268,7 +268,11 @@ public class TakeMeActivity extends BaseActivity implements View.OnClickListener
             loc_end = new Location(Double.parseDouble(user.Latitude), Double.parseDouble(user.Longitude));
             loc_now = new Location(BaseApplication.getInstance().Longitude, BaseApplication.getInstance().Latitude);
             System.out.print("=====================================");
-            getAllGoods("500",user.Longitude,user.Latitude);
+//            getAllGoods("500",user.Longitude,user.Latitude);
+            if (goodDetial!=null){
+                getAllGoods("500",goodDetial.Longitude,goodDetial.Latitude);
+            }
+
         } else if (null != businessMessage && null != userExtInfo) {
             Store_name.setText(businessMessage.ShowName);
             phone_number.setText(userExtInfo.PhoneNumber);
