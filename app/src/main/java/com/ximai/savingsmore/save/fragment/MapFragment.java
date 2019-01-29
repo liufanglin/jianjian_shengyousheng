@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -482,6 +483,40 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                 }
             }
         }
+
+
+        //跳转事件 跳转到列表
+        if (list.get(marker_position).CoordinatesCount>1){
+            if (null != city && Longitude != 0 && Latitude != 0) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("long", list.get(marker_position).Longitude + "");
+                intent.putExtra("lat", list.get(marker_position).Latitude + "");
+                intent.putExtra("Radius","1");
+                if (!TextUtils.isEmpty(province)){
+                    if (province.equals("上海市") ){
+                        intent.putExtra("title", "上海市"+district);
+                    }else if (province.equals("天津市")){
+                        intent.putExtra("title", "天津市"+district);
+                    }else if (province.equals("重庆市")){
+                        intent.putExtra("title", "重庆市"+district);
+                    }else if (province.equals("北京市")){
+                        intent.putExtra("title", "北京市"+district);
+                    }else if (province.equals("中国香港")){
+                        intent.putExtra("title", "中国香港"+district);
+                    }else if (province.equals("中国澳门")){
+                        intent.putExtra("title", "中国澳门"+district);
+                    }else{
+                        intent.putExtra("title", province + district);
+                        intent.putExtra("qu", district);
+                        intent.putExtra("shi", city1);
+                        intent.putExtra("sheng", province);
+                    }
+                }
+                startActivity(intent);
+            }
+            return true;
+        }
+
         if (null == popuWindowsUtils) {
             popuWindowsUtils = new PopuWindowsUtils(getActivity(), list, new PopuWindowsUtils.callBack() {
                 @Override
@@ -535,7 +570,12 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         markerimgs = FrameLayout.inflate(context, R.layout.markerimgs, null);
         marker_button = (Button) markerimgs.findViewById(R.id.marker_content);
         if (type.equals("name")) {//判断是否先促销名称和促销形式
-            marker_button.setText(goods.Name);
+            //跳转事件 跳转到列表
+            if (goods.CoordinatesCount>1){
+                marker_button.setText(goods.CoordinatesCount+"个促销品");
+            }else {
+                marker_button.setText(goods.Name);
+            }
         } else {
             marker_button.setText(goods.Preferential);
             if (goods.Preferential.length() > 5){
@@ -583,6 +623,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
             @Override
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
                 goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
+                String ss=new String(responseBody);
                 if (goodsList==null) return;
                 if (goodsList.IsSuccess) {
                     if (null != goodsList.MainData) {

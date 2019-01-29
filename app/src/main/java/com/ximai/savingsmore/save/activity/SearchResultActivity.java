@@ -95,7 +95,7 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
     private String number;
     private TextView tv_bottom1,tv_bottom2,tv_bottom3,tv_bottom4;
     private int totalPage=1;
-
+    private String Radius;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,6 +154,8 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
         Area = getIntent().getStringExtra("qu");
         Longitude1 = getIntent().getStringExtra("long");
         Latitude1 = getIntent().getStringExtra("lat");
+        Radius=getIntent().getStringExtra("Radius");
+
         //设置标题
         setCenterTitle(title);
         if (null == Longitude1) {
@@ -665,55 +667,110 @@ public class SearchResultActivity extends BaseActivity implements SwipeRefreshLa
             pageSize = 30;
         }
 
-        WebRequestHelper.json_post(SearchResultActivity.this, URLText.GET_GOODS, RequestParamsPool.getAllGoods(IsPromotion, Provice, City, AreaId, Longitude1, Latitude1, pageNo, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, IsCareCountDesc,keyword, isBag, isState, class1, class2, brand, type), new MyAsyncHttpResponseHandler(SearchResultActivity.this) {
-            @Override
-            public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
-                try {
-                    goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
-                    totalPage=goodsList.TotalPageCount;
-                    if (goodsList.IsSuccess) {
-                        if (null != goodsList.MainData) {
+
+        if (TextUtils.isEmpty(Radius)){
+            WebRequestHelper.json_post(SearchResultActivity.this, URLText.GET_GOODS, RequestParamsPool.getAllGoods(IsPromotion, Provice, City, AreaId, Longitude1, Latitude1, pageNo, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, IsCareCountDesc,keyword, isBag, isState, class1, class2, brand, type), new MyAsyncHttpResponseHandler(SearchResultActivity.this) {
+                @Override
+                public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
+                    try {
+                        goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
+                        totalPage=goodsList.TotalPageCount;
+                        if (goodsList.IsSuccess) {
+                            if (null != goodsList.MainData) {
 //                            list.clear();
-                            list.addAll(goodsList.MainData);
-                            if (list.size() == 0){
-                                if ("2".equals(isPeopleAndBusiness)) {//2是个人
-                                    ll_defaultdata.setVisibility(View.VISIBLE);
-                                    recyclerView.setVisibility(View.GONE);
-                                    ll_businessdata.setVisibility(View.GONE);
+                                list.addAll(goodsList.MainData);
+                                if (list.size() == 0){
+                                    if ("2".equals(isPeopleAndBusiness)) {//2是个人
+                                        ll_defaultdata.setVisibility(View.VISIBLE);
+                                        recyclerView.setVisibility(View.GONE);
+                                        ll_businessdata.setVisibility(View.GONE);
+                                    }else{
+                                        ll_defaultdata.setVisibility(View.GONE);
+                                        recyclerView.setVisibility(View.GONE);
+                                        ll_businessdata.setVisibility(View.VISIBLE);
+                                    }
                                 }else{
                                     ll_defaultdata.setVisibility(View.GONE);
-                                    recyclerView.setVisibility(View.GONE);
-                                    ll_businessdata.setVisibility(View.VISIBLE);
+                                    ll_businessdata.setVisibility(View.GONE);
+                                    recyclerView.setVisibility(View.VISIBLE);
                                 }
-                            }else{
-                                ll_defaultdata.setVisibility(View.GONE);
-                                ll_businessdata.setVisibility(View.GONE);
-                                recyclerView.setVisibility(View.VISIBLE);
-                            }
 //                        if (list.size() == 0 && isSearch) {
 //                            ll_defaultdata.setVisibility(View.VISIBLE);
 //                            recyclerView.setVisibility(View.GONE);
 //                            Toast.makeText(SearchResultActivity.this, "请重新搜索", Toast.LENGTH_SHORT).show();
 //                            finish();
 //                        }
-                            myAdapter.notifyDataSetChanged();
+                                myAdapter.notifyDataSetChanged();
+                            }
+                        }
+                        isRefreshing = false;
+                        swipeRefreshLayout.setRefreshing(isRefreshing);
+
+                        if (null != builder){
+                            builder.dismiss();
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+
+                        if (null != builder){
+                            builder.dismiss();
                         }
                     }
-                    isRefreshing = false;
-                    swipeRefreshLayout.setRefreshing(isRefreshing);
+                }
+            });
+        }else {
+            WebRequestHelper.json_post(SearchResultActivity.this, URLText.GET_GOODS, RequestParamsPool.getAllGoods(IsPromotion, Provice, City, AreaId, Longitude1, Latitude1, pageNo, pageSize, IsRebateDesc, IsPriceDesc, IsStartTimeDesc, IsDistanceDesc, IsCareCountDesc,keyword, isBag, isState, class1, class2, brand, type,Radius), new MyAsyncHttpResponseHandler(SearchResultActivity.this) {
+                @Override
+                public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
+                    try {
+                        goodsList = GsonUtils.fromJson(new String(responseBody), GoodsList.class);
+                        totalPage=goodsList.TotalPageCount;
+                        if (goodsList.IsSuccess) {
+                            if (null != goodsList.MainData) {
+//                            list.clear();
+                                list.addAll(goodsList.MainData);
+                                if (list.size() == 0){
+                                    if ("2".equals(isPeopleAndBusiness)) {//2是个人
+                                        ll_defaultdata.setVisibility(View.VISIBLE);
+                                        recyclerView.setVisibility(View.GONE);
+                                        ll_businessdata.setVisibility(View.GONE);
+                                    }else{
+                                        ll_defaultdata.setVisibility(View.GONE);
+                                        recyclerView.setVisibility(View.GONE);
+                                        ll_businessdata.setVisibility(View.VISIBLE);
+                                    }
+                                }else{
+                                    ll_defaultdata.setVisibility(View.GONE);
+                                    ll_businessdata.setVisibility(View.GONE);
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                }
+//                        if (list.size() == 0 && isSearch) {
+//                            ll_defaultdata.setVisibility(View.VISIBLE);
+//                            recyclerView.setVisibility(View.GONE);
+//                            Toast.makeText(SearchResultActivity.this, "请重新搜索", Toast.LENGTH_SHORT).show();
+//                            finish();
+//                        }
+                                myAdapter.notifyDataSetChanged();
+                            }
+                        }
+                        isRefreshing = false;
+                        swipeRefreshLayout.setRefreshing(isRefreshing);
 
-                    if (null != builder){
-                        builder.dismiss();
-                    }
-                }catch (Exception e){
-                    e.printStackTrace();
+                        if (null != builder){
+                            builder.dismiss();
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
 
-                    if (null != builder){
-                        builder.dismiss();
+                        if (null != builder){
+                            builder.dismiss();
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
+
+
     }
 
     /**

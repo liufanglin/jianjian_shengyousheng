@@ -46,7 +46,7 @@ public class PayDialog extends AlertDialog{
 
     public void setLinePay(){
         tv_line_pay.setText("现金支付");
-
+        paymode_money.setText(price);
     }
     /**
      * init-
