@@ -21,8 +21,9 @@
             android:background="@mipmap/close3" />
         <TextView
             android:text="支付"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:layout_marginTop="20dp"
+            android:textColor="#2c51f3"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -35,7 +36,8 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="¥0.00"
-        android:textSize="14sp" />
+        android:textColor="#333333"
+        android:textSize="16sp" />
     <View
         android:background="@color/line_color"
         android:layout_width="match_parent"
