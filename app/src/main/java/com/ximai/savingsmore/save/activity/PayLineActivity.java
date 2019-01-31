@@ -1,7 +1,9 @@
 package com.ximai.savingsmore.save.activity;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -177,17 +179,35 @@ public class PayLineActivity extends BaseActivity implements View.OnClickListene
                     public void onClick(View view) {
                         switch (view.getId()) {
                             case R.id.paymode_wx:
-                                APPUtil.isGoWechat(PayLineActivity.this);
+                                if (APPUtil.isGoWechat(PayLineActivity.this)){
+                                    if (isWeiZhiFu == true){
+                                        line_pay(personOrderDetialBean.Id,"wechat");//订单Id
+                                    }else{
+                                        if (null != submitOrderResult.MainData.get(0).Id){
+                                            line_pay(submitOrderResult.MainData.get(0).Id,"wechat");
+                                        }
+                                    }
+                                }
+
                                 break;
                             case R.id.paymode_zfb:
-                                APPUtil.isGoPay(PayLineActivity.this);
+                                if (APPUtil.isGoPay(PayLineActivity.this)){
+                                    if (isWeiZhiFu == true){
+                                        line_pay(personOrderDetialBean.Id,"ailiPay");//订单Id
+                                    }else{
+                                        if (null != submitOrderResult.MainData.get(0).Id){
+                                            line_pay(submitOrderResult.MainData.get(0).Id,"ailiPay");
+                                        }
+                                    }
+                                }
+
                                 break;
                             case R.id.paymode_md:
                                 if (isWeiZhiFu == true){
-                                    line_pay(personOrderDetialBean.Id);//订单Id
+                                    line_pay(personOrderDetialBean.Id,"");//订单Id
                                 }else{
                                     if (null != submitOrderResult.MainData.get(0).Id){
-                                        line_pay(submitOrderResult.MainData.get(0).Id);
+                                        line_pay(submitOrderResult.MainData.get(0).Id,"");
                                     }
                                 }
                                 break;
@@ -209,7 +229,7 @@ public class PayLineActivity extends BaseActivity implements View.OnClickListene
      * 线下支付
      * @param Id
      */
-    private void line_pay(String Id) {
+    private void line_pay(String Id, final String type) {
         showLoading(this,"正在加载");
         WebRequestHelper.json_post(PayLineActivity.this, URLText.LINE_PAY, RequestParamsPool.line_pay(Id), new MyAsyncHttpResponseHandler(PayLineActivity.this) {
             @Override
@@ -218,7 +238,7 @@ public class PayLineActivity extends BaseActivity implements View.OnClickListene
                 try {
                     JSONObject jsonObject = new JSONObject(result);
                     if (true == jsonObject.optBoolean("IsSuccess")){
-                        Toast.makeText(PayLineActivity.this, "确认已付款", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(PayLineActivity.this, "确认已付款", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(PayLineActivity.this, PaySuccessActivity.class);
                         if (isWeiZhiFu == true){
                             intent.putExtra("Id",personOrderDetialBean.Id);
@@ -232,6 +252,26 @@ public class PayLineActivity extends BaseActivity implements View.OnClickListene
 //                        bundle.putSerializable("SubmitOrderResult",submitOrderResult);
 //                        intent.putExtras(bundle);
                         startActivity(intent);
+
+
+                        if (!TextUtils.isEmpty(type)){
+                            if ("wechat".equals(type)){
+                                Intent intent1 = new Intent();
+                                ComponentName cmp = new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI");
+                                intent1.setAction(Intent.ACTION_MAIN);
+                                intent1.addCategory(Intent.CATEGORY_LAUNCHER);
+                                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                intent1.setComponent(cmp);
+                                startActivity(intent1);
+                            }else if ("ailiPay".equals(type)){
+                                PackageManager packageManager
+                                        = getApplicationContext().getPackageManager();
+                                Intent intent1 = packageManager.
+                                        getLaunchIntentForPackage("com.eg.android.AlipayGphone");
+                                startActivity(intent1);
+                            }
+                        }
+
                         finish();
 
                         /**

@@ -241,7 +241,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/button_sharp"
-            android:text="确认已付款"
+            android:text="确认去支付"
             android:textColor="@color/white"
             android:textSize="@dimen/login_regin_text" />
     </RelativeLayout>

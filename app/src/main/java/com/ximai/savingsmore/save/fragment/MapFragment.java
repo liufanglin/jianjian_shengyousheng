@@ -557,7 +557,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         if (!popuWindowsUtils.isShowing()) {
             popuWindowsUtils.showAsDropDown(show_popu, marker_position);
         }
-        setUpMap();//解决地图蓝点消失的问题
+    //    setUpMap();//解决地图蓝点消失的问题
         return true;
     }
 
