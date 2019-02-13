@@ -487,7 +487,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
 
         //跳转事件 跳转到列表
         if (list.get(marker_position).CoordinatesCount>1){
-            if (null != city && Longitude != 0 && Latitude != 0) {
+            if ( Longitude != 0 && Latitude != 0) {
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("long", list.get(marker_position).Longitude + "");
                 intent.putExtra("lat", list.get(marker_position).Latitude + "");
