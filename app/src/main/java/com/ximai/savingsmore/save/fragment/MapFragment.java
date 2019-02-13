@@ -507,7 +507,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                         intent.putExtra("title", "中国澳门"+district);
                     }else{
                         intent.putExtra("title", province + district);
-                        intent.putExtra("qu", district);
+//                        intent.putExtra("qu", district);
                         intent.putExtra("shi", city1);
                         intent.putExtra("sheng", province);
                     }
