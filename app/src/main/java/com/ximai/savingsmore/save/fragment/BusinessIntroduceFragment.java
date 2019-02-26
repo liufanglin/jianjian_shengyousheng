@@ -378,7 +378,7 @@ public class BusinessIntroduceFragment extends Fragment implements View.OnClickL
                 dialog.dismiss();
             }
         };
-        Dialog dialog = new XiMaiPopDialog(getActivity(), "招募启示", "快看!转 发促销，每次赏 10 个消费积分，价值 2 元!", "转发","下次", R.style.CustomDialog_1, callBack, 2);
+        Dialog dialog = new XiMaiPopDialog(getActivity(), "招募启示", "快看!转发促销，每次赏 10 个消费积分，价值 2 元!", "转发","下次", R.style.CustomDialog_1, callBack, 2);
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
     }
