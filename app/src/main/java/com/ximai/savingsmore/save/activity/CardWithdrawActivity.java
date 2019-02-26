@@ -1,6 +1,7 @@
 package com.ximai.savingsmore.save.activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -141,17 +142,8 @@ public class CardWithdrawActivity extends BaseActivity implements View.OnClickLi
                     Toast.makeText(this, "请输入您的手机号", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                PreferencesUtils.putString(CardWithdrawActivity.this,"et_names",et_name.getText().toString());
-                PreferencesUtils.putString(CardWithdrawActivity.this,"et_cardnumbers",et_cardnumber.getText().toString());
-                PreferencesUtils.putString(CardWithdrawActivity.this,"et_banknames",et_bankname.getText().toString());
-                PreferencesUtils.putString(CardWithdrawActivity.this,"et_banks",et_bank.getText().toString());
-                PreferencesUtils.putString(CardWithdrawActivity.this,"et_phones",et_phone.getText().toString());
 
-                /**
-                 * 提现
-                 */
-                FivalwithDrawMoney("3",et_name.getText().toString(),et_cardnumber.getText().toString(),et_bankname.getText().toString(),et_bank.getText().toString(),et_phone.getText().toString());
-
+                Onedialog();
 
 //                if (null != idList){
 //                    for (int i = 0; i < idList.size(); i++) {
@@ -246,6 +238,36 @@ public class CardWithdrawActivity extends BaseActivity implements View.OnClickLi
             }
         };
         Dialog dialog = new XiMaiPopDialog(this, "温馨提示", "您的提现申请已提交，审核中请稍后", "确认", R.style.CustomDialog_1, callBack, 2);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
+    }
+
+
+
+    public void Onedialog(){
+        DialogCallBack callBack = new DialogCallBack() {
+            @Override
+            public void OkDown(Dialog dialog) {
+                dialog.cancel();
+                dialog.dismiss();
+                PreferencesUtils.putString(CardWithdrawActivity.this,"et_names",et_name.getText().toString());
+                PreferencesUtils.putString(CardWithdrawActivity.this,"et_cardnumbers",et_cardnumber.getText().toString());
+                PreferencesUtils.putString(CardWithdrawActivity.this,"et_banknames",et_bankname.getText().toString());
+                PreferencesUtils.putString(CardWithdrawActivity.this,"et_banks",et_bank.getText().toString());
+                PreferencesUtils.putString(CardWithdrawActivity.this,"et_phones",et_phone.getText().toString());
+
+                /**
+                 * 提现
+                 */
+                FivalwithDrawMoney("3",et_name.getText().toString(),et_cardnumber.getText().toString(),et_bankname.getText().toString(),et_bank.getText().toString(),et_phone.getText().toString());
+
+            }
+            @Override
+            public void CancleDown(Dialog dialog) {
+                dialog.cancel();
+            }
+        };
+        Dialog dialog = new XiMaiPopDialog(CardWithdrawActivity.this, "温馨提示", "您好，提现金额 xxx 元已经完成，审核通过后，24 小时内到账。节假日 顺延!", "知道了", R.style.CustomDialog_1, callBack, 2);
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
     }

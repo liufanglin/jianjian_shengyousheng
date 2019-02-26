@@ -118,12 +118,8 @@ public class AliWithdrawActivity extends BaseActivity implements View.OnClickLis
                     Toast.makeText(this, "请输入您的手机号码", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                PreferencesUtils.putString(AliWithdrawActivity.this,"et_alinumber",et_alinumber.getText().toString());
-                PreferencesUtils.putString(AliWithdrawActivity.this,"et_name",et_name.getText().toString());
-                PreferencesUtils.putString(AliWithdrawActivity.this,"et_phone",et_phone.getText().toString());
 
-                FinalWithDrawMoney("1",et_name.getText().toString(),et_alinumber.getText().toString(),null,null,et_phone.getText().toString());
-
+                Onedialog();
 //                if (null != idList){
 //                    for (int i = 0; i < idList.size(); i++) {
 //                        final int finalI = i;
@@ -216,6 +212,29 @@ public class AliWithdrawActivity extends BaseActivity implements View.OnClickLis
             }
         };
         Dialog dialog = new XiMaiPopDialog(this, "温馨提示", "您的提现申请已提交，审核中请稍后", "确认", R.style.CustomDialog_1, callBack, 2);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
+    }
+
+    public void Onedialog(){
+        DialogCallBack callBack = new DialogCallBack() {
+            @Override
+            public void OkDown(Dialog dialog) {
+                dialog.cancel();
+                dialog.dismiss();
+                PreferencesUtils.putString(AliWithdrawActivity.this,"et_alinumber",et_alinumber.getText().toString());
+                PreferencesUtils.putString(AliWithdrawActivity.this,"et_name",et_name.getText().toString());
+                PreferencesUtils.putString(AliWithdrawActivity.this,"et_phone",et_phone.getText().toString());
+
+                FinalWithDrawMoney("1",et_name.getText().toString(),et_alinumber.getText().toString(),null,null,et_phone.getText().toString());
+
+            }
+            @Override
+            public void CancleDown(Dialog dialog) {
+                dialog.cancel();
+            }
+        };
+        Dialog dialog = new XiMaiPopDialog(AliWithdrawActivity.this, "温馨提示", "您好，提现金额 xxx 元已经完成，审核通过后，24 小时内到账。节假日 顺延!", "知道了", R.style.CustomDialog_1, callBack, 2);
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
     }

@@ -42,6 +42,7 @@ public class GoodDetial  implements Serializable{
     public String HitCount;
     public String AreaId;
     public String OriginalPrice;
+    public String CountryId;
     public String ProvinceId;
     public List<Images> Images ;
     public List<ChainStores> ChainStores ;

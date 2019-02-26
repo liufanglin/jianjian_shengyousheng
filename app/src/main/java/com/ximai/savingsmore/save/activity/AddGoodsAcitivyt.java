@@ -1464,6 +1464,10 @@ public class AddGoodsAcitivyt extends BaseActivity implements View.OnClickListen
                             start.setTextColor(getResources().getColor(R.color.stepcolor));
                             end.setTextColor(getResources().getColor(R.color.stepcolor));
                         }
+                        myProduct.CountryId = goodDetial.CountryId;
+                        myProduct.ProvinceId = goodDetial.ProvinceId;
+                        myProduct.CityId = goodDetial.CityId;
+                        myProduct.AreaId = goodDetial.AreaId;
                         //获取到产品发布的开始时间
                         start.setText(goodDetial.StartTimeName);
                         //保存当前时间 - 用于发布的时候判断是否有更改时间

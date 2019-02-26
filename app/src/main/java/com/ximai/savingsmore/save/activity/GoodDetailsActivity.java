@@ -455,6 +455,7 @@ public class GoodDetailsActivity extends Activity implements View.OnClickListene
                         distance.setText(v + "km");//显示距离
                         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(50, 50);
                         layout.setMargins(5, 0, 5, 0);
+                        comment_score.removeAllViews();
                         if (goodDetial.CommentCount.equals("0")) {
                             score.setText(" 0 分");
                             for (int i = 0; i < 5; i++) {
