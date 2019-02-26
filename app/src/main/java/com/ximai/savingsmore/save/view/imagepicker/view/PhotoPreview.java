@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
@@ -77,34 +78,36 @@ public class PhotoPreview extends LinearLayout implements OnClickListener {
 			save_bt.setVisibility(View.VISIBLE);
 //			loadImage("file://" + photoModel.getOriginalPath());
 			loadImage(URLText.img_url+photoModel.getOriginalPath());
+			Glide.with(cxt).load(URLText.img_url+photoModel.getOriginalPath()).into(ivContent);
 		} else {
 			save_bt.setVisibility(View.GONE);
 //			loadImage("file://" + photoModel.getOriginalPath());
 			loadImage(URLText.img_url+photoModel.getOriginalPath());
+			Glide.with(cxt).load(URLText.img_url+photoModel.getOriginalPath()).into(ivContent);
 		}
 
 	}
 
 	private void loadImage(String path) {
 		this.path = path;
-		ImageLoader.getInstance().loadImage(path,
-				new SimpleImageLoadingListener() {
-					@Override
-					public void onLoadingComplete(String imageUri, View view,
-							Bitmap loadedImage) {
-						pbLoading.setVisibility(View.GONE);
-						loadedBitamap = loadedImage;
-						ivContent.setImageBitmap(loadedImage);
-					}
-
-					@Override
-					public void onLoadingFailed(String imageUri, View view,
-							FailReason failReason) {
-						ivContent.setImageDrawable(getResources().getDrawable(
-								R.drawable.ic_picture_loadfailed));
-						pbLoading.setVisibility(View.GONE);
-					}
-				});
+//		ImageLoader.getInstance().loadImage(path,
+//				new SimpleImageLoadingListener() {
+//					@Override
+//					public void onLoadingComplete(String imageUri, View view,
+//							Bitmap loadedImage) {
+//						pbLoading.setVisibility(View.GONE);
+//						loadedBitamap = loadedImage;
+//						ivContent.setImageBitmap(loadedImage);
+//					}
+//
+//					@Override
+//					public void onLoadingFailed(String imageUri, View view,
+//							FailReason failReason) {
+//						ivContent.setImageDrawable(getResources().getDrawable(
+//								R.drawable.ic_picture_loadfailed));
+//						pbLoading.setVisibility(View.GONE);
+//					}
+//				});
 	}
 
 	@Override
