@@ -117,8 +117,9 @@ public class IssuGoodActivity extends BaseActivity implements View.OnClickListen
                 }else if (MyUserInfoUtils.getInstance().myUserInfo.ApprovalState.equals("2")){
                     Twodialog();
                 } else if (MyUserInfoUtils.getInstance().myUserInfo.ApprovalState.equals("3")){
-
-                    TwodialogFabu();
+                    Intent intent = new Intent(IssuGoodActivity.this, AddGoodsAcitivyt.class);
+                    startActivity(intent);
+//                    TwodialogFabu();
                 }else if (MyUserInfoUtils.getInstance().myUserInfo.ApprovalState.equals("4")){
                     /**
                      * 打电话
@@ -287,6 +288,7 @@ public class IssuGoodActivity extends BaseActivity implements View.OnClickListen
             public void OkDown(Dialog dialog) {
                 dialog.cancel();
                 dialog.dismiss();
+
                 //去我的个人中心
                 Intent intent2 = new Intent(IssuGoodActivity.this, BusinessMyCenterActivity.class);
                 intent2.putExtra("title", "我的中心");

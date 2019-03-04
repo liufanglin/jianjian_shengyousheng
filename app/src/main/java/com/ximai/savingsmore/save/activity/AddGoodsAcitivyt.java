@@ -74,6 +74,7 @@ import com.ximai.savingsmore.save.view.FullyGridLayoutManager;
 import com.ximai.savingsmore.save.view.GlideRoundTransform;
 import com.ximai.savingsmore.save.view.KyLoadingBuilder;
 import com.ximai.savingsmore.save.view.MyGridView;
+import com.ximai.savingsmore.save.view.XiMaiPopDialog;
 import com.ximai.savingsmore.save.view.XiMaiPopDialog1;
 import com.ximai.savingsmore.save.view.XiMaiPopDialog2;
 import com.ximai.savingsmore.save.view.imagepicker.PhotoPreviewActivity;
@@ -309,7 +310,14 @@ public class AddGoodsAcitivyt extends BaseActivity implements View.OnClickListen
         et_fendian_phone.setCursorVisible(false);
         et_fendian_phone.setFocusable(false);
         et_fendian_phone.setFocusableInTouchMode(false);
-
+        product_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b){
+                    TwodialogFabu();
+                }
+            }
+        });
         /**
          * 活动形式选择 - 买就送选择
          */
@@ -1976,5 +1984,31 @@ public class AddGoodsAcitivyt extends BaseActivity implements View.OnClickListen
         builder.setOutsideTouchable(false);
         builder.setBackTouchable(true);
         builder.show();
+    }
+
+
+    /**
+     * 待审核
+     */
+    public void TwodialogFabu(){
+        DialogCallBack callBack = new DialogCallBack() {
+            @Override
+            public void OkDown(Dialog dialog) {
+                dialog.cancel();
+                dialog.dismiss();
+
+                //去我的个人中心
+                Intent intent2 = new Intent(AddGoodsAcitivyt.this, BusinessMyCenterActivity.class);
+                intent2.putExtra("title", "我的中心");
+                startActivity(intent2);
+            }
+            @Override
+            public void CancleDown(Dialog dialog) {
+                dialog.cancel();
+            }
+        };
+        Dialog dialog = new XiMaiPopDialog(AddGoodsAcitivyt.this, "温馨提示", "请确认您发布的促销与贵公司“主营商品”种类一致!可以在我的中心 选择“主营商品”调整!", "知道了","取消", R.style.CustomDialog_1, callBack, 2);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
     }
 }
