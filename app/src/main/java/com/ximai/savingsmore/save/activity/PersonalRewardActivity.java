@@ -181,6 +181,7 @@ public class PersonalRewardActivity extends BaseActivity implements View.OnClick
                         Intent intent = new Intent(this,AliWithdrawActivity.class);
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("idList", (Serializable) IdList);
+                        bundle.putString("money",personalRewardBean.ShowData);
                         intent.putExtras(bundle);
                         startActivity(intent);
                     }
@@ -199,6 +200,7 @@ public class PersonalRewardActivity extends BaseActivity implements View.OnClick
                         }
                         Intent intent = new Intent(this,CardWithdrawActivity.class);
                         Bundle bundle = new Bundle();
+                        bundle.putString("money",personalRewardBean.ShowData);
                         bundle.putSerializable("idList", (Serializable) IdList);
                         intent.putExtras(bundle);
                         startActivity(intent);
