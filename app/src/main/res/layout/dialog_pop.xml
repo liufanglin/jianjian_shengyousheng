@@ -10,9 +10,11 @@
     <RelativeLayout
         android:id="@+id/tv_content"
         android:layout_width="fill_parent"
-        android:layout_height="95dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:background="@color/transparent"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" >
 
