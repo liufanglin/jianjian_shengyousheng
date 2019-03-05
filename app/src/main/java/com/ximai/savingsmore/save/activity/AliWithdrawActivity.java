@@ -236,7 +236,7 @@ public class AliWithdrawActivity extends BaseActivity implements View.OnClickLis
                 dialog.cancel();
             }
         };
-        Dialog dialog = new XiMaiPopDialog(AliWithdrawActivity.this, "温馨提示", "您好，提现金额"+ money +"元已经完成，审核通过后，24 小时内到账。节假日 顺延!", "知道了", R.style.CustomDialog_1, callBack, 1);
+        Dialog dialog = new XiMaiPopDialog(AliWithdrawActivity.this, "温馨提示", "您好，提现金额"+ money +"元已经完成，审核通过后，24 小时内到账。节假日顺延!", "知道了", R.style.CustomDialog_1, callBack, 1);
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
     }

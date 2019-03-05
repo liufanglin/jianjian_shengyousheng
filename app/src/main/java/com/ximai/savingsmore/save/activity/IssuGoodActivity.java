@@ -302,7 +302,7 @@ public class IssuGoodActivity extends BaseActivity implements View.OnClickListen
                 startActivity(intent);
             }
         };
-        Dialog dialog = new XiMaiPopDialog(IssuGoodActivity.this, "温馨提示", "请确认您发布的促销与贵公司“主营商品”种类一致!可以在我的中心 选择“主营商品”调整!", "知道了","取消", R.style.CustomDialog_1, callBack, 2);
+        Dialog dialog = new XiMaiPopDialog(IssuGoodActivity.this, "温馨提示", "请确认您发布的促销与贵公司“主营商品”种类一致!可以在“我的中心”选择“主营商品”调整!", "知道了","取消", R.style.CustomDialog_1, callBack, 2);
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
     }
