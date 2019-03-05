@@ -107,7 +107,7 @@ public class BusinessRewardAdapter extends RecyclerView.Adapter<BusinessRewardAd
                 holder.iv_rewardstate.setBackgroundResource(R.mipmap.iv_reward2);
                 holder.tv_rewardstyle.setText("奖赏："+rewardList.get(position).RedPacketTypeName);
                 holder.tv_rewarddate.setText("领取日期："+ Utils.timeStamp2Date(String.valueOf(System.currentTimeMillis()),"yyyy-MM-dd HH:mm"));
-                holder.tv_rewardsbtn.setText("获得¥"+"1.88");
+                holder.tv_rewardsbtn.setText("获得¥"+ UIUtils.formatPrice(Double.parseDouble(rewardList.get(position).Price)));
                 holder.tv_rewardsbtn.setTextColor(Color.parseColor("#808080"));
                 holder.tv_rewardsbtn.setBackgroundResource(R.drawable.button_gray);
             }
