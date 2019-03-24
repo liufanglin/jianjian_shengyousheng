@@ -205,7 +205,7 @@ public class MyCommentLeftFrament extends Fragment {
                 viewHodel.name.setText(all_list.get(position).Name);
             }
             if (null != all_list.get(position).SaleCount) {
-                if ("0".equals(list.get(position).SaleCount)){
+                if ("0".equals(all_list.get(position).SaleCount)){
                     viewHodel.sales_number.setVisibility(View.GONE);
                 }else {
                     viewHodel.sales_number.setText("销 " + all_list.get(position).SaleCount);
@@ -249,7 +249,7 @@ public class MyCommentLeftFrament extends Fragment {
             }
             if (null != all_list.get(position).Address && null != all_list.get(position).Province && null != all_list.get(position).City) {
 
-                viewHodel.location.setText(list.get(position).Country+" · "+all_list.get(position).Province + all_list.get(position).City + all_list.get(position).Address);
+                viewHodel.location.setText(all_list.get(position).Country+" · "+all_list.get(position).Province + all_list.get(position).City + all_list.get(position).Address);
             }
             if (null != all_list.get(position).StartTimeName && !TextUtils.isEmpty(all_list.get(position).StartTimeName)) {
                 viewHodel.start_time.setText(all_list.get(position).StartTimeName.split(" ")[0]);
@@ -257,16 +257,16 @@ public class MyCommentLeftFrament extends Fragment {
             if (null != all_list.get(position).EndTimeName && !TextUtils.isEmpty(all_list.get(position).EndTimeName)) {
                 viewHodel.end_time.setText(all_list.get(position).EndTimeName.split(" ")[0]);
             }
-            viewHodel.price.setText(list.get(position).Currency+" "+ all_list.get(position).Price);
+            viewHodel.price.setText(all_list.get(position).Currency+" "+ all_list.get(position).Price);
 //            viewHodel.dazhe_style.setText(all_list.get(position).Preferential);
             if (all_list.get(position).Preferential.length() > 5){
                 viewHodel.dazhe_style.setText(all_list.get(position).Preferential.substring(0,5)+"...");
             }else{
                 viewHodel.dazhe_style.setText(all_list.get(position).Preferential);
             }
-            viewHodel.high_price.setText(list.get(position).Currency+" "+ all_list.get(position).OriginalPrice);
-            viewHodel.tv_care.setText("关注"+list.get(position).CareCount);
-            viewHodel.tv_store_count.setText("到店人次"+list.get(position).StoreCount);
+            viewHodel.high_price.setText(all_list.get(position).Currency+" "+ all_list.get(position).OriginalPrice);
+            viewHodel.tv_care.setText("关注"+all_list.get(position).CareCount);
+            viewHodel.tv_store_count.setText("到店人次"+all_list.get(position).StoreCount);
         }
 
         @Override

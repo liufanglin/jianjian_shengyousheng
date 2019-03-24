@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     private TextView register, forgetPassword;
     //用户的类型  2个人 3商家
     private int type = 2;
-    private LinearLayout ll_business, ll_personal,ll_choose_user;
+    private LinearLayout ll_business, ll_personal, ll_choose_user;
     private TextView business_number, good_number, person_number, today_number;
     private String ExternalSigninType;
     private RelativeLayout back;
@@ -161,7 +161,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
          * 判断是商家登录还是个人登录
          */
         String isPeopleAndBusiness = PrefUtils.getString(this, "isPeopleAndBusiness", null);
-        if ("2".equals(isPeopleAndBusiness)){//个人
+        if ("2".equals(isPeopleAndBusiness)) {//个人
             cen_title.setText("个人登录");
 //            tv_title.setText("商家登录");
             tv_msg_one.setText("商家");
@@ -173,9 +173,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             iv_geren.setVisibility(View.VISIBLE);
             ll_login_icon.setVisibility(View.VISIBLE);
             ll_login_msg.setVisibility(View.VISIBLE);
-            PrefUtils.setString(this,"isPeopleAndBusiness","2");
+            PrefUtils.setString(this, "isPeopleAndBusiness", "2");
             type = 2;
-        }else if ("3".equals(isPeopleAndBusiness)){//商家
+        } else if ("3".equals(isPeopleAndBusiness)) {//商家
             cen_title.setText("商家登录");
 //            tv_title.setText("个人登录");
             tv_msg_one.setText("个人");
@@ -185,11 +185,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             ll_personal.setVisibility(View.VISIBLE);
             ll_business.setVisibility(View.GONE);
             iv_geren.setVisibility(View.GONE);
-            PrefUtils.setString(this,"isPeopleAndBusiness","3");
+            PrefUtils.setString(this, "isPeopleAndBusiness", "3");
             ll_login_icon.setVisibility(View.INVISIBLE);
             ll_login_msg.setVisibility(View.INVISIBLE);
             type = 3;
-        }else{
+        } else {
 //            tv_title.setText("商家登录");
             tv_msg_one.setText("商家");
             tv_msg_two.setText("促销");
@@ -204,7 +204,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             /**
              * 默认是个人登录
              */
-            PrefUtils.setString(this,"isPeopleAndBusiness","2");
+            PrefUtils.setString(this, "isPeopleAndBusiness", "2");
         }
 
         getRegisterNUmber();
@@ -228,6 +228,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     /**
      * 用户选择允许或拒绝后，会回调onRequestPermissionsResult方法
+     *
      * @param requestCode
      * @param permissions
      * @param grantResults
@@ -235,13 +236,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (WRITE_COARSE_LOCATION_REQUEST_CODE == requestCode){
-          log.d("map","地图权限问题");
+        if (WRITE_COARSE_LOCATION_REQUEST_CODE == requestCode) {
+            log.d("map", "地图权限问题");
         }
     }
 
     /**
      * 事件处理
+     *
      * @param v
      */
     @Override
@@ -250,7 +252,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.login:
                 if (!TextUtils.isEmpty(name.getText().toString()) && null != name.getText() && !TextUtils.isEmpty(password.getText().toString()) && null != password.getText()) {
                     //判断用户是否注册
-                    isSignup(name.getText().toString());
+//                    isSignup(name.getText().toString());
+                    login(name.getText().toString(), password.getText().toString());
                 } else {
                     Toast.makeText(LoginActivity.this, "请您输入用户名和密码", Toast.LENGTH_LONG).show();
                 }
@@ -262,7 +265,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 startActivity(new Intent(LoginActivity.this, ForgetPasswordActivity.class).putExtra("title", "找回密码"));
                 break;
             case R.id.title＿right://标题right
-                if (type == 3){
+                if (type == 3) {
                     cen_title.setText("个人登录");
                     tv_title.setText("商家登录");
                     register.setText("个人免费注册");
@@ -273,8 +276,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     ll_login_icon.setVisibility(View.VISIBLE);
                     ll_login_msg.setVisibility(View.VISIBLE);
                     type = 2;
-                    PrefUtils.setString(this,"isPeopleAndBusiness","2");
-                }else{
+                    PrefUtils.setString(this, "isPeopleAndBusiness", "2");
+                } else {
                     cen_title.setText("商家登录");
                     tv_title.setText("个人登录");
                     register.setText("商家免费注册");
@@ -285,11 +288,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     ll_login_icon.setVisibility(View.INVISIBLE);
                     ll_login_msg.setVisibility(View.INVISIBLE);
                     type = 3;
-                    PrefUtils.setString(this,"isPeopleAndBusiness","3");
+                    PrefUtils.setString(this, "isPeopleAndBusiness", "3");
                 }
                 break;
             case R.id.ll_choose_user:
-                if (type == 3){
+                if (type == 3) {
                     cen_title.setText("个人登录");
                     tv_msg_one.setText("商家");
                     tv_msg_two.setText("促销");
@@ -301,8 +304,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     ll_personal.setVisibility(View.GONE);//数据少而修改
                     iv_geren.setVisibility(View.VISIBLE);
                     type = 2;
-                    PrefUtils.setString(this,"isPeopleAndBusiness","2");
-                }else{
+                    PrefUtils.setString(this, "isPeopleAndBusiness", "2");
+                } else {
                     cen_title.setText("商家登录");
                     tv_msg_one.setText("个人");
                     tv_msg_two.setText("登录");
@@ -314,7 +317,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     ll_business.setVisibility(View.GONE);
                     iv_geren.setVisibility(View.GONE);
                     type = 3;
-                    PrefUtils.setString(this,"isPeopleAndBusiness","3");
+                    PrefUtils.setString(this, "isPeopleAndBusiness", "3");
                 }
                 break;
             case R.id.back://返回键
@@ -369,6 +372,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         msg.obj = platform;
         UIHandler.sendMessage(msg, LoginActivity.this);   //发送消息
     }
+
     /**
      * 自己写的第三方监听
      */
@@ -381,6 +385,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         msg.obj = throwable;
         UIHandler.sendMessage(msg, LoginActivity.this);
     }
+
     /**
      * 自己写的第三方监听
      */
@@ -419,13 +424,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 /**
                  * 保存三方登录的Id
                  */
-                if (null != userId){
+                if (null != userId) {
                     PreferencesUtils.putString(BaseApplication.getInstance(), "OpenId", userId);
                 }
                 /**
                  * 将数据绑定上传
                  */
-                ThirdLogin(userId, userName, ExternalSigninType, JPushInterface.getRegistrationID(LoginActivity.this),type + "");
+                ThirdLogin(userId, userName, ExternalSigninType, JPushInterface.getRegistrationID(LoginActivity.this), type + "");
 
 //                String account = PreferencesUtils.getString(LoginActivity.this, "account", "");
 //                String pwd = PreferencesUtils.getString(LoginActivity.this, "pwd", "");
@@ -453,10 +458,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     /**
-     *第三方登录信息返回上传到网络
+     * 第三方登录信息返回上传到网络
      */
-    private void ThirdLogin(String OpenId, String NickName, String ExternalSigninType,String PushId,String UserType) {
-        WebRequestHelper.post(URLText.THIRD_LOGIN, RequestParamsPool.thirldLogin(OpenId, NickName, ExternalSigninType,PushId, UserType), new MyAsyncHttpResponseHandler(LoginActivity.this) {
+    private void ThirdLogin(String OpenId, String NickName, String ExternalSigninType, String PushId, String UserType) {
+        WebRequestHelper.post(URLText.THIRD_LOGIN, RequestParamsPool.thirldLogin(OpenId, NickName, ExternalSigninType, PushId, UserType), new MyAsyncHttpResponseHandler(LoginActivity.this) {
             @Override
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
@@ -483,9 +488,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
-                super.onFailure(arg0, arg1, arg2, arg3);}
+                super.onFailure(arg0, arg1, arg2, arg3);
+            }
         });
     }
 
@@ -502,14 +509,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     String message = object.optString("Message");
                     Boolean isScuess = object.optBoolean("IsSuccess");
 
-                    if (TextUtils.equals("该手机号尚未注册！",message)){//没有注册去提示
+                    if (TextUtils.equals("该手机号尚未注册！", message)) {//没有注册去提示
                         //判断选择的是个人还是商家  2是个人3是商家
-                        if (2 == type){
+                        if (2 == type) {
                             peopleDialog();
-                        }else{
+                        } else {
                             businessDialog();
                         }
-                    }else{//已经注册就直接去登录
+                    } else {//已经注册就直接去登录
                         login(name.getText().toString(), password.getText().toString());
                     }
                 } catch (JSONException e) {
@@ -522,7 +529,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     /**
      * 个人dialog
      */
-    public void peopleDialog(){
+    public void peopleDialog() {
         DialogCallBack callBack = new DialogCallBack() {
             @Override
             public void OkDown(Dialog dialog) {
@@ -530,6 +537,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 dialog.dismiss();
                 register(type);
             }
+
             @Override
             public void CancleDown(Dialog dialog) {
                 dialog.cancel();
@@ -543,7 +551,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     /**
      * 商家dialog
      */
-    public void businessDialog(){
+    public void businessDialog() {
         DialogCallBack callBack = new DialogCallBack() {
             @Override
             public void OkDown(Dialog dialog) {
@@ -551,6 +559,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 dialog.dismiss();
                 register(type);
             }
+
             @Override
             public void CancleDown(Dialog dialog) {
                 dialog.cancel();
@@ -564,35 +573,63 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     /**
      * 账号密码登录
+     *
      * @param name
      * @param password
      */
     private void login(final String name, final String password) {
+        showLoading(this, "正在加载");
         WebRequestHelper.post(URLText.LOGIN_URL, RequestParamsPool.getLoginParams(name, password, JPushInterface.getRegistrationID(LoginActivity.this), type), new MyAsyncHttpResponseHandler(LoginActivity.this) {
             @Override
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
+                if (null != builder) {
+                    builder.dismiss();
+                }
                 try {
                     JSONObject object = new JSONObject(new String(responseBody));
                     String message = object.optString("Message");
-                    Boolean isLogin = object.optBoolean("IsSuccess");
-                    if (isLogin) {
-                        String MainData = object.optString("MainData");
-                        UserInfo userInfo = GsonUtils.fromJson(MainData, UserInfo.class);
-                        LoginUser.getInstance().userInfo = userInfo;
-                        if (null != userInfo) {
-                            BaseApplication.getInstance().Token = userInfo.TokenType + " " + userInfo.AccessToken;
-                        }
-                        LoginUser.getInstance().setIsLogin(true);
-                        /**
-                         * 保存 - 密码和账户
-                         */
-                        if (null != name && null != password && 0 != type ){
-                            saveLoginUserAccountAndPwd(name, password, type);
-                        }
-                        getUsereInfo();
-                    }
-                    Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
 
+
+                    if (TextUtils.equals("验证失败，账号不存在！", message)) {//没有注册去提示
+                        //判断选择的是个人还是商家  2是个人3是商家
+                        if (2 == type) {
+                            peopleDialog();
+                        } else {
+                            businessDialog();
+                        }
+                    } else {//已经注册就直接去登录
+
+                        Boolean isLogin = object.optBoolean("IsSuccess");
+                        if (isLogin) {
+                            String MainData = object.optString("MainData");
+                            UserInfo userInfo = GsonUtils.fromJson(MainData, UserInfo.class);
+                            LoginUser.getInstance().userInfo = userInfo;
+                            if (null != userInfo) {
+                                BaseApplication.getInstance().Token = userInfo.TokenType + " " + userInfo.AccessToken;
+                            }
+                            LoginUser.getInstance().setIsLogin(true);
+                            /**
+                             * 保存 - 密码和账户
+                             */
+                            if (null != name && null != password && 0 != type) {
+                                saveLoginUserAccountAndPwd(name, password, type);
+                            }
+//                        getUsereInfo();
+                            String ShowData = object.optString("ShowData");
+                            MyUserInfoUtils.getInstance().myUserInfo = GsonUtils.fromJson(ShowData, MyUserInfo.class);
+
+                            if (null == MyUserInfoUtils.getInstance().myUserInfo.IMUserName && null == MyUserInfoUtils.getInstance().myUserInfo.IMPassword) {
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.putExtra("first_login", true);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                requestLoginEaseChat(MyUserInfoUtils.getInstance().myUserInfo.IMUserName, MyUserInfoUtils.getInstance().myUserInfo.IMPassword);
+                            }
+                        }
+                        Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
+
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -604,7 +641,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
      * 得到用户的信息
      */
     private void getUsereInfo() {
-        showLoading(this,"正在加载");
+        showLoading(this, "正在加载");
         WebRequestHelper.json_post(LoginActivity.this, URLText.GET_USERINFO, RequestParamsPool.getUserInfo(), new MyAsyncHttpResponseHandler(LoginActivity.this) {
             @Override
             public void onResponse(int statusCode, Header[] headers, byte[] responseBody) {
@@ -618,22 +655,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 String MianData = object.optString("MainData");
                 MyUserInfoUtils.getInstance().myUserInfo = GsonUtils.fromJson(MianData, MyUserInfo.class);
 
-                if (null == MyUserInfoUtils.getInstance().myUserInfo.IMUserName && null == MyUserInfoUtils.getInstance().myUserInfo.IMPassword){
-                    if (null != builder){
+                if (null == MyUserInfoUtils.getInstance().myUserInfo.IMUserName && null == MyUserInfoUtils.getInstance().myUserInfo.IMPassword) {
+                    if (null != builder) {
                         builder.dismiss();
                     }
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra("first_login", true);
                     startActivity(intent);
                     finish();
-                }else{
+                } else {
                     requestLoginEaseChat(MyUserInfoUtils.getInstance().myUserInfo.IMUserName, MyUserInfoUtils.getInstance().myUserInfo.IMPassword);
                 }
             }
         });
     }
 
-    private void  getRegisterNUmber() {
+    private void getRegisterNUmber() {
         StringEntity s = null;
         try {
             s = new StringEntity("");
@@ -663,7 +700,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         EMChatManager.getInstance().login(accountStr, pwd, new EMCallBack() {//回调
             @Override
             public void onSuccess() {
-                if (null != builder){
+                if (null != builder) {
                     builder.dismiss();
                 }
                 // EMGroupManager.getInstance().loadAllGroups();//加载群组 木有此功能
@@ -679,20 +716,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 startActivity(intent);
                 finish();
             }
+
             @Override
             public void onProgress(int progress, String status) {
 
             }
+
             @Override
             public void onError(int code, String message) {
-                if (null != builder){
+                if (null != builder) {
                     builder.dismiss();
                 }
             }
         });
     }
 
-    private void register(int type){
+    private void register(int type) {
         Intent intent = new Intent(LoginActivity.this, OneStepRegisterActivity.class);
         intent.putExtra("register_type", type + "");
         startActivity(intent);
@@ -700,7 +739,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     /**
      * 保存帐号和密码
-     *
      */
     public void saveLoginUserAccountAndPwd(String account, String pwd, int type) {
         PreferencesUtils.putString(BaseApplication.getInstance(), "account", account);
@@ -711,8 +749,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     /**
      * 打开loading
      */
-    public void showLoading(Context context, String text){
-        if (null == builder){
+    public void showLoading(Context context, String text) {
+        if (null == builder) {
             builder = new KyLoadingBuilder(context);
         }
         builder.setIcon(R.mipmap.loading);
